@@ -1,0 +1,47 @@
+/*
+Theme Name: 	MaterialWP Child
+Theme URI:		http://example.com/materialWP-child		
+Description:	Material Wordpress Child Theme
+Author:			Joshua R. Engel
+Author URI:		http://example.com
+Template: 		materialwp-materialwp
+Version:		1.0.0
+License:		GNU General Public License v2 or later
+License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Tags:			light, dark, two-columns, right-sidebar, responsive-layour, accessibility-ready
+Text Domain:	materialWP-child
+*/
+
+/*Basic Container Set-up*/
+.container {
+    width: 100%;
+    padding: 0px;
+    
+}
+
+/* Custom Nav-bar Set-ups */
+.navbar {
+    margin-bottom: 0px;   
+}
+
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse  {
+    margin-left: 30px;   
+}
+
+.card {
+    min-height: 800px;
+}
+
+/* Row Changes */
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Col-lg-12 Changes */
+
+.col-lg-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
