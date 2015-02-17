@@ -16,7 +16,9 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
         
-    <?php if ( 7 > 6 ): ?>
+    <?php if ( is_front_page() ): ?>
+        
+        <h1>Hello World!</h1>
         
     <?php else: ?>
         

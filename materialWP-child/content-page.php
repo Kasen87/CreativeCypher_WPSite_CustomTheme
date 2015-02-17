@@ -8,7 +8,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="card">
+    <?php if ( is_front_page() ) : ?>
+        <h1>Hello World!</h1>
+    
+    <?php else : ?>
+    	<div class="card">
 		<div class="entry-img">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php the_post_thumbnail(); ?>
@@ -36,4 +40,7 @@
 			</footer> .entry-footer -->
 		</div> <!-- .entry-container -->
 	</div> <!-- .card -->
+    
+    <?php endif; ?>
+
 </article><!-- #post-## -->
