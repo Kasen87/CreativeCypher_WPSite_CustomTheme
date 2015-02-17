@@ -15,13 +15,7 @@ get_header(); ?>
 
 <div class="container">
 	<div class="row">
-        
-    <?php if ( is_front_page() ): ?>
-        
-        <h1>Hello World!</h1>
-        
-    <?php else: ?>
-        
+
         <div id="primary" class="col-lg-12">
             <main id="main" class="site-main" role="main">
 
@@ -50,9 +44,6 @@ get_header(); ?>
 
             </main><!-- #main -->
 	   </div><!-- #primary -->
-        
-    <?php endif ?>
-	
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
