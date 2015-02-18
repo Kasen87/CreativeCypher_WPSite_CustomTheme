@@ -15,6 +15,7 @@ Text Domain:	materialWP-child
 /* Body Adjustment */
 body{
     padding-top: 60px;
+    background-image: url(images/bg_Layover.png);
 }
 
 .false-height {
@@ -263,15 +264,48 @@ body{
 
 .featured {
     border-radius: 2px;
-    height: 150px;
     color: rgba(0, 0, 0, 0.84);
     background: #ffffff;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
-    margin: 5px;
+    margin: .5%;
+    float: left;
+    border: 2px solid red;
 }
 
 .centerMe {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.featuredRow {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px dashed green;
+    min-height: 500px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.featured01 {
+    height: 100%;
+    width: 49%;
+    top: 0;
+    left: 0;
+}
+
+.featured02 {
+    width: 24%;
+    min-height: 50%;
+}
+
+.featured03 {
+    width: 24%;
+    height: 50%;
+}
+
+.featured04 {
+    width: 49%;
+    height: 49%;
 }

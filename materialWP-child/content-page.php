@@ -54,11 +54,14 @@
             </div>
         </div>
     </div>
-    <div id="primary" class="card col-md-12">
-                <div class="row centerMe">
-                    <div class="col-md-4 featured"><p>Hey hey hey</p></div>
-                    <div class="col-md-4 featured"><p>Hey hey hey</p></div>
-                </div>
+    <div id="primary" class="col-lg-12">
+        <div class="container-fluid">
+                <div class="row featuredRow">
+                    <div class="featured featured01"><p>Hey hey hey</p></div>
+                    <div class="featured featured02"><p>Hey hey hey</p></div>
+                    <div class="featured featured03"><p>Hey hey hey</p></div>
+                    <div class="featured featured04"><p>Hey hey hey</p></div>
+                <!--<</div>
                 <div class="row centerMe">
                     <div class="col-md-6 featured"><p>Hey hey hey</p></div>
                     <div class="col-md-5 featured"><p>Hey hey hey</p></div>
@@ -66,8 +69,9 @@
                 <div class="row centerMe">
                     <div class="col-md-4 featured"><p>Hey hey hey</p></div>
                     <div class="col-md-4 featured"><p>Hey hey hey</p></div>
-                    <div class="col-md-3 featured"><p>Hey hey hey</p></div>
+                    <div class="col-md-3 featured"><p>Hey hey hey</p></div>-->
                 </div>
+            </div>
     </div>
     
     <?php else : ?>
