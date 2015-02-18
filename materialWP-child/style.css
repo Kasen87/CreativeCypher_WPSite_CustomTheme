@@ -268,8 +268,10 @@ body{
     background: #ffffff;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
     margin: .5%;
+    padding: .25%;
     float: left;
-    border: 2px solid red;
+    min-width: 300px;
+    min-height: 150px;
 }
 
 .centerMe {
@@ -282,30 +284,63 @@ body{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px dashed green;
-    min-height: 500px;
-    margin-top: 5%;
+    height: 75vh;
+    margin-top: 2%;
     margin-bottom: 5%;
+    padding: 5px;
+    padding-bottom: 15px;
+    
 }
 
 .featured01 {
-    height: 100%;
-    width: 49%;
+    height: 60%;
+    width: 35%;
     top: 0;
     left: 0;
 }
 
 .featured02 {
-    width: 24%;
-    min-height: 50%;
+    width: 19%;
+    height: 60%;
 }
 
 .featured03 {
-    width: 24%;
-    height: 50%;
+    width: 19%;
+    height: 29%;
 }
 
 .featured04 {
-    width: 49%;
-    height: 49%;
+    width: 19%;
+    height: 29%;
+}
+
+.container-fluid {
+    /*border: 1px dashed blue;*/
+}
+
+.featuredHeading {
+    /*border: 1px red solid;*/
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+}
+
+.featured05 {
+    width: 41.25%;
+    height: 29%;
+}
+
+.featured06 {
+    width: 25%;
+    height: 35%;
+}
+
+.featured07 {
+    width: 25%;
+    height: 35%;
+}
+
+.featured08 {
+    width: 46.5%;
+    height: 35%;
 }
