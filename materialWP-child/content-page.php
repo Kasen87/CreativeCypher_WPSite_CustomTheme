@@ -40,7 +40,7 @@
                     <li>
                         <span>Image 05</span>
                         <div>
-                            <h3>Have an awesome day!</h3>
+                            <h3>Hooray!</h3>
                         </div>
                     </li>
                     <li>
@@ -68,7 +68,7 @@
                         <h4>Special Feature 3</h4>
                     </div>
                     <div class="featured featured04">
-                        <h4>Special Feature 4</h4>
+                        <!--<h4>Special Feature 4</h4>-->
                     </div>
                     <div class="featured featured05">
                         <h4>Special Feature 5</h4>

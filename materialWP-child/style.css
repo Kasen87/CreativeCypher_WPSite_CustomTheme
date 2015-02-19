@@ -19,7 +19,7 @@ body{
 }
 
 .false-height {
-    height: 940px;
+    height: calc(100vh - 60px);
 }
 
 .zeroMargin {
@@ -258,9 +258,12 @@ body{
 }
 
 
-
-
-
+.featuredHeading {
+    /*border: 1px red solid;*/
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+}
 
 .featured {
     border-radius: 2px;
@@ -268,7 +271,6 @@ body{
     background: #ffffff;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
     margin: .5%;
-    padding: .25%;
     float: left;
     min-width: 300px;
     min-height: 150px;
@@ -297,33 +299,40 @@ body{
     width: 35%;
     top: 0;
     left: 0;
+    background-image: url("images/featured/team3.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
 }
 
 .featured02 {
     width: 19%;
     height: 60%;
+    background-image: url("images/featured/team1.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:cover;
 }
 
 .featured03 {
-    width: 19%;
+    width: calc(20% - 1%);
     height: 29%;
+
 }
 
 .featured04 {
-    width: 19%;
+    width: calc(20% - 10px);
     height: 29%;
+    background-image: url("images/featured/team2.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
 }
 
 .container-fluid {
     /*border: 1px dashed blue;*/
 }
 
-.featuredHeading {
-    /*border: 1px red solid;*/
-    text-align: center;
-    color: white;
-    margin-top: 5%;
-}
 
 .featured05 {
     width: 41.25%;
