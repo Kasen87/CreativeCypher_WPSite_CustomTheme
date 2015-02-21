@@ -249,32 +249,7 @@ body{
     opacity: 1;
 }
 
-@media screen and (max-width: 1140px){
-    .cc-slideshow li div h3 { font-size: 140px }
-}
 
-@media screen and (max-width: 600px) {
-    .cc-slideshow li div h3 { font-size: 80px }
-}
-
-
-.featuredHeading {
-    /*border: 1px red solid;*/
-    text-align: center;
-    color: white;
-    margin-top: 5%;
-}
-
-.featured {
-    border-radius: 2px;
-    color: rgba(0, 0, 0, 0.84);
-    background: #ffffff;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
-    margin: .5%;
-    float: left;
-    min-width: 300px;
-    min-height: 150px;
-}
 
 .centerMe {
     width: 80%;
@@ -282,74 +257,193 @@ body{
     margin-right: auto;
 }
 
-.featuredRow {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 75vh;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    padding: 5px;
-    padding-bottom: 15px;
+.container-fluid {
+
+}
+
+    .featuredHeading {
+        /*border: 1px red solid;*/
+        text-align: center;
+        color: white;
+       /* margin-top: 5%;*/
+    }
+
+    .featuredRow {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        /*border: 1px solid green;*/
+        min-width: 300px;
+        height: 100vh;
+        min-height: 75vh;
+
+    }
+
+        .featured {
+            border-radius: 2px;
+            color: rgba(0, 0, 0, 0.84);
+            background: #ffffff;
+            margin: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+            float: left;
+            min-width: 150px;
+            min-height: 150px;
+            background-position: top center;
+            /*border: 1px dashed white;*/
+        }
+
+        .featured:hover > p {
+            max-height: 20%;
+        }
+
+        .featured01 {
+            top: 0;
+            left: 0;
+            position: relative;
+            background-image: url("images/featured/team3.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            .featured > h4 {
+                background-color: rgba(0,58,111,1);
+                position:absolute;
+                color: #fff;
+                top: calc(70% + 10px);
+                padding: 10px;
+                border-bottom-right-radius: 2px;
+                border-top-right-radius: 2px;
+                text-align: left;
+            }
+
+            .tile1H > h4 {
+                top: calc(65% - 5px);
+            }
+
+            .tile1H > h4:first-child {
+                max-height: 20%;   
+            }
+            .featured > p {
+                background-color: rgba(0,0,0,0.75);
+                position: absolute;
+                top: 80%;
+                padding: 10px;
+                margin-bottom: 0px;
+                color: white;
+                border-bottom-right-radius: 2px;
+                border-top-right-radius: 2px;
+                width: 100%;
+                vertical-align: center;
+                overflow-y: hidden;
+                max-height: 8%;
+            }
+
+
+        .featured02 {
+            position: relative;
+            background-image: url("images/featured/team1.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .featured03 {
+            position: relative;
+            background-image: url("images/featured/team1.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .featured04 {
+            position:relative;
+            background-image: url("images/featured/team2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        .featured05 {
+            position: relative;
+            background-image: url("images/featured/team2.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .featured06 {
+            position: relative;
+            background-image: url("images/featured/team1.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .featured07 {
+            position: relative;
+            background-image: url("images/featured/team1.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .featured08 {
+            position: relative;
+            background-image: url("images/featured/team1.png");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+
+    .tile1W {
+    width: calc(25% - 10px);
+    }
+
+    .tile1H {
+        height: calc(25% - 10px);
+    }
+
+    .tile2W {
+        width: calc(50% - 10px);
+    }
+
+    .tile2H {
+        height: calc(50% - 10px);
+    }
+
+@media screen and (min-width: 1360px){
+    
+
+   .tile1W {
+        width: 290px;
+    }
+
+    .tile1H {
+        height: 290px;
+    }
+
+    .tile2W {
+        width: 590px;
+    }
+
+    .tile2H {
+        height: 590px;
+    }
+
+
+    .featuredRow {
+       max-width: 1300px;
+       max-height: none;
+       /*border: 2px dashed yellow;*/
+    }
     
 }
 
-.featured01 {
-    height: 60%;
-    width: 35%;
-    top: 0;
-    left: 0;
-    background-image: url("images/featured/team3.png");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+@media screen and (max-width: 1140px){
+    .cc-slideshow li div h3 { font-size: 140px }
 }
 
-.featured02 {
-    width: 19%;
-    height: 60%;
-    background-image: url("images/featured/team1.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size:cover;
-}
-
-.featured03 {
-    width: calc(20% - 1%);
-    height: 29%;
-
-}
-
-.featured04 {
-    width: calc(20% - 10px);
-    height: 29%;
-    background-image: url("images/featured/team2.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100%;
-}
-
-.container-fluid {
-    /*border: 1px dashed blue;*/
-}
-
-
-.featured05 {
-    width: 41.25%;
-    height: 29%;
-}
-
-.featured06 {
-    width: 25%;
-    height: 35%;
-}
-
-.featured07 {
-    width: 25%;
-    height: 35%;
-}
-
-.featured08 {
-    width: 46.5%;
-    height: 35%;
+@media screen and (max-width: 600px) {
+    .cc-slideshow li div h3 { font-size: 80px }
+    
+    .featured {
+        min-height: 300px;
+        min-width: 450px;
+        border: 1px solid white;
+    }
 }

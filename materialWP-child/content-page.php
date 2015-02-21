@@ -56,31 +56,47 @@
     </div>
     <div id="primary" class="col-lg-12">
         <div class="container-fluid">
-            <div class="featuredHeading"><h1>Fan-Favorites</h1></div>
+            <div class="featuredHeading"><!--<h1>Fan-Favorites</h1>--></div>
                 <div class="row featuredRow">
-                    <div class="featured featured01">
-                        <h4>Special Feature 1</h4>
+                    <div class="featured featured01 tile2W tile2H">
+                        <h4>Cooking While Naked</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured02">
-                        <h4>Special Feature 2</h4>
+                    <div class="featured featured02 tile1W tile2H">
+                        <h4>Featured 2</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured03">
-                        <h4>Special Feature 3</h4>
+                    <div class="featured featured03 tile1H tile1W">
+                        <h4>Featured 3</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured04">
-                        <!--<h4>Special Feature 4</h4>-->
+                    <div class="featured featured04 tile1W tile1H">
+                        <h4>Featured 4</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured05">
-                        <h4>Special Feature 5</h4>
+                    <div class="featured featured05 tile2W tile1H">
+                        <h4>Featured 5</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured06">
-                        <h4>Special Feature 6</h4>
+                    <div class="featured featured06 tile1W tile1H">
+                        <h4>Featured 6</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured07">
-                        <h4>Special Feature 7</h4>
+                    <div class="featured featured07 tile1W tile1H">
+                        <h4>Featured 7</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured08">
-                        <h4>Special Feature 8</h4>
+                    <div class="featured featured08 tile2W tile2H">
+                        <h4>Featured 8</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
+                    </div>
+                    <div class="featured featured08 tile2W tile1H">
+                        <h4>Featured 9</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
+                    </div>
+                    <div class="featured featured08 tile2W tile1H">
+                        <h4>Featured 10</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
                 </div>
             </div>
