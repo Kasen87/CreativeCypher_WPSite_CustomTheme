@@ -9,9 +9,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <?php if ( is_front_page() ) : ?>
-    <div class="card false-height">
+    <div class="card false-height lg-Container">
         <div class="entry-container">
             <div class="entry-content">
+                
+                <!--<div class="fullMenu">
+                    <ul>
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                        <li>Four</li>
+                    </ul>
+                </div>-->
+                
                 <ul class="cc-slideshow">
                     <li>
                         <span>Image 01</span>
@@ -54,15 +64,18 @@
             </div>
         </div>
     </div>
-    <div id="primary" class="col-lg-12">
-        <div class="container-fluid">
-            <div class="featuredHeading"><!--<h1>Fan-Favorites</h1>--></div>
+    
+    <!--<div class="card taglineSep"></div>-->
+    
+    <div id="primary" class="lg-Container">
+        <!--<div class="container-fluid">-->
+            <div class="whiteBox">
                 <div class="row featuredRow">
                     <div class="featured featured01 tile2W tile2H">
                         <h4>Cooking While Naked</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
-                    <div class="featured featured02 tile1W tile2H">
+                    <div class="featured featured02 tile2W tile1H">
                         <h4>Featured 2</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
@@ -99,7 +112,8 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo hendrerit lectus, eget tempus tortor varius ac. Quisque sed pellentesque elit. Curabitur vel nulla eget quam tincidunt cursus eu a dui. Integer efficitur sapien at vestibulum suscipit. Etiam tempus ligula est, pulvinar consectetur nisi porttitor nec.</p>
                     </div>
                 </div>
-            </div>
+                </div>
+            <!--</div>-->
     </div>
     
     <?php else : ?>

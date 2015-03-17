@@ -20,6 +20,9 @@ body{
 
 .false-height {
     height: calc(100vh - 60px);
+    display: block;
+    margin: 0 auto;
+    /*border: 4px dashed green;*/
 }
 
 .zeroMargin {
@@ -135,43 +138,56 @@ body{
 }
 
 .cc-slideshow li:nth-child(1) span { 
-    background-image: url(images/1.jpg) 
+    background-image: url('images/1.jpg') 
 }
 .cc-slideshow li:nth-child(2) span { 
-    background-image: url(images/2.jpg);
+    background-image: url('images/2.jpg');
     animation-delay: 6s; 
+    -webkit-animation-delay: 6s; 
 }
 .cc-slideshow li:nth-child(3) span { 
-    background-image: url(images/3.jpg);
+    background-image: url('images/3.jpg');
     animation-delay: 12s; 
+    -webkit-animation-delay: 12s; 
 }
 .cc-slideshow li:nth-child(4) span { 
-    background-image: url(images/4.jpg);
+    background-image: url('images/4.jpg');
     animation-delay: 18s; 
+    -webkit-animation-delay: 18s; 
 }
 .cc-slideshow li:nth-child(5) span { 
-    background-image: url(images/5.jpg);
+    background-image: url('images/5.jpg');
     animation-delay: 24s; 
+    -webkit-animation-delay: 24s; 
 }
 .cc-slideshow li:nth-child(6) span { 
-    background-image: url(images/6.jpg);
+    background-image: url('images/6.jpg');
     animation-delay: 30s; 
+    -webkit-animation-delay: 30s; 
 }
 
 .cc-slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
+    animation-delay: 6s;
+    -webkit-animation-delay: 6s;
 }
 .cc-slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
+    animation-delay: 12s;
+    -webkit-animation-delay: 12s; 
+
 }
 .cc-slideshow li:nth-child(4) div { 
     animation-delay: 18s; 
+    -webkit-animation-delay: 18s; 
+
 }
 .cc-slideshow li:nth-child(5) div { 
     animation-delay: 24s; 
+    -webkit-animation-delay: 24s; 
+
 }
 .cc-slideshow li:nth-child(6) div { 
     animation-delay: 30s; 
+    -webkit-animation-delay: 30s;
 }
 
 
@@ -249,191 +265,202 @@ body{
     opacity: 1;
 }
 
-
+/*************** Landing Page Featured Section ************************/
 
 .centerMe {
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.container-fluid {
+/*.featuredHeading {        /*This was previously put in for a heading above the images, but it doesn't look quite right :(
+    text-align: center;
+    color: white;
+}*/
 
+.featuredRow {
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid green;*/
+    min-width: 300px;
+    min-height: 75vh;
 }
 
-    .featuredHeading {
-        /*border: 1px red solid;*/
-        text-align: center;
-        color: white;
-       /* margin-top: 5%;*/
-    }
+.featured {
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.84);
+    background: #ffffff;
+    margin: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+    float: left;
+    min-width: 150px;
+    min-height: 150px;
+    background-position: top center;
+}
 
-    .featuredRow {
-        width: 80vw;
-        margin-left: auto;
-        margin-right: auto;
-        /*border: 1px solid green;*/
-        min-width: 300px;
-        height: 100vh;
-        min-height: 75vh;
+/************ Featured Overlay Text Sections ******************************/
+.featured:hover > p {
+    max-height: 20%;
+    padding: 10px;
+}
 
-    }
+.featured > h4 {
+    background-color: rgba(0,58,111,1);
+    position:absolute;
+    color: #fff;
+    top: calc(70% + 10px);
+    padding: 10px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    text-align: left;
+}
 
-        .featured {
-            border-radius: 2px;
-            color: rgba(0, 0, 0, 0.84);
-            background: #ffffff;
-            margin: 5px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
-            float: left;
-            min-width: 150px;
-            min-height: 150px;
-            background-position: top center;
-            /*border: 1px dashed white;*/
-        }
+.tile1H > h4 {
+    top: calc(65% - 5px);
+}
 
-        .featured:hover > p {
-            max-height: 20%;
-        }
+.tile1H > h4:first-child {
+    max-height: 20%;
+    padding: 10px;   
+}
+.featured > p {
+    background-color: rgba(0,0,0,0.75);
+    position: absolute;
+    top: 80%;
+    padding: 0px;
+    margin-bottom: 0px;
+    color: white;
+    width: 100%;
+    vertical-align: center;
+    overflow-y: hidden;
+    max-height: 0px; 
+}
 
-        .featured01 {
-            top: 0;
-            left: 0;
-            position: relative;
-            background-image: url("images/featured/team3.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+/******************Featured Sections***************************/
+.featured01 {
+    position: relative;
+    background-image: url("images/featured/team3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-            .featured > h4 {
-                background-color: rgba(0,58,111,1);
-                position:absolute;
-                color: #fff;
-                top: calc(70% + 10px);
-                padding: 10px;
-                border-bottom-right-radius: 2px;
-                border-top-right-radius: 2px;
-                text-align: left;
-            }
+.featured02 {
+    position: relative;
+    background-image: url("images/featured/team1.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
-            .tile1H > h4 {
-                top: calc(65% - 5px);
-            }
+.featured03 {
+    position: relative;
+    background-image: url("images/featured/team1.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
-            .tile1H > h4:first-child {
-                max-height: 20%;   
-            }
-            .featured > p {
-                background-color: rgba(0,0,0,0.75);
-                position: absolute;
-                top: 80%;
-                padding: 10px;
-                margin-bottom: 0px;
-                color: white;
-                border-bottom-right-radius: 2px;
-                border-top-right-radius: 2px;
-                width: 100%;
-                vertical-align: center;
-                overflow-y: hidden;
-                max-height: 8%;
-            }
-
-
-        .featured02 {
-            position: relative;
-            background-image: url("images/featured/team1.png");
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
-
-        .featured03 {
-            position: relative;
-            background-image: url("images/featured/team1.png");
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
-
-        .featured04 {
-            position:relative;
-            background-image: url("images/featured/team2.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+.featured04 {
+    position:relative;
+    background-image: url("images/featured/team2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
-        .featured05 {
-            position: relative;
-            background-image: url("images/featured/team2.png");
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
+.featured05 {
+    position: relative;
+    background-image: url("images/featured/team2.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
-        .featured06 {
-            position: relative;
-            background-image: url("images/featured/team1.png");
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
+.featured06 {
+    position: relative;
+    background-image: url("images/featured/team1.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
-        .featured07 {
-            position: relative;
-            background-image: url("images/featured/team1.png");
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
+.featured07 {
+    position: relative;
+    background-image: url("images/featured/team1.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
-        .featured08 {
-            position: relative;
-            background-image: url("images/featured/team1.png");
-            background-repeat: no-repeat;
-            background-size:cover;
-        }
+.featured08 {
+    position: relative;
+    background-image: url("images/featured/team1.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
-
-    .tile1W {
+/************************** Tile Classes **************************/
+.tile1W {
     width: calc(25% - 10px);
-    }
+}
 
-    .tile1H {
-        height: calc(25% - 10px);
-    }
+.tile1H {
+   height:335px;
+}
 
-    .tile2W {
-        width: calc(50% - 10px);
-    }
+.tile2W {
+    width: calc(50% - 10px);
+}
 
-    .tile2H {
-        height: calc(50% - 10px);
-    }
+.tile2H {
+    height: 680px;
+}
 
-@media screen and (min-width: 1360px){
-    
+.centeredFeature {
+    margin: 0px auto;
+    display: block;
+}
 
-   .tile1W {
-        width: 290px;
-    }
+.whiteBox {
+    padding: 10px;
+}
 
-    .tile1H {
-        height: 290px;
-    }
+/************** Container Sizes *************/
 
-    .tile2W {
-        width: 590px;
-    }
+.lg-Container {
+    width: 1400px;
+    background: #eee;
+    display:block;
+    margin: 0 auto;
+}
 
-    .tile2H {
-        height: 590px;
-    }
+.card.false-height.lg-Container {
+    width: 100%;
+}
 
 
-    .featuredRow {
-       max-width: 1300px;
-       max-height: none;
-       /*border: 2px dashed yellow;*/
-    }
+.taglineSep {
+    background-color: #e7e7e7;
+    min-height: 100px;
+    width: 100%;
+    margin: 0px;
+    position: inherit;
     
 }
 
+/******************* Body Menu ***********************/
+/*********** Menu appears on the right side, and pushes the body to the left side **************/
+.fullMenu {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    right: 0;
+    top: 60px;;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    margin-right: -10px;
+}
+
+.displayMenu {
+    
+}
+
+/******************************* Media Queries *****************************/
 @media screen and (max-width: 1140px){
     .cc-slideshow li div h3 { font-size: 140px }
 }
@@ -444,6 +471,5 @@ body{
     .featured {
         min-height: 300px;
         min-width: 450px;
-        border: 1px solid white;
     }
 }
