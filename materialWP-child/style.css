@@ -22,7 +22,6 @@ body{
     height: calc(100vh - 60px);
     display: block;
     margin: 0 auto;
-    /*border: 4px dashed green;*/
 }
 
 .zeroMargin {
@@ -61,7 +60,6 @@ body{
     min-height: 800px;
 }
     
-
 /* Row Changes */
 
 .row {
