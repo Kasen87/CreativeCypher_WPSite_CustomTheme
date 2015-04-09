@@ -15,36 +15,21 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
         
-    <!--Check to see if this is the front page, if so, control ALL of the content -->    
-    <?php if ( is_front_page() ) : ?>
-        
         <div id="primary" class="col-lg-12">
             <main id="main" class="site-main" role="main">
-                    <?php get_template_part( 'content', 'page' ); ?>
-            </main><!-- #main -->
-        </div><!-- #primary -->
+  
+        <?php if ( is_front_page() ): ?>
+                <?php get_template_part( 'landing', 'page'); ?>
+        <?php elseif (is_page('press-releases') ): ?>
+                <?php get_template_part( 'press-releases', 'page' ); ?>
 
-    <?php else : ?>
-        <div id="primary" class="col-lg-12">
-            <main id="main" class="site-main" role="main">
-
-                <?php while ( have_posts() ) : the_post(); ?>
-
-                    <?php get_template_part( 'content', 'page' ); ?>
-
-                    <?php
-                        // If comments are open or we have at least one comment, load up the comment template
-                        if ( comments_open() || get_comments_number() ) :
-                            comments_template();
-                        endif;
-                    ?>
-
-                <?php endwhile; // end of the loop. ?>
+                
+                <?php else : ?>
+                                
+                <?php endif; ?>
 
             </main><!-- #main -->
         </div><!-- #primary -->
 
-    <?php endif; ?>
-
-<?php get_sidebar(); ?>
+<?/*php get_sidebar(); */?>
 <?php get_footer(); ?>
