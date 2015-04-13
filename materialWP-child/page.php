@@ -20,8 +20,10 @@ get_header(); ?>
   
         <?php if ( is_front_page() ): ?>
                 <?php get_template_part( 'landing', 'page'); ?>
-        <?php elseif (is_page('press-releases') ): ?>
+        <?php elseif (is_page('team') ): ?>
                 <?php get_template_part( 'press-releases', 'page' ); ?>
+        <?php elseif (is_page('shows') ): ?>
+                <?php get_template_part( 'shows', 'page' ); ?>
 
                 
                 <?php else : ?>

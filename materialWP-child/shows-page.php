@@ -29,7 +29,6 @@
                 
                 <?php foreach($categories as $catName): ?>
                   <div class="card PR">
-                      <div class="slideContainer">
                     <?php echo '<h3 class="showTitle">' . $catName->cat_name . '</h3>'; ?>
                       
                         <!-- Start of the inside loop for posts within the show! -->                            
@@ -64,7 +63,7 @@
                                 <?php endwhile; ?>
 
                                 <!-- End of the inside loop for posts within the show! -->
-                        </div>
+
                     </div> <!-- .card -->
                     
                             <?php else : ?>

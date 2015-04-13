@@ -434,13 +434,13 @@ body{
 }
 
 .card.PR {
-    width: calc(100% + 600px);
+    width: 90%;
     display: block;
     margin: 0 auto;
     padding: 0;
-    height: 160px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    height: 200px;
+    overflow-x: scroll;
+    margin-top: 10px;
 }
 
 
@@ -476,14 +476,27 @@ body{
 .entry-container {
     display: block;
     float: left;
-    width: 280px;
+    width: 220px;
     height: 140px;
     margin-left: 10px;
     margin-top: 10px;
     overflow-y: hidden;
     padding: 0;
     padding-left: 5px;
+    position:relative;
+    z-index: 1;
+    transition: box-shadow 0.3s ease;
+    -webkit-transition: box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease;
+    -moz-transition: box-shadow 0.3s ease;
 }
+
+.entry-container:hover {
+    box-shadow: 8px 6px 3px #bbbbbb;
+    z-index: 2;
+}
+
+
 
 .outerContainer {
     width: 100%;
@@ -504,6 +517,7 @@ body{
     margin-right: auto;
     background-color: #eee;
     padding-top: 10px;
+    padding-bottom: 10px;
 
 }
 .heroBodyBG {
@@ -550,4 +564,18 @@ body{
     width: 100%;
     position: absolute;
     left: 0;
+}
+
+.showTitle {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #bbb;
+    font-size: 125%;
+}
+.slideContainer {
+    width: 1500px;
+    overflow-y: hidden;
+    overflow: scroll;
+    white-space: nowrap;
 }
