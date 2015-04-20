@@ -17,14 +17,32 @@ get_header(); ?>
         
         <div id="primary" class="col-lg-12">
             <main id="main" class="site-main" role="main">
-  
+                
+<!--Landing Page Section-->
         <?php if ( is_front_page() ): ?>
                 <?php get_template_part( 'landing', 'page'); ?>
-        <?php elseif (is_page('team') ): ?>
-                <?php get_template_part( 'press-releases', 'page' ); ?>
+                
+<!--Creations Section-->
         <?php elseif (is_page('shows') ): ?>
                 <?php get_template_part( 'shows', 'page' ); ?>
-
+        <?php elseif (is_page('films') ): ?>
+                <?php get_template_part( 'films', 'page' ); ?>
+        <?php elseif (is_page('music') ): ?>
+                <?php get_template_part( 'music', 'page' ); ?>
+        <?php elseif (is_page('gallery') ): ?>
+                <?php get_template_part( 'gallery', 'page' ); ?>
+        <?php elseif (is_page('blog') ): ?>
+                <?php get_template_part( 'blog', 'page' ); ?>
+                
+<!--Creators section -->
+        <?php elseif (is_page('about') ): ?>
+                <?php get_template_part( 'about', 'page' ); ?>               
+        <?php elseif (is_page('team') ): ?>
+                <?php get_template_part( 'team', 'page' ); ?>
+                
+<!--Create Section -->
+         <?php elseif (is_page('create') ): ?>
+                <?php get_template_part( 'create', 'page' ); ?>               
                 
                 <?php else : ?>
                                 
