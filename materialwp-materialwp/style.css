@@ -230,7 +230,7 @@ th {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: #337ab7;
+	color: rgba(250, 230, 0, 1);
 }
 
 a:visited {
@@ -240,7 +240,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: #3f51b5;
+	color: rgba(250, 230, 0, 1);
 }
 
 /*--------------------------------------------------------------
@@ -553,7 +553,7 @@ a:active {
 
 .entry-container h1 a:hover{
 	text-decoration: none;
-	color: #3f51b5;
+	color: rgba(250,230,0,1);
 }
 
 a.read-more {
@@ -564,7 +564,7 @@ a.read-more {
 
 a.read-more:hover {
 	text-decoration: none;
-	color: #3f51b5;
+	color: rgba(250,230,0,1);
 }
 
 .card {

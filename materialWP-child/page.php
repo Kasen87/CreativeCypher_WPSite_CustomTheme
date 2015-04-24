@@ -39,6 +39,8 @@ get_header(); ?>
                 <?php get_template_part( 'about', 'page' ); ?>               
         <?php elseif (is_page('team') ): ?>
                 <?php get_template_part( 'team', 'page' ); ?>
+        <?php elseif (is_page('partners') ): ?>
+                <?php get_template_part( 'partners', 'page' ); ?>
                 
 <!--Create Section -->
          <?php elseif (is_page('create') ): ?>

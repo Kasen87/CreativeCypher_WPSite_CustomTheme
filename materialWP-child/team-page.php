@@ -20,7 +20,7 @@
             <div class="innerContainer">
                 
                 <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Shows'); ?>
+                <?php $catID = get_cat_ID('Team'); ?>
                 <?php $args = array(
                                 'parent' => $catID
                             ); ?>
@@ -28,10 +28,10 @@
                 <?php $categories = get_categories($args); ?>
                 
                 <?php foreach($categories as $catName): ?>
-                  <div class="card PR">
+                  <div class="card partnersAllMod">
                       <?php echo '<h3 class="showTitle">' . $catName->cat_name . '</h3>'; ?>
                       
-                      <div class="slideContainer">
+                      <div class="slideContainer member">
                         
 
                             <!-- Start of the inside loop for posts within the show! -->                            
@@ -47,7 +47,7 @@
 
                                     <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
                                         <a href="<?php echo the_permalink(); ?>">
-                                        <div class="card entry-container">
+                                        <div class="card entry-container memberCard">
 
                                             <div class="entry-img">
                                                 <?php if ( has_post_thumbnail() ) : ?>
@@ -60,6 +60,7 @@
 
                                     <!-- End of the inside loop for posts within the show! -->
                             </div>
+
                         </div> <!-- .card -->
 
                             <?php else : ?>
@@ -69,6 +70,8 @@
                     <?php wp_reset_postdata(); ?>
                     <?php wp_reset_query(); ?>
                     <?php endforeach; ?>
+                
+
 
             </div><!--Inner Container-->
         </div>
