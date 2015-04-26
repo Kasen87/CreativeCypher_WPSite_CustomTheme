@@ -31,7 +31,7 @@ get_header(); ?>
                 <?php get_template_part( 'music', 'page' ); ?>
         <?php elseif (is_page('gallery') ): ?>
                 <?php get_template_part( 'gallery', 'page' ); ?>
-        <?php elseif (is_page('blog') ): ?>
+        <?php elseif (is_page('blog-post') ): ?>
                 <?php get_template_part( 'blog', 'page' ); ?>
                 
 <!--Creators section -->

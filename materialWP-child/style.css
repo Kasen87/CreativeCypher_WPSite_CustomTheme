@@ -12,10 +12,49 @@ Tags:			light, dark, two-columns, right-sidebar, responsive-layour, accessibilit
 Text Domain:	materialWP-child
 */
 
+/*Font Import*/
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/leaguespartan-bold.eot');
+    src: url('fonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/leaguespartan-bold.woff2') format('woff2'),
+         url('fonts/leaguespartan-bold.woff') format('woff'),
+         url('fonts/leaguespartan-bold.ttf') format('truetype'),
+         url('fonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Intro Inline';
+    src: url('fonts/Intro_Inline.otf');
+    font-style: normal;
+}
+
 /* Body Adjustment */
+a.showLink:hover {
+    color: rgba(250,230,0,1);   
+    text-decoration: none;
+}
+
 body{
     padding-top: 60px;
     background-image: url(images/bg_2.jpg);
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4 {
+    font-family: 'League Spartan',sans-serif;
+    font-weight: 300;
+    color: #000;
 }
 
 .false-height {
@@ -117,127 +156,6 @@ body{
 .centerMe {
     margin-left: auto;
     margin-right: auto;
-}
-
-/*.featuredHeading {        /*This was previously put in for a heading above the images, but it doesn't look quite right :(
-    text-align: center;
-    color: white;
-}*/
-
-.featuredRow {
-    margin-left: auto;
-    margin-right: auto;
-    /*border: 1px solid green;*/
-    min-width: 300px;
-    min-height: 75vh;
-}
-
-.featured {
-    border-radius: 2px;
-    color: rgba(0, 0, 0, 0.84);
-    background: #ffffff;
-    margin: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
-    float: left;
-    min-width: 150px;
-    min-height: 150px;
-    background-position: top center;
-}
-
-/************ Featured Overlay Text Sections ******************************/
-.featured:hover > p {
-    max-height: 20%;
-    padding: 10px;
-}
-
-.featured > h4 {
-    background-color: rgba(0,58,111,1);
-    position:absolute;
-    color: #fff;
-    top: calc(70% + 10px);
-    padding: 10px;
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
-    text-align: left;
-}
-
-.tile1H > h4 {
-    top: calc(65% - 5px);
-}
-
-.tile1H > h4:first-child {
-    max-height: 20%;
-    padding: 10px;   
-}
-.featured > p {
-    background-color: rgba(0,0,0,0.75);
-    position: absolute;
-    top: 80%;
-    padding: 0px;
-    margin-bottom: 0px;
-    color: white;
-    width: 100%;
-    vertical-align: center;
-    overflow-y: hidden;
-    max-height: 0px; 
-}
-
-/******************Featured Sections***************************/
-.featured01 {
-    position: relative;
-    background-image: url("images/featured/team3.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.featured02 {
-    position: relative;
-    background-image: url("images/featured/team1.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-
-.featured03 {
-    position: relative;
-    background-image: url("images/featured/team1.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-
-.featured04 {
-    position:relative;
-    background-image: url("images/featured/team2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-.featured05 {
-    position: relative;
-    background-image: url("images/featured/team2.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-
-.featured06 {
-    position: relative;
-    background-image: url("images/featured/team1.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-
-.featured07 {
-    position: relative;
-    background-image: url("images/featured/team1.png");
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-
-.featured08 {
-    position: relative;
-    background-image: url("images/featured/team1.png");
-    background-repeat: no-repeat;
-    background-size:cover;
 }
 
 /************************** Tile Classes **************************/
@@ -407,6 +325,10 @@ body{
  
 }
 
+#comments{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /******New Classes Added*************/
 .contentBodyBG {
@@ -430,12 +352,11 @@ body{
     margin: 0;
     margin-top: 10px;
     margin-left: 10px;
-    color: rgba(0,0, 0, 1);
     font-size: 135%;
 }
 .slideContainer {
-    width: 1650px;
     padding-bottom: 10px;
+    
 }
 
 .slideContainer::-webkit-scrollbar {
@@ -478,6 +399,7 @@ body{
     margin-right: auto;
     padding: 35px 0;
     white-space: nowrap;
+    
 }
 
 .metricsSection:after {
@@ -497,24 +419,25 @@ body{
 }
 
 .metricBox {
+    position: relative;
     margin-left: 50px;
     margin-right: auto;
 }   
 
 .metricBox > h3 {
     padding-top: 20px;
-    font-size: 100%;   
+    font-size: 100%;
 }
 
 .metricBox > h1 {
-    font-size: 300%;   
+    font-family: 'Intro Inline', sans-serif;
+    font-size: 350%;
+    
 }
 
 .partnersMod {
     width: 100%;
 }
-
-
 
 .partnersAllMod {
     width: 90%;
@@ -532,20 +455,6 @@ body{
     display: block;   
 }
 
-a {
-	color: rgba(250, 230, 0, 1);
-}
-
-a:visited {
-	
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: rgba(250, 230, 0, 1);
-}
-
 .dropdown-menu>.active>a {
     color: #000;
     background-color: rgba(250,230,0,1);
@@ -561,4 +470,13 @@ a:active {
 .memberCard {
     height: 250px;
     width: 200px;
+}
+
+.showPage {
+    width: 1650px;
+}
+
+.art-hero {
+    margin-left: auto;
+    margin-right: auto;
 }

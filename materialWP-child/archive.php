@@ -132,35 +132,6 @@
         </div>
         </div>
     </div> 
-
-<?php elseif (in_category( 'team' ) || post_is_in_descendant_category(get_cat_ID('team'))) : ?>
-  
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="innerContainer">
-            <div class="team-hero">
-                <?php the_post_thumbnail(); ?>
-            </div>
-        </div>
-
-<!--Create the video section where the hero img would usually go -->
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="card">
-        <div class="innerContainer">
-		<div class="fullShowDescription">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-                <?php the_content(); ?>
-			</div><!-- .entry-content -->
-        </div>
-        </div>
-    </div> 
     
 <?php else : ?>
     <!--If it's not any of the above files, then call the 404 page-->
@@ -168,7 +139,7 @@
 
 <?php endif; ?>
 
-<?php if ( !(in_category( 'team' ) || post_is_in_descendant_category(get_cat_ID('team')))) : ?>
+    
     <!--Recommended/next Shows to watch! -->
     
                 <div class="innerContainer">
@@ -224,7 +195,7 @@
 
             </div><!--Inner Container-->
 
-<?php endif; ?>
+
 			<!--footer class="entry-footer">
 				<!--php materialwp_entry_footer(); ?>-->
 			<!--</footer><!-- .entry-footer -->

@@ -1,74 +1,27 @@
 <?php
 /**
- * Template Name: landing-page
- *
- *The template used for displaying page content in page.php
+ * The template used for displaying page content in page.php
  *
  * @package materialwp
  */
 ?>
 
-
-<div class="card false-height lg-Container">
-    <video src="http://thecreativecypher.com/wp-content/uploads/2015/04/CC_Bumper.mp4" width="100%" height="100%" autoplay="true">
-    </video>
+<div class="heroBodyBG">
+    <div class="outerContentCont">
+        <div class="half-hero">
+        
+        </div>
+    </div>
 </div>
-    
-    <!--<div class="card taglineSep"></div>-->
-    
-   <!-- <div id="primary" class="lg-Container">-->
-        <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <div class="contentBodyBG">
         <div class="outerContentCont">
             <div class="innerContainer">
-                
-                <!--This section will be for featured films, newly updated, that stuff! -->
-                <!--Create a category 'featured' that we'll pull from to populate this section -->
-                
-                        <!--<div class="featuredSection">
-                            php $catID = get_cat_ID('featured'); 
-                            php $args = array(
-                                            'parent' => $catID
-                                            ); 
-                            php 
-
-                        </div>-->
-                
-                <div class="card PR">
-                    <div class="metricsSection">
-                            <div class="metricBox">
-                                <h1>1.2M</h1>
-                                <h3>Viewers a Month</h3>
-                            </div>
-                            <div class="metricBox">
-                                <h1>2M</h1>
-                                <h3>Favorites</h3>
-                            </div>
-                            <div class="metricBox">
-                                <h1>30K</h1>
-                                <h3>Subscribers</h3>
-                            </div>
-                            <div class="metricBox">
-                                <h1>40K</h1>
-                                <h3>Likes Per Week</h3>
-                            </div>
-                            <div class="metricBox">
-                                <h1>120K</h1>
-                                <h3>Daily Viewers</h3>
-                            </div>
-                            <div class="metricBox">
-                                <h1>740</h1>
-                                <h3>New Talent</h3>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-
-                <!-- Social Media Section, feeds from Twitter, Facebook, Instagram @creativeCypher -->
-                
+    
                 
                 <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Shows'); ?>
+                <?php $catID = get_cat_ID('Blog'); ?>
                 <?php $args = array(
                                 'parent' => $catID
                             ); ?>
@@ -122,5 +75,4 @@
         </div>
     </div> 
 </article><!--End of Article-->
-            <!--</div>-->
-    </div>
+

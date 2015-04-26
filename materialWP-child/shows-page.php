@@ -30,9 +30,9 @@
                 
                 <?php foreach($categories as $catName): ?>
                   <div class="card PR">
-                      <?php echo '<h3 class="showTitle">' . $catName->cat_name . '</h3>'; ?>
+                      <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
                       
-                      <div class="slideContainer">
+                      <div class="slideContainer showPage">
                         
 
                             <!-- Start of the inside loop for posts within the show! -->                            

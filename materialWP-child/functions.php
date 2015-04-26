@@ -34,6 +34,16 @@ if( ! function_exists( 'post_is_in_descendant_category' ) ) {
 
 }
 
+if( ! function_exists( 'wpb_add_google_fonts' ) ) {
+    function wpb_add_google_fonts() {
+        wp_register_style('wpb-googleFonts',
+                          'http://fonts.googleapis.com/css?family=Montserrat:400,700');
+                            wp_enqueue_style('wpb-googleFonts');
+    }
+    
+    add_action('wp_print_styles', 'wpb_add_google_fonts');
+}
+
 
 
 ?>

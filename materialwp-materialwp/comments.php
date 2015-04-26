@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area card">
+<div id="comments" class="comments-area card innerContainer">
 
 	<?php // You can start editing here -- including this comment! ?>
 
