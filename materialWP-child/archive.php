@@ -19,13 +19,8 @@
 
 <?php if (in_category( 'Shows' ) || post_is_in_descendant_category(get_cat_ID('Shows'))) : ?>
 
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="video-hero">
-            <?php the_content(); ?>
-        </div>    
-
-<!--Create the video section where the hero img would usually go -->
+<!--Pull In The Header -->
+<?php get_template_part('pieces/hero', 'live'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -194,11 +189,6 @@
                     <?php endforeach; ?>
 
             </div><!--Inner Container-->
-
-
-			<!--footer class="entry-footer">
-				<!--php materialwp_entry_footer(); ?>-->
-			<!--</footer><!-- .entry-footer -->
-		</div> <!-- .entry-container -->
+		</div> <!-- .entry-container(part of hero-generic/live template_piece -->
 	</div> <!-- .card -->
 </article><!-- #post-## -->

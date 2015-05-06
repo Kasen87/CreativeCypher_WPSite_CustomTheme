@@ -6,71 +6,31 @@
  */
 ?>
 
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="half-hero">
-        
-        </div>
-    </div>
-</div>
+<?php get_template_part('hero', 'generic'); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <div class="contentBodyBG">
         <div class="outerContentCont">
             <div class="innerContainer">
-    
+                
+                <!--Need to place a featured section in here-->
+                
+                
+                
                 
                 <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Shows'); ?>
+                <?php $catID = get_cat_ID('shows'); ?>
                 <?php $args = array(
                                 'parent' => $catID
                             ); ?>
-
-                <?php $categories = get_categories($args); ?>
+                <?php $categories = get_categories($args); ?> 
                 
                 <?php foreach($categories as $catName): ?>
-                  <div class="card PR">
-                      <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
-                      
-                      <div class="slideContainer showPage">
-                        
-
-                            <!-- Start of the inside loop for posts within the show! -->                            
-                                <?php $args = array(
-                                                'category_name' => $catName->cat_name,
-                                                'post_type' => 'post',
-                                                'post_status' => 'publish'
-                                ); ?>
-
-                                <?php $list_of_posts = new WP_Query($args); ?>
-
-                                <?php if( $list_of_posts->have_posts() ) : ?>
-
-                                    <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
-                                        <a href="<?php echo the_permalink(); ?>">
-                                        <div class="card entry-container">
-
-                                            <div class="entry-img">
-                                                <?php if ( has_post_thumbnail() ) : ?>
-                                                    <?php the_post_thumbnail(); ?>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div> <!-- .entry-container -->
-                                        </a>
-                                    <?php endwhile; ?>
-
-                                    <!-- End of the inside loop for posts within the show! -->
-                            </div>
-                        </div> <!-- .card -->
-
-                            <?php else : ?>
-                                <?php get_template_part( 'content', 'none'); ?>
-                            <?php endif; ?>
-
+                    <?php set_query_var('catName', $catName); ?>
+                    <?php get_template_part('pieces/single', 'row'); ?>
                     <?php wp_reset_postdata(); ?>
                     <?php wp_reset_query(); ?>
-                    <?php endforeach; ?>
-
+                <?php endforeach; ?>
             </div><!--Inner Container-->
         </div>
     </div> 

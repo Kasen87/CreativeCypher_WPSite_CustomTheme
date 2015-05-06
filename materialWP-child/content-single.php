@@ -19,91 +19,20 @@
 
 <?php if (in_category( 'Shows' ) || post_is_in_descendant_category(get_cat_ID('Shows'))) : ?>
 
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="video-hero">
-            <?php the_content(); ?>
-        </div>    
+    <!--Pull In The Header -->
+    <?php get_template_part('pieces/hero', 'live'); ?>  <!-- This opens two divs that need to be closed by the end of this file -->
 
-<!--Create the video section where the hero img would usually go -->
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="card">
-        <div class="innerContainer">
-		<div class="fullShowDescription">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-                <!--We need to find a way to import text before of after the youtube embed section-->
-                <p>Information about this particular episode goes here!</p>
-				
-			</div><!-- .entry-content -->
-        </div>
-        </div>
-    </div>
 <?php elseif (in_category( 'films' ) || post_is_in_descendant_category(get_cat_ID('films'))) : ?>
-  
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="video-hero">
-            <?php the_content(); ?>
-        </div>    
 
-<!--Create the video section where the hero img would usually go -->
+    <!--Pull In The Header -->
+    <?php get_template_part('pieces/hero', 'live'); ?>  <!-- This opens two divs that need to be closed by the end of this file -->
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="card">
-        <div class="innerContainer">
-		<div class="fullShowDescription">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-                <!--We need to find a way to import text before of after the youtube embed section-->
-                <p>Information about this particular episode goes here!</p>
-				
-			</div><!-- .entry-content -->
-        </div>
-        </div>
-    </div> 
 <?php elseif (in_category( 'music' ) || post_is_in_descendant_category(get_cat_ID('music'))) : ?>
   
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="music-hero">
-            <?php the_content(); ?>
-        </div>    
-
-<!--Create the video section where the hero img would usually go -->
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="card">
-        <div class="innerContainer">
-		<div class="fullShowDescription">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-                <!--We need to find a way to import text before of after the youtube embed section-->
-                <p>Information about this particular episode goes here!</p>
-				
-			</div><!-- .entry-content -->
-        </div>
-        </div>
-    </div> 
+    <!--Pull In The Header -->
+    <?php get_template_part('pieces/hero', 'live'); ?>  <!-- This opens two divs that need to be closed by the end of this file -->
 
 <?php elseif (in_category( 'art' ) || post_is_in_descendant_category(get_cat_ID('gallery'))) : ?>
-  
 <div class="heroBodyBG">
     <div class="outerContentCont">
         <div class="innerContainer">

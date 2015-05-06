@@ -12,7 +12,7 @@ Tags:			light, dark, two-columns, right-sidebar, responsive-layour, accessibilit
 Text Domain:	materialWP-child
 */
 
-/*Font Import*/
+/*Font Imports*/
 @font-face {
     font-family: 'League Spartan';
     src: url('fonts/leaguespartan-bold.eot');
@@ -30,17 +30,7 @@ Text Domain:	materialWP-child
     font-style: normal;
 }
 
-/* Body Adjustment */
-a.showLink:hover {
-    color: rgba(250,230,0,1);   
-    text-decoration: none;
-}
-
-body{
-    padding-top: 60px;
-    background-image: url(images/bg_2.jpg);
-    font-family: 'Montserrat', sans-serif;
-}
+/* Setting the Fonts */
 
 h1,
 h2,
@@ -56,6 +46,21 @@ h6,
     font-weight: 300;
     color: #000;
 }
+
+/* Body Adjustments */
+body{
+    padding-top: 60px;
+    background-image: url(images/bg_2.jpg);
+    font-family: 'Montserrat', sans-serif;
+}
+
+a.showLink:hover {
+    color: rgba(250,230,0,1);   
+    text-decoration: none;
+}
+
+/* Home Page Styles */
+/* Upper Content Mod  */
 
 .false-height {
     height: calc(100vh - 60px);
@@ -120,36 +125,6 @@ h6,
     margin: 0px;
 }
 
-
-/* Custom Front Page Slider */
-.cc-slideshow,
-.cc-slideshow:after {
-    position: static;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    margin-left: 0px;
-    list-style: none;
-}
-
-.cc-slideshow li span {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    opacity: 1;
-    z-index: 0;
-}
-
-.cc-slideshow li span {
-    background-image: url(images/Logos/CC_Logo.png);
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-}
 
 /*************** Landing Page Featured Section ************************/
 
@@ -287,10 +262,7 @@ h6,
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #eee;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
+    background-color: #fff;
 }
 
 .heroBodyBG {
@@ -363,7 +335,7 @@ h6,
     display: none;
 }
 
-.video-hero {
+.live-hero {
     display: block;
     background-color: #000;
     position: relative;
@@ -373,9 +345,9 @@ h6,
     height: 0;
 }
 
-.video-hero iframe,
-.video-hero object,
-.video-hero embed {
+.live-hero iframe,
+.live-hero object,
+.live-hero embed {
     position: absolute;
     top: 0;
     left: 0;
