@@ -45,6 +45,7 @@ h6,
     font-family: 'League Spartan',sans-serif;
     font-weight: 300;
     color: #000;
+    margin: 0;
 }
 
 /* Body Adjustments */
@@ -222,17 +223,18 @@ a.showLink:hover {
 
 
 .entry-container {
-    display: block;
-    float: left;
-    width: 220px;
+    min-width: 220px;
+    width: calc(100% * 0.24);
     height: 140px;
-    margin-left: 10px;
-    margin-top: 10px;
-    overflow-y: hidden;
-    padding: 0;
-    padding-left: 5px;
+    vertical-align: top;
+    display: inline-block;
     position:relative;
     z-index: 1;
+    margin-top: 10px;
+    margin-left: calc(100% * 0.005);
+    overflow: hidden;
+    
+    
     transition: box-shadow 0.3s ease;
     -webkit-transition: box-shadow 0.3s ease;
     -o-transition: box-shadow 0.3s ease;
@@ -289,7 +291,7 @@ a.showLink:hover {
 
 /**************************Maximum Screen Size********************/
 @media screen and (min-width: 1140px){
-    .outerContentCont {
+.outerContentCont {
         width: 1200px;
         margin: 0 auto;
         overflow-x: hidden;
@@ -451,4 +453,23 @@ a.showLink:hover {
 .art-hero {
     margin-left: auto;
     margin-right: auto;
+}
+/* Piece/Featured-Section styles*/
+.featuredContainer {
+    width: 100%;
+    height: 315px;
+}
+
+.featuredSection {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.featuredSection > h3 {
+    padding: 10px 0 0 10px;
+}
+
+.padLowerX10 {
+    padding: 10px 0;
 }
