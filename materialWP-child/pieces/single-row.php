@@ -5,7 +5,8 @@
         <?php $args = array(
                         'category_name' => $catName->cat_name,
                         'post_type' => 'post',
-                        'post_status' => 'publish'
+                        'post_status' => 'publish',
+                        'posts_per_page' => 4
         ); ?>
 
         <?php $list_of_posts = new WP_Query($args); ?>

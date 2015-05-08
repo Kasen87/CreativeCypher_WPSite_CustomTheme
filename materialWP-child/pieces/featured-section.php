@@ -18,10 +18,18 @@
         <div class="featuredContainer padLowerX10">
                         
         <?php if( $list_of_posts->have_posts() ) : ?>
-
+            <?php $c = 0; ?>
             <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
+            <?php $class = ''; ?>
+            <?php $c++;
+                if ($c == 1) $class .= 'primaryFeatured';
+                if ($c == 2) : ?>
+                    <div class="card entry-container adSpace">
+                            
+                    </div>
+                <?php endif; ?>
                 <a href="<?php echo the_permalink(); ?>">
-                <div class="card entry-container">
+                <div class="card entry-container <?php echo $class; ?>">
 
                     <div class="entry-img">
                         <?php if ( has_post_thumbnail() ) : ?>

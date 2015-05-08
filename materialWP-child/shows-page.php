@@ -15,11 +15,14 @@
                 
                 <!--Need to place a featured section in here-->
                 <?php get_template_part('pieces/featured', 'section'); ?>                
-                                
+                    <a href=""><div class="showMore centerMargins">
+                        <h4 class="vertical-align">Show More</h4>
+                    </div></a>
                 <!--Start Populating an array with all of the categories-->
                 <?php $catID = get_cat_ID('shows'); ?>
                 <?php $args = array(
-                                'parent' => $catID
+                                'parent' => $catID,
+                                'number' => 1
                             ); ?>
                 <?php $categories = get_categories($args); ?> 
                 

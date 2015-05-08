@@ -1,7 +1,4 @@
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="half-hero">
-        </div>
+<?php get_template_part('pieces/hero', 'generic'); ?>
 
 <div class="card">
       <div>

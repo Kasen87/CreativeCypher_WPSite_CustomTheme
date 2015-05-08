@@ -35,7 +35,7 @@ get_header(); ?>
                 <?php get_template_part( 'blog', 'page' ); ?>
                 
 <!--Creators section -->
-        <?php elseif (is_page('about') ): ?>
+        <?php elseif (is_page('about') || is_page('about-us')): ?>
                 <?php get_template_part( 'about', 'page' ); ?>               
         <?php elseif (is_page('team') ): ?>
                 <?php get_template_part( 'team', 'page' ); ?>

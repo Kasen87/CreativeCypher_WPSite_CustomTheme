@@ -8,12 +8,12 @@
  */
 ?>
 
-
-<div class="card false-height lg-Container">
-    <video src="http://thecreativecypher.com/wp-content/uploads/2015/04/CC_Bumper.mp4" width="100%" height="100%" autoplay="true">
-    </video>
+<div class="landingHero">
+    <div class="fullViewport">
+        <video src="http://thecreativecypher.com/wp-content/uploads/2015/04/CC_Bumper.mp4" width="100%" height="100%" autoplay="true">
+        </video>
+    </div>
 </div>
-    
     <!--<div class="card taglineSep"></div>-->
     
    <!-- <div id="primary" class="lg-Container">-->

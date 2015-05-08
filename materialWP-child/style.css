@@ -46,6 +46,7 @@ h6,
     font-weight: 300;
     color: #000;
     margin: 0;
+    font-variant: small-caps;
 }
 
 /* Body Adjustments */
@@ -67,9 +68,8 @@ a:hover {
 /* Home Page Styles */
 /* Upper Content Mod  */
 
-.false-height {
+.fullViewport {
     height: calc(100vh - 60px);
-    display: block;
     margin: 0 auto;
 }
 
@@ -177,9 +177,7 @@ a:hover {
     width: 100%;
 }
 
-.card.false-height.lg-Container {
-    width: 100%;
-}
+
 
 .centerMargins {
     display: block;
@@ -197,7 +195,6 @@ a:hover {
     padding: 0;
     overflow-x: scroll;
     max-height: 200px;
-    margin-top: 10px;
     padding-bottom: 10px;
 }
 
@@ -276,7 +273,7 @@ a:hover {
 
 .heroBodyBG {
     width: 100%;
-    /*background-color: #000;*/
+    background-
 }
 
 /**************************Maximum Screen Size********************/
@@ -287,11 +284,6 @@ a:hover {
         overflow-x: hidden;
     }
  
-}
-
-#comments{
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /******New Classes Added*************/
@@ -456,16 +448,35 @@ a:hover {
     display: block;
     width: 90%;
     margin: 0 auto;
+    /*Only Done To See what it Looks like*/
+    box-shadow: none;
+}
+
+.featuredSection h3 {
+    font-variant: small-caps;
+    margin-bottom: -15px;
 }
 
 .featuredSection > h3 {
     padding: 10px 0 0 5px;
 }
 
-.entry-container:first-of-type{
-    width: 66%;
+.featuredContainer .entry-container {
+    width: 32.3%;
+    min-height: 140px;
+}
+
+.featuredContainer .primaryFeatured{
+    width: 65.5%;
     min-height: 250px;
 }
+
+.adSpace {
+    width: 32.5%;
+    height: 250px;
+}
+
+
 
 /*Blog Sections*/
 
@@ -503,4 +514,48 @@ a:hover {
 .blogStyle hr{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.showMore {
+    display: block;
+    background-color: rgba(200,200,200,0.85);
+    width: 89%;
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #ccc;
+    margin-top: 10px;
+    transform: translateX(-0.25%);
+    text-align: center;
+    
+    transition: box-shadow 0.3s;
+}
+
+.showMore:hover{
+    box-shadow: 5px 5px 8px #aaa;
+}
+
+.vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.show-hero {
+    background-image: url(images/Logos/CC_Logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    position: relative;
+}
+
+.show-hero img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.landingHero {
+    width: 100%;
+    background-color: #000;
 }

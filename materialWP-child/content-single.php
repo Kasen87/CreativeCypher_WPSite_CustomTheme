@@ -14,9 +14,6 @@
 
 <!--We'll want to create seperate segments in php for later use! -->
 
-
-
-
 <?php if (in_category( 'Shows' ) || post_is_in_descendant_category(get_cat_ID('Shows'))) : ?>
 
     <!--Pull In The Header -->
@@ -96,6 +93,14 @@
     <?php get_template_part('content', 'none'); ?>
 
 <?php endif; ?>
+    
+    
+    
+    
+    
+<!--------------------------------------------------------------------------------------------
+           ||| Need Something to Do with this section below here |||
+--------------------------------------------------------------------------------------------->
 
 <?php if ( !(in_category( 'team' ) || post_is_in_descendant_category(get_cat_ID('team')))) : ?>
     <!--Recommended/next Shows to watch! -->
