@@ -232,7 +232,7 @@ a:hover {
 .entry-container {
     min-width: 220px;
     width: calc(100% * 0.24);
-    height: 140px;
+    min-height: 140px;
     vertical-align: top;
     display: inline-block;
     position:relative;
@@ -450,7 +450,6 @@ a:hover {
 /* Piece/Featured-Section styles*/
 .featuredContainer {
     width: 100%;
-    height: 315px;
 }
 
 .featuredSection {
@@ -460,8 +459,15 @@ a:hover {
 }
 
 .featuredSection > h3 {
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 5px;
 }
+
+.entry-container:first-of-type{
+    width: 66%;
+    min-height: 250px;
+}
+
+/*Blog Sections*/
 
 .padLowerX10 {
     padding: 10px 0;
@@ -472,17 +478,29 @@ a:hover {
     width: 80%;
     min-height: 300px;
     padding: 15px;
+    margin-top: 10px;
 }
 
 .blogStyle h2 {
-    text-align: center;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.blogStyle h5 {
+    color: #bbb;
 }
 
 .blogContent img{
     float: left;
+    display: inline-block;
     width: calc(100% * 0.33);
 }
 
 .clearBoth {
     clear: both;
+}
+
+.blogStyle hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

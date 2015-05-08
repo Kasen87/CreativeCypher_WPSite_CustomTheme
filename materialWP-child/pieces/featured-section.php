@@ -10,12 +10,12 @@
                         'category_name' => $catName->cat_name,
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        'posts_per_page' => 8
+                        'posts_per_page' => 10
         ); ?>
 
         <?php $list_of_posts = new WP_Query($args); ?>
     
-        <div class="featuredContainer">
+        <div class="featuredContainer padLowerX10">
                         
         <?php if( $list_of_posts->have_posts() ) : ?>
 
@@ -32,6 +32,7 @@
                 </a>
             <?php endwhile; ?>
             <!-- End of the inside loop for posts within the show! -->
+            <div class="clearBoth"></div>
     </div>
  </div> <!-- .card -->
 

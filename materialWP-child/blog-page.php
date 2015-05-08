@@ -37,16 +37,15 @@
                                         
                                         <div class="card centerMargins blogStyle">
                                             <h2><?php the_title(); ?></h2>
+                                            <h5>by: <?php the_author(); ?> on <?php echo get_the_date(); ?></h5><hr>
 
                                             <div class="blogContent">
                                             <a href="<?php echo the_permalink(); ?>">
                                                 <div class="centerMargins">
-                                                    <?php if ( has_post_thumbnail() ) : ?>
-                                                        <?php the_post_thumbnail(); ?>
-                                                    <?php endif; ?>
                                                 </div>
                                             </a>
                                                 <?php the_content(); ?>
+                                                <div class="clearBoth"></div>
                                             </div>
                                         </div> <!-- .entry-container -->
 
@@ -59,7 +58,7 @@
                             <?php else : ?>
                                 <?php get_template_part( 'content', 'none'); ?>
                             <?php endif; ?>
-            <div class="clearBoth"></div>
+ 
                     <?php wp_reset_postdata(); ?>
                     <?php wp_reset_query(); ?>
             </div><!--Inner Container-->
