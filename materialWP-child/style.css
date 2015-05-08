@@ -60,6 +60,10 @@ a.showLink:hover {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 /* Home Page Styles */
 /* Upper Content Mod  */
 
@@ -177,6 +181,15 @@ a.showLink:hover {
     width: 100%;
 }
 
+.centerMargins {
+    display: block;
+    margin: 0 auto;   
+}
+
+.lvl9Width {
+    width: 90%;   
+}
+
 .card.PR {
     width: 90%;
     display: block;
@@ -216,12 +229,6 @@ a.showLink:hover {
     margin-right: -10px;
 }
 
-.displayMenu {
-    
-}
-
-
-
 .entry-container {
     min-width: 220px;
     width: calc(100% * 0.24);
@@ -234,7 +241,7 @@ a.showLink:hover {
     margin-left: calc(100% * 0.005);
     overflow: hidden;
     
-    
+    /*Transitions*/
     transition: box-shadow 0.3s ease;
     -webkit-transition: box-shadow 0.3s ease;
     -o-transition: box-shadow 0.3s ease;
@@ -257,7 +264,7 @@ a.showLink:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 80vh;
 }
 
 .innerContainer {
@@ -271,23 +278,6 @@ a.showLink:hover {
     width: 100%;
     /*background-color: #000;*/
 }
-
-
-
-/******************************* Media Queries *****************************/
-@media screen and (max-width: 1140px){
-    .cc-slideshow li div h3 { font-size: 140px }
-}
-
-@media screen and (max-width: 600px) {
-    .cc-slideshow li div h3 { font-size: 80px }
-    
-    .featured {
-        min-height: 300px;
-        min-width: 450px;
-    }
-}
-
 
 /**************************Maximum Screen Size********************/
 @media screen and (min-width: 1140px){
@@ -307,8 +297,6 @@ a.showLink:hover {
 /******New Classes Added*************/
 .contentBodyBG {
     background-image: url(images/bg_2.jpg) repeat;
-    /*background-color: #000;*/
-    
     width: 100%;
 }
 
@@ -320,6 +308,11 @@ a.showLink:hover {
     margin-right: -50%;
     transform: translate(-50%, -50%);
         
+}
+
+.entry-img > img {
+    display: block;
+    margin: 0 auto;
 }
 
 .showTitle {
@@ -472,4 +465,24 @@ a.showLink:hover {
 
 .padLowerX10 {
     padding: 10px 0;
+}
+
+.blogStyle {
+    position: relative;
+    width: 80%;
+    min-height: 300px;
+    padding: 15px;
+}
+
+.blogStyle h2 {
+    text-align: center;
+}
+
+.blogContent img{
+    float: left;
+    width: calc(100% * 0.33);
+}
+
+.clearBoth {
+    clear: both;
 }

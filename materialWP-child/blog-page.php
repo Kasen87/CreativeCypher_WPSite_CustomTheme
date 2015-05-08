@@ -21,42 +21,35 @@
     
                 
                 <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Blog'); ?>
-                <?php $args = array(
-                                'parent' => $catID
+                  <div class="card centerMargins padLowerX10">
+                      <!-- Start of the inside loop for posts within the show! -->                            
+                            <?php $args = array(
+                                    'category_name' => 'blog',
+                                    'post_type' => 'post',
+                                    'post_status' => 'publish'
                             ); ?>
 
-                <?php $categories = get_categories($args); ?>
-                
-                <?php foreach($categories as $catName): ?>
-                  <div class="card PR">
-                      <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
-                      
-                      <div class="slideContainer showPage">
-                        
+                            <?php $list_of_posts = new WP_Query($args); ?>
 
-                            <!-- Start of the inside loop for posts within the show! -->                            
-                                <?php $args = array(
-                                                'category_name' => $catName->cat_name,
-                                                'post_type' => 'post',
-                                                'post_status' => 'publish'
-                                ); ?>
-
-                                <?php $list_of_posts = new WP_Query($args); ?>
-
-                                <?php if( $list_of_posts->have_posts() ) : ?>
+                            <?php if( $list_of_posts->have_posts() ) : ?>
 
                                     <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
-                                        <a href="<?php echo the_permalink(); ?>">
-                                        <div class="card entry-container">
+                                        
+                                        <div class="card centerMargins blogStyle">
+                                            <h2><?php the_title(); ?></h2>
 
-                                            <div class="entry-img">
-                                                <?php if ( has_post_thumbnail() ) : ?>
-                                                    <?php the_post_thumbnail(); ?>
-                                                <?php endif; ?>
+                                            <div class="blogContent">
+                                            <a href="<?php echo the_permalink(); ?>">
+                                                <div class="centerMargins">
+                                                    <?php if ( has_post_thumbnail() ) : ?>
+                                                        <?php the_post_thumbnail(); ?>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </a>
+                                                <?php the_content(); ?>
                                             </div>
                                         </div> <!-- .entry-container -->
-                                        </a>
+
                                     <?php endwhile; ?>
 
                                     <!-- End of the inside loop for posts within the show! -->
@@ -66,11 +59,9 @@
                             <?php else : ?>
                                 <?php get_template_part( 'content', 'none'); ?>
                             <?php endif; ?>
-
+            <div class="clearBoth"></div>
                     <?php wp_reset_postdata(); ?>
                     <?php wp_reset_query(); ?>
-                    <?php endforeach; ?>
-
             </div><!--Inner Container-->
         </div>
     </div> 
