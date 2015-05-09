@@ -188,17 +188,9 @@ a:hover {
     width: 90%;   
 }
 
-.card.PR {
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    overflow-x: scroll;
-    max-height: 200px;
-    padding-bottom: 10px;
-}
 
-.card.PR::-webkit-scrollbar {
+
+.singleRow::-webkit-scrollbar {
     display: none;
 }
 
@@ -311,7 +303,6 @@ a:hover {
     margin: 0;
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 135%;
 }
 .slideContainer {
     padding-bottom: 10px;
@@ -474,6 +465,14 @@ a:hover {
 .adSpace {
     width: 32.5%;
     height: 250px;
+    background: url("images/ad-placeholder.png") center center;
+    background-size: cover;
+    box-shadow: none;
+    transition: none;
+}
+
+.adSpace:hover{
+    box-shadow: none;
 }
 
 
@@ -558,4 +557,14 @@ a:hover {
 .landingHero {
     width: 100%;
     background-color: #000;
+}
+
+.singleRow {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: scroll;
+    max-height: 200px;
+    padding-bottom: 10px;
 }

@@ -1,4 +1,4 @@
-<div class="card PR">
+<div class="singleRow">
     <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
     
     <!-- Start of the inside loop for posts within the show! -->                            

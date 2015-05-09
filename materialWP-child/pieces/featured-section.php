@@ -25,7 +25,6 @@
                 if ($c == 1) $class .= 'primaryFeatured';
                 if ($c == 2) : ?>
                     <div class="card entry-container adSpace">
-                            
                     </div>
                 <?php endif; ?>
                 <a href="<?php echo the_permalink(); ?>">
