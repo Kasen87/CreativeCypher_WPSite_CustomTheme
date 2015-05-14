@@ -1,8 +1,17 @@
+<?php $targetText = 'http';
+    $description = get_the_content();
+    $description = explode($targetText, $description);
+    $descContent = $description[0];
+    $heroContent = $targetText . $description[1];
+    $heroContent = apply_filters('the_content', $heroContent);
+    $descContent = apply_filters('the_content', $descContent);
+?>
+
 <div class="heroBodyBG">
     <div class="outerContentCont">
         <div class="innerContainer">
             <div class="live-hero">
-                <?php the_content(); ?>
+                <?php echo $heroContent; ?>
             </div>
         </div>
 
@@ -12,12 +21,14 @@
             <div class="innerContainer">
                 <div class="fullShowDescription">
                     <header class="entry-header">
-                        <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+                        <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?><hr />
+                        <h5><?php echo the_date(); ?>&nbsp;&nbsp;&nbsp;&nbsp;Uploaded by: <?php the_author(); ?></h5>
                     </header>
                     <div class="entry-content">
-                        <!--We need to find a way to import text before of after the youtube embed section-->
-                        <p>Information about this particular episode goes here!</p>
+                        <p><?php echo $descContent; ?></p>
                     </div>
                 </div><!-- .fullShowDescription -->
             </div><!-- .innerContainer -->
         </div><!-- .card -->
+
+    

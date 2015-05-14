@@ -15,7 +15,7 @@
     
                 
                 <!--Start Populating an array with all of the categories-->
-                  <div class="card centerMargins padLowerX10">
+                  <div class="card centerMargins padTopBotBy10">
                       <!-- Start of the inside loop for posts within the show! -->                            
                             <?php $args = array(
                                     'category_name' => 'blog',

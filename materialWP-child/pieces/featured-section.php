@@ -15,7 +15,7 @@
 
         <?php $list_of_posts = new WP_Query($args); ?>
     
-        <div class="featuredContainer padLowerX10">
+        <div class="featuredContainer padTopBotBy10">
                         
         <?php if( $list_of_posts->have_posts() ) : ?>
             <?php $c = 0; ?>
@@ -38,6 +38,7 @@
                 </div> <!-- .entry-container -->
                 </a>
             <?php endwhile; ?>
+            <?php unset($c); ?>
             <!-- End of the inside loop for posts within the show! -->
             <div class="clearBoth"></div>
     </div>

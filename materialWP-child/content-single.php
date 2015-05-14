@@ -19,6 +19,12 @@
     <!--Pull In The Header -->
     <?php get_template_part('pieces/hero', 'live'); ?>  <!-- This opens two divs that need to be closed by the end of this file -->
 
+
+
+
+
+
+
 <?php elseif (in_category( 'films' ) || post_is_in_descendant_category(get_cat_ID('films'))) : ?>
 
     <!--Pull In The Header -->
@@ -98,9 +104,9 @@
     
     
     
-<!--------------------------------------------------------------------------------------------
+<!--
            ||| Need Something to Do with this section below here |||
---------------------------------------------------------------------------------------------->
+-->
 
 <?php if ( !(in_category( 'team' ) || post_is_in_descendant_category(get_cat_ID('team')))) : ?>
     <!--Recommended/next Shows to watch! -->
@@ -119,7 +125,7 @@
                   <div class="card PR">
                       <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
                       
-                      <div class="slideContainer showPage">
+                      <div class="slideContainer">
                             <!-- Start of the inside loop for posts within the show! -->                            
                                 <?php $args = array(
                                                 'category_name' => $catName->cat_name,

@@ -7,38 +7,24 @@
  * @package materialwp
  */
 ?>
-
+<!--Hero Section-->
 <div class="landingHero">
     <div class="fullViewport">
         <video src="http://thecreativecypher.com/wp-content/uploads/2015/04/CC_Bumper.mp4" width="100%" height="100%" autoplay="true">
         </video>
     </div>
 </div>
-    <!--<div class="card taglineSep"></div>-->
-    
-   <!-- <div id="primary" class="lg-Container">-->
-        <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
+<!--End Hero Section -->
+<!--Lower Content Section-->
+<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <div class="contentBodyBG">
         <div class="outerContentCont">
-            <div class="innerContainer">
-                
-                <!--This section will be for featured films, newly updated, that stuff! -->
-                <!--Create a category 'featured' that we'll pull from to populate this section -->
-                
-                        <!--<div class="featuredSection">
-                            php $catID = get_cat_ID('featured'); 
-                            php $args = array(
-                                            'parent' => $catID
-                                            ); 
-                            php 
-
-                        </div>-->
-                
-                <div class="card PR">
+            <div class="innerContainer padTopBotBy10">
+                <div class="card metricCard centerMargins">
                     <div class="metricsSection">
                             <div class="metricBox">
                                 <h1>1.2M</h1>
-                                <h3>Viewers a Month</h3>
+                                <h3>Monthly Views</h3>
                             </div>
                             <div class="metricBox">
                                 <h1>2M</h1>
@@ -63,64 +49,36 @@
                             <div class="clear"></div>
                         </div>
                     </div>
-
+                <?php get_template_part('pieces/featured', 'section'); ?>
                 <!-- Social Media Section, feeds from Twitter, Facebook, Instagram @creativeCypher -->
-                
-                
+                <a href="<?php echo get_site_url(); ?>/creations/shows"> <!--Dirty Hardcode, I know... >.< -->
+                    <div class="showMore centerMargins">
+                        <h4 class="vertical-align">Show More</h4>
+                    </div>
+                </a>
                 <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Shows'); ?>
-                <?php $args = array(
-                                'parent' => $catID
-                            ); ?>
-
-                <?php $categories = get_categories($args); ?>
-                
-                <?php foreach($categories as $catName): ?>
-                  <div class="card PR">
-                      <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
-                      
-                      <div class="slideContainer showPage">
-                        
-
-                            <!-- Start of the inside loop for posts within the show! -->                            
-                                <?php $args = array(
-                                                'category_name' => $catName->cat_name,
-                                                'post_type' => 'post',
-                                                'post_status' => 'publish'
-                                ); ?>
-
-                                <?php $list_of_posts = new WP_Query($args); ?>
-
-                                <?php if( $list_of_posts->have_posts() ) : ?>
-
-                                    <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
-                                        <a href="<?php echo the_permalink(); ?>">
-                                        <div class="card entry-container">
-
-                                            <div class="entry-img">
-                                                <?php if ( has_post_thumbnail() ) : ?>
-                                                    <?php the_post_thumbnail(); ?>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div> <!-- .entry-container -->
-                                        </a>
-                                    <?php endwhile; ?>
-
-                                    <!-- End of the inside loop for posts within the show! -->
-                            </div>
-                        </div> <!-- .card -->
-
-                            <?php else : ?>
-                                <?php get_template_part( 'content', 'none'); ?>
-                            <?php endif; ?>
-
+                <?php $catID = get_cat_ID('shows'); ?>
+                <?php $args = array('parent' => $catID,'number' => 4); ?>
+                <?php $categories = get_categories($args); ?> 
+                <div class="singleRow">
+                    <h3 class="showTitle">More Shows</h3>
+                    <?php foreach($categories as $catName): ?>
+                        <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
+                            <div class="card entry-container">
+                                <div class="entry-img">    
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div> <!-- .entry-container -->
+                        </a><!-- End of the loop-->
                     <?php wp_reset_postdata(); ?>
                     <?php wp_reset_query(); ?>
                     <?php endforeach; ?>
-
-            </div><!--Inner Container-->
-        </div>
-    </div> 
+                </div> <!-- .card -->
+            </div><!--End of Inner Container-->
+        </div><!--End of OuterContentCont-->
+    </div><!--End of ContentBodyBG-->
 </article><!--End of Article-->
             <!--</div>-->
     </div>

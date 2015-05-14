@@ -11,7 +11,7 @@
 
         <?php $list_of_posts = new WP_Query($args); ?>
     
-        <div class="slideContainer" <?php echo 'width="' . $list_of_posts->post_count*250 . 'px"'; ?>> <!--Works to create width properly, but doesn't effect the div the way I'd like to-->
+        <div class="slideContainer"> <!--Works to create width properly, but doesn't effect the div the way I'd like to-->
                         
         <?php if( $list_of_posts->have_posts() ) : ?>
 

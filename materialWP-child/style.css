@@ -12,7 +12,12 @@ Tags:			light, dark, two-columns, right-sidebar, responsive-layour, accessibilit
 Text Domain:	materialWP-child
 */
 
-/*Font Imports*/
+/*************************************************/
+/*************************************************/
+/****************** FONT CHANGES *****************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
 @font-face {
     font-family: 'League Spartan';
     src: url('fonts/leaguespartan-bold.eot');
@@ -29,8 +34,6 @@ Text Domain:	materialWP-child
     src: url('fonts/Intro_Inline.otf');
     font-style: normal;
 }
-
-/* Setting the Fonts */
 
 h1,
 h2,
@@ -49,122 +52,75 @@ h6,
     font-variant: small-caps;
 }
 
-/* Body Adjustments */
+hr{
+    margin: 5px 0 10px 0;
+}
+
+/*************************************************/
+/*************************************************/
+/*************** MODIFY PARENT CSS ***************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
 body{
     padding-top: 60px;
     background-image: url(images/bg_2.jpg);
     font-family: 'Montserrat', sans-serif;
 }
-
-a.showLink:hover {
-    color: rgba(250,230,0,1);   
-    text-decoration: none;
-}
-
 a:hover {
     text-decoration: none;
 }
 
-/* Home Page Styles */
-/* Upper Content Mod  */
-
-.fullViewport {
-    height: calc(100vh - 60px);
-    margin: 0 auto;
-}
-
-.zeroMargin {
-    margin-top: -10px;
-    margin-bottom: -10px;
-}
-
-
-/*Basic Container Set-up*/
 .container {
     width: 100%;
     padding: 0px;
 }
-
-/* Custom Nav-bar Set-ups */
 .navbar {
     margin-bottom: 0px;   
 }
-
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse  {
     margin-left: 30px;   
 }
-
 .navbar.navbar, .navbar-default.navbar {
     background-color: #000;
     color: rgba(255, 230, 0, 1);
 }
-
 .navbar-right {
     margin-right: 0px;
 }
-
-/* Card Changes */
-
-.homeCard {
-    min-height: 800px;
+.dropdown-menu>.active>a {
+    color: #000;
+    background-color: rgba(250,230,0,1);
 }
-    
-
-/* Row Changes */
-
+.dropdown-menu>.active>a:hover {
+    background-color: rgba(250,230,0,1);   
+}
+.dropdown-menu>li>a:hover{
+    color: rgba(250,230,0,1);
+}
 .row {
     margin-left: 0px;
     margin-right: 0px;
 }
-
-/* Col-lg-12 Changes */
-
 .col-lg-12 {
     padding-left: 0px;
     padding-right: 0px;
 }
-
-/* hentry changes */
-
 .hentry {
     margin: 0px;
 }
-
-
-/*************** Landing Page Featured Section ************************/
-
-.centerMe {
-    margin-left: auto;
-    margin-right: auto;
+.site-footer {
+    background-color: #000;
+    color: rgba(255,230,0,1);
 }
 
-/************************** Tile Classes **************************/
-.tile1W {
-    width: calc(25% - 10px);
-}
-
-.tile1H {
-   height:335px;
-}
-
-.tile2W {
-    width: calc(50% - 10px);
-}
-
-.tile2H {
-    height: 680px;
-}
-
-.centeredFeature {
-    margin: 0px auto;
-    display: block;
-}
-
-.whiteBox {
-    padding: 10px;
-}
-
-/************** Container Sizes *************/
+/*************************************************/
+/*************************************************/
+/***************** CONTAINER CSS *****************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
 
 .lg-Container {
     width: 1400px;
@@ -177,51 +133,19 @@ a:hover {
     width: 100%;
 }
 
-
-
-.centerMargins {
-    display: block;
-    margin: 0 auto;   
-}
-
-.lvl9Width {
-    width: 90%;   
-}
-
-
-
-.singleRow::-webkit-scrollbar {
-    display: none;
-}
-
-
-.taglineSep {
-    background-color: #e7e7e7;
-    min-height: 100px;
+.innerContainer {
     width: 100%;
-    margin: 0px;
-    position: inherit;
-    
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
 }
 
-/******************* Body Menu ***********************/
-/*********** Menu appears on the right side, and pushes the body to the left side **************/
-.fullMenu {
-    display: block;
-    position: fixed;
-    z-index: 5;
-    right: 0;
-    top: 60px;;
-    width: 250px;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.8);
-    margin-right: -10px;
-}
+/* Containers for the Entries */
 
 .entry-container {
     min-width: 220px;
     width: calc(100% * 0.24);
-    min-height: 140px;
+    min-height: 160px;
     vertical-align: top;
     display: inline-block;
     position:relative;
@@ -229,6 +153,7 @@ a:hover {
     margin-top: 10px;
     margin-left: calc(100% * 0.005);
     overflow: hidden;
+    border: 1px solid rgba(250,230,0, 0.25);
     
     /*Transitions*/
     transition: box-shadow 0.3s ease;
@@ -242,48 +167,6 @@ a:hover {
     z-index: 2;
 }
 
-.outerContainer {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.half-hero {
-    background-color: #000;
-    background-image: url(images/Logos/CC_Logo.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 80vh;
-}
-
-.innerContainer {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-}
-
-.heroBodyBG {
-    width: 100%;
-    background-
-}
-
-/**************************Maximum Screen Size********************/
-@media screen and (min-width: 1140px){
-.outerContentCont {
-        width: 1200px;
-        margin: 0 auto;
-        overflow-x: hidden;
-    }
- 
-}
-
-/******New Classes Added*************/
-.contentBodyBG {
-    background-image: url(images/bg_2.jpg) repeat;
-    width: 100%;
-}
-
 .entry-container .entry-img {
     width: 100%;
     position: absolute;
@@ -293,163 +176,13 @@ a:hover {
     transform: translate(-50%, -50%);
         
 }
-
 .entry-img > img {
     display: block;
     margin: 0 auto;
 }
 
-.showTitle {
-    margin: 0;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-.slideContainer {
-    padding-bottom: 10px;
-    
-}
-
-.slideContainer::-webkit-scrollbar {
-    display: none;
-}
-
-.live-hero {
-    display: block;
-    background-color: #000;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 55%;
-    padding-top: 30px; 
-    height: 0;
-}
-
-.live-hero iframe,
-.live-hero object,
-.live-hero embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.site-footer {
-    background-color: #000;
-    color: rgba(255,230,0,1);
-}
-
-.fullShowDescription {
-    width: 100%;
-    padding-left: 15px;
-}
-
-.metricsSection {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 35px 0;
-    white-space: nowrap;
-    
-}
-
-.metricsSection:after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-.metricBox {
-    background-image: url(images/backdrops-03.jpg);
-    display: block;
-    float: left;
-    text-align: center;
-    width: 115px;
-    height: 115px;
-    padding-top: 15px;
-}
-
-.metricBox {
-    position: relative;
-    margin-left: 50px;
-    margin-right: auto;
-}   
-
-.metricBox > h3 {
-    padding-top: 20px;
-    font-size: 100%;
-}
-
-.metricBox > h1 {
-    font-family: 'Intro Inline', sans-serif;
-    font-size: 350%;
-    
-}
-
-.partnersMod {
-    width: 100%;
-}
-
-.partnersAllMod {
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-.partnersAllMod:after {
-     content: "";
-    clear: both;
-    display: block;   
-}
-
-.dropdown-menu>.active>a {
-    color: #000;
-    background-color: rgba(250,230,0,1);
-}
-
-.dropdown-menu>.active>a:hover {
-    background-color: rgba(250,230,0,1);   
-}
-
-.dropdown-menu>li>a:hover{
-    color: rgba(250,230,0,1);
-}
-.memberCard {
-    height: 250px;
-    width: 200px;
-}
-
-.showPage {
-    width: 1650px;
-}
-
-.art-hero {
-    margin-left: auto;
-    margin-right: auto;
-}
-/* Piece/Featured-Section styles*/
 .featuredContainer {
     width: 100%;
-}
-
-.featuredSection {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    /*Only Done To See what it Looks like*/
-    box-shadow: none;
-}
-
-.featuredSection h3 {
-    font-variant: small-caps;
-    margin-bottom: -15px;
-}
-
-.featuredSection > h3 {
-    padding: 10px 0 0 5px;
 }
 
 .featuredContainer .entry-container {
@@ -462,83 +195,68 @@ a:hover {
     min-height: 250px;
 }
 
-.adSpace {
-    width: 32.5%;
-    height: 250px;
-    background: url("images/ad-placeholder.png") center center;
+.slideContainer {
+    padding-bottom: 10px;
+}
+.slideContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/*************************************************/
+/*************************************************/
+/**************** HERO IMAGE CSS *****************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
+.half-hero {
+    background-color: #000;
+    background-image: url(images/Logos/CC_Logo.png);
+    background-position: center;
     background-size: cover;
-    box-shadow: none;
-    transition: none;
+    background-repeat: no-repeat;
+    height: 80vh;
+}
+.heroBodyBG {
+    width: 100%;
+    background-color: #000;
 }
 
-.adSpace:hover{
-    box-shadow: none;
-}
-
-
-
-/*Blog Sections*/
-
-.padLowerX10 {
-    padding: 10px 0;
-}
-
-.blogStyle {
-    position: relative;
-    width: 80%;
-    min-height: 300px;
-    padding: 15px;
-    margin-top: 10px;
-}
-
-.blogStyle h2 {
-    text-align: left;
-    line-height: 1.5em;
-}
-
-.blogStyle h5 {
-    color: #bbb;
-}
-
-.blogContent img{
-    float: left;
-    display: inline-block;
-    width: calc(100% * 0.33);
-}
-
-.clearBoth {
-    clear: both;
-}
-
-.blogStyle hr{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.showMore {
+/*Hero for Video/Music/Film Content Single PHP */
+.live-hero {
     display: block;
-    background-color: rgba(200,200,200,0.85);
-    width: 89%;
-    height: 40px;
-    border-radius: 3px;
-    box-shadow: 3px 3px 3px #ccc;
-    margin-top: 10px;
-    transform: translateX(-0.25%);
-    text-align: center;
-    
-    transition: box-shadow 0.3s;
-}
-
-.showMore:hover{
-    box-shadow: 5px 5px 8px #aaa;
-}
-
-.vertical-align {
+    background-color: #000;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    overflow: hidden;
+    padding-bottom: 55%;
+    padding-top: 30px; 
+    height: 0;
+}
+.live-hero iframe,
+.live-hero object,
+.live-hero embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.fullShowDescription {
+    width: 100%;
+    padding: 15px;
 }
 
+.entry-content {
+    margin-top: 0px;
+}
+
+/*Hero for Artwork*/
+.art-hero {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Hero for The Show, BG fallback */
 .show-hero {
     background-image: url(images/Logos/CC_Logo.png);
     background-position: center;
@@ -554,17 +272,310 @@ a:hover {
     overflow: hidden;
 }
 
+
 .landingHero {
     width: 100%;
     background-color: #000;
 }
 
+
+/*************************************************/
+/*************************************************/
+/***************** SECTIONS CSS ******************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
+
+/* Landing Page Section */
+.fullViewport {
+    height: calc(100vh - 60px);
+    margin: 0 auto;
+}
+/* Metrics Section -- Landing Page */
+.metricCard{
+    width: 89%;
+    transform: translateX(-0.5%);
+}
+.metricsSection {
+    display: block;
+    padding: 35px 0;
+    white-space: nowrap;
+    margin-bottom: 2%;
+}
+.metricsSection:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.metricBox {
+    background-image: url(images/backdrops-03.jpg);
+    display: block;
+    float: left;
+    text-align: center;
+    width: 115px;
+    height: 115px;
+    padding-top: 15px;
+    position: relative;
+    margin-left: calc(100% * 0.05);
+    margin-right: auto;
+    box-shadow: 3px 3px 3px #ccc;
+}
+
+.metricBox > h3 {
+    padding-top: 20px;
+    font-size: 115%;
+}
+
+.metricBox > h1 {
+    font-family: 'Intro Inline', sans-serif;
+    font-size: 350%;
+    
+}
+
+/* Featured Section */
+.featuredSection {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: none; /*Only Done To See what it Looks like*//*Edit: I like it*/;
+}
+
+.featuredSection h3 {
+    font-variant: small-caps;
+    margin-bottom: -15px;
+}
+
+.featuredSection > h3 {
+    padding: 10px 0 0 5px;
+}
+
+.showMore {
+    display: block;
+    background-color: rgba(200,200,200,0.85);
+    width: 89%;
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #ccc;
+    margin-top: 10px;
+    transform: translateX(-0.25%);
+    text-align: center;
+    
+    transition: box-shadow 0.3s;
+}
+.showMore:hover{
+    box-shadow: 5px 5px 8px #aaa;
+}
+
+/*Full Episode Listing Section */
+.fullListing{
+    width: 90%;
+}
+
+.fullListing > a .entry-container {
+    width: calc(100% * 0.33 - 10px);
+}
+/*Show's display of other episodes*/
+.episodes {
+    width: 90%;
+}
+
+.seasonContainer > a .entry-container {
+    position: relative;
+    width: calc(100% * 0.33 - 10px);
+    overflow: hidden;
+}
+
+.seasonContainer > .entry-container > .entry-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #555;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.seasonContainer > .entry-container:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16); /*Default Card Box-Shadow from Material.css*/
+}
+
+.entry-desc{
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 10px 0 0 10px;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.25);
+
+    transition: opacity 0.3s;
+
+}
+.entry-desc:hover{
+    opacity: 1;
+}
+
+.entry-desc hr{
+    width: 90%;
+}
+
+/* Blog Section Styling */
+
+.blogStyle {
+    position: relative;
+    width: 80%;
+    min-height: 300px;
+    padding: 15px;
+    margin-top: 10px;
+}
+.blogStyle h2 {
+    text-align: left;
+    line-height: 1.5em;
+}
+.blogStyle h5 {
+    color: #bbb;
+}
+.blogContent img{
+    float: left;
+    display: inline-block;
+    width: calc(100% * 0.33);
+}
+.blogStyle hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* Partners Section */
+.partnersMod {
+    width: 100%;
+}
+.partnersAllMod {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.partnersAllMod:after {
+    content: "";
+    clear: both;
+    display: block;   
+}
+
+/* Single Row Section */
 .singleRow {
     width: 90%;
     display: block;
     margin: 0 auto;
     padding: 0;
-    overflow-x: scroll;
     max-height: 200px;
     padding-bottom: 10px;
+}
+.singleRow::-webkit-scrollbar {
+    display: none;
+}
+.showTitle {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Team or Member Section */
+.memberCard {
+    height: 250px;
+    width: 200px;
+}
+
+/*************************************************/
+/*************************************************/
+/****************** AD SPACE CSS *****************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
+.adSpace {
+    width: 32.5%;
+    height: 250px;
+    background: url("images/ad-placeholder.png") center center;
+    background-size: cover;
+    box-shadow: none;
+    transition: none;
+}
+
+.adSpace:hover{
+    box-shadow: none;
+}
+
+
+/*************************************************/
+/*************************************************/
+/***************** RESPONSIVE CSS ****************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
+/************** Maximum Screen Size **************/
+
+@media screen and (min-width: 1140px){
+.outerContentCont {
+        width: 1200px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+ 
+}
+
+/*************************************************/
+/*************************************************/
+/****************** UTILITY CSS ******************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
+.centerMargins {
+    display: block;
+    margin: 0 auto;   
+}
+.vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.padTopBotBy10 {
+    padding: 10px 0;
+}
+.clearBoth {
+    clear: both;
+}
+.border1 {
+    border: 1px solid red;
+}
+.border2 {
+    border: 1px dashed blue;
+}
+
+
+/*************************************************/
+/*************************************************/
+/****************** TESTING CSS ******************/
+/******************* BELOW HERE ******************/
+/*********************** ||| *********************/
+/*********************** VVV *********************/
+
+/******************* Body Menu ***********************/
+/*********** Menu appears on the right side, and pushes the body to the left side **************/
+.fullMenu {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    right: 0;
+    top: 60px;;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    margin-right: -10px;
 }
