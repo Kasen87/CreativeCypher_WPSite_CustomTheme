@@ -24,7 +24,11 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<nav class="<?php if (is_admin_bar_showing()) {
+						echo 'navbar navbar-default navbar-fixed-top admin-bar-adjust';
+					} else {
+						echo 'navbar navbar-default navbar-fixed-top';
+					}?>" role="navigation">
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
@@ -51,6 +55,8 @@
 		            );
 	        	?>
 
+
+
 	        		<!--<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php  echo home_url( '/' ); ?>">
 	        			<div class="form-control-wrapper">
                         	<input name="s" id="s" type="text" class="form-control col-lg-8" placeholder="<?php  _e('Search','materialwp'); ?>">
@@ -61,5 +67,7 @@
         	</div><!-- /.container -->
 		</nav><!-- .navbar .navbar-default -->
 	</header><!-- #masthead -->
+
+
 
 	<div id="content" class="site-content">

@@ -46,7 +46,7 @@ h6,
 .h3,
 .h4 {
     font-family: 'League Spartan',sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: #000;
     margin: 0;
     font-variant: small-caps;
@@ -55,6 +55,11 @@ h6,
 hr{
     margin: 5px 0 10px 0;
 }
+ul{
+    padding: 0;
+}
+
+
 
 /*************************************************/
 /*************************************************/
@@ -344,6 +349,7 @@ a:hover {
 .featuredSection h3 {
     font-variant: small-caps;
     margin-bottom: -15px;
+    font-size: 300%;
 }
 
 .featuredSection > h3 {
@@ -377,7 +383,7 @@ a:hover {
 }
 /*Show's display of other episodes*/
 .episodes {
-    width: 90%;
+    width: 95%;
 }
 
 .seasonContainer > a .entry-container {
@@ -385,6 +391,7 @@ a:hover {
     width: calc(100% * 0.33 - 10px);
     overflow: hidden;
 }
+
 
 .seasonContainer > .entry-container > .entry-img {
     position: absolute;
@@ -400,6 +407,15 @@ a:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16); /*Default Card Box-Shadow from Material.css*/
 }
 
+.suggest-entry > a .entry-container{
+    width: calc(100% * 0.24);
+    min-width: 100px;
+}
+
+.singleRow.suggest-entry{
+    width: 95%;
+}
+
 .entry-desc{
     position: absolute;
     color: #fff;
@@ -409,10 +425,14 @@ a:hover {
     top: 0;
     padding: 10px 0 0 10px;
     opacity: 0;
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.50);
 
     transition: opacity 0.3s;
 
+}
+
+.entry-desc h4 {
+    color: #fff;
 }
 .entry-desc:hover{
     opacity: 1;
@@ -472,8 +492,8 @@ a:hover {
     display: block;
     margin: 0 auto;
     padding: 0;
-    max-height: 200px;
-    padding-bottom: 10px;
+    /*max-height: 200px;*/
+    padding-bottom: 25px;
 }
 .singleRow::-webkit-scrollbar {
     display: none;
@@ -481,7 +501,8 @@ a:hover {
 .showTitle {
     margin: 0;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 5px;
+    font-size: 225%;
 }
 
 /* Team or Member Section */
@@ -578,4 +599,40 @@ a:hover {
     height: 100vh;
     background-color: rgba(0,0,0,0.8);
     margin-right: -10px;
+}
+
+.admin-bar-adjust {
+    top: 30px;
+}
+
+.suggest-sep {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transform: translate(-2%,0);
+}
+
+.pageTitle {
+    text-align: center;
+    color: #000;
+    padding: 15px 0;
+}
+
+.textContainer {
+    text-align: center;
+    width: 75%;
+}
+
+.imgAbout {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.textContainer h1 {
+    padding: 5px 0;
+}
+
+.textcontainer p {
+    padding: 5px 0;
 }

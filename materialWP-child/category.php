@@ -21,7 +21,7 @@ get_header(); ?>
 <?php $parents = get_category( get_query_var( 'cat') ); ?>
 <?php set_query_var('parents', $parents); ?>    
                 
-<?php if (post_is_in_descendant_category(get_cat_ID('Shows'))) : ?>
+<?php if (post_is_in_descendant_category(get_cat_ID('shows'))) : ?>
     <?php get_template_part('pieces/hero', 'show'); ?>
 <?php endif; ?>
 

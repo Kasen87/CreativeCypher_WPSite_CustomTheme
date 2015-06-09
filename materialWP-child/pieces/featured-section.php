@@ -3,7 +3,7 @@
     $categories = get_categories($args); ?>
 
 <div class="card featuredSection">
-    <h3>Featured Creations</h3>
+    <h3>featured creations</h3>
     
     <!-- Start of the inside loop for posts within the show! -->                            
         <?php $args = array(

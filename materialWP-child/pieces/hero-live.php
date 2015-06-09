@@ -30,5 +30,7 @@
                 </div><!-- .fullShowDescription -->
             </div><!-- .innerContainer -->
         </div><!-- .card -->
+    </div> <!-- .outerContentCont from hero-piece sections-->
+</div> <!-- .heroBodyBG from hero-piece sections -->
 
     

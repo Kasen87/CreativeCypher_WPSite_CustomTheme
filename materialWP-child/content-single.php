@@ -18,9 +18,31 @@
 
     <!--Pull In The Header -->
     <?php get_template_part('pieces/hero', 'live'); ?>  <!-- This opens two divs that need to be closed by the end of this file -->
+    <?php $myParent = get_the_category(); ?>
+    <?php set_query_var('myParent', $myParent[0]); ?>
+    <?php get_template_part('pieces/suggestions', 'section'); ?>
 
+    <hr class="suggest-sep centerMargins">
 
-
+    <?php $catID = get_cat_ID('shows'); ?>
+    <?php $args = array('parent' => $catID,'number' => 4); ?>
+    <?php $categories = get_categories($args); ?> 
+    <div class="singleRow suggest-entry">
+        <h3 class="showTitle">more shows</h3>
+        <?php foreach($categories as $catName): ?>
+            <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
+                <div class="card entry-container">
+                    <div class="entry-img">    
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <?php the_post_thumbnail(); ?>
+                        <?php endif; ?>
+                    </div>
+                </div> <!-- .entry-container -->
+            </a><!-- End of the loop-->
+        <?php wp_reset_postdata(); ?>
+        <?php wp_reset_query(); ?>
+        <?php endforeach; ?>
+        </div>
 
 
 
@@ -36,138 +58,18 @@
     <?php get_template_part('pieces/hero', 'live'); ?>  <!-- This opens two divs that need to be closed by the end of this file -->
 
 <?php elseif (in_category( 'art' ) || post_is_in_descendant_category(get_cat_ID('gallery'))) : ?>
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="innerContainer">
-            <div class="art-hero">
-                <?php the_content(); ?>
-            </div>
-        </div>
 
-<!--Create the video section where the hero img would usually go -->
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="card">
-        <div class="innerContainer">
-		<div class="fullShowDescription">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-                <!--We need to find a way to import text before of after the youtube embed section-->
-                <p>Information about this particular episode goes here!</p>
-				
-			</div><!-- .entry-content -->
-        </div>
-        </div>
-    </div> 
-
-<?php elseif (in_category( 'team' ) || post_is_in_descendant_category(get_cat_ID('team'))) : ?>
-  
-<div class="heroBodyBG">
-    <div class="outerContentCont">
-        <div class="innerContainer">
-            <div class="team-hero">
-                <?php the_post_thumbnail(); ?>
-            </div>
-        </div>
-
-<!--Create the video section where the hero img would usually go -->
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<div class="card">
-        <div class="innerContainer">
-		<div class="fullShowDescription">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-                <?php the_content(); ?>
-			</div><!-- .entry-content -->
-        </div>
-        </div>
-    </div> 
-    
 <?php else : ?>
     <!--If it's not any of the above files, then call the 404 page-->
     <?php get_template_part('content', 'none'); ?>
 
-<?php endif; ?>
-    
-    
-    
-    
-    
-<!--
-           ||| Need Something to Do with this section below here |||
--->
+<?php endif; ?>   
 
-<?php if ( !(in_category( 'team' ) || post_is_in_descendant_category(get_cat_ID('team')))) : ?>
-    <!--Recommended/next Shows to watch! -->
-    
-                <div class="innerContainer">
-                
-                <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Shows'); ?>
-                <?php $args = array(
-                                'parent' => $catID
-                            ); ?>
 
-                <?php $categories = get_categories($args); ?>
-                
-                <?php foreach($categories as $catName): ?>
-                  <div class="card PR">
-                      <?php echo '<a class="showLink" href="' . get_category_link($catName->cat_ID) . '"><h3 class="showTitle">' . $catName->cat_name . '</h3></a>'; ?>
-                      
-                      <div class="slideContainer">
-                            <!-- Start of the inside loop for posts within the show! -->                            
-                                <?php $args = array(
-                                                'category_name' => $catName->cat_name,
-                                                'post_type' => 'post',
-                                                'post_status' => 'publish'
-                                ); ?>
 
-                                <?php $list_of_posts = new WP_Query($args); ?>
+<!--Below divs end the three from Suggestions sections-->
+        </div>
+    </div>
+</div>
 
-                                <?php if( $list_of_posts->have_posts() ) : ?>
-
-                                    <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
-                                        <a href="<?php echo the_permalink(); ?>">
-                                        <div class="card entry-container">
-
-                                            <div class="entry-img">
-                                                <?php if ( has_post_thumbnail() ) : ?>
-                                                    <?php the_post_thumbnail(); ?>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div> <!-- .entry-container -->
-                                        </a>
-                                    <?php endwhile; ?>
-
-                                    <!-- End of the inside loop for posts within the show! -->
-                            </div>
-                        </div> <!-- .card -->
-
-                            <?php else : ?>
-                                <?php get_template_part( 'content', 'none'); ?>
-                            <?php endif; ?>
-
-                    <?php wp_reset_postdata(); ?>
-                    <?php wp_reset_query(); ?>
-                    <?php endforeach; ?>
-
-            </div><!--Inner Container-->
-
-<?php endif; ?>
-			<!--footer class="entry-footer">
-				<!--php materialwp_entry_footer(); ?>-->
-			<!--</footer><!-- .entry-footer -->
-		</div> <!-- .entry-container -->
-	</div> <!-- .card -->
 </article><!-- #post-## -->
