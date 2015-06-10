@@ -1,15 +1,15 @@
 /*
-Theme Name: 	MaterialWP Child
-Theme URI:		http://example.com/materialWP-child		
-Description:	Material Wordpress Child Theme
+Theme Name: 	Creative Cypher
+Theme URI:		http://thecreativecypher.com/creative-cypher-theme		
+Description:	Creative Cypher Custom Theme
 Author:			Joshua R. Engel
-Author URI:		http://example.com
+Author URI:		http://blue1647.com
 Template: 		materialwp-materialwp
 Version:		1.0.0
 License:		GNU General Public License v2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 Tags:			light, dark, two-columns, right-sidebar, responsive-layour, accessibility-ready
-Text Domain:	materialWP-child
+Text Domain:	creative-cypher-theme
 */
 
 /*************************************************/
@@ -143,6 +143,7 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
+    overflow: hidden;
 }
 
 /* Containers for the Entries */
@@ -184,6 +185,8 @@ a:hover {
 .entry-img > img {
     display: block;
     margin: 0 auto;
+    height: calc(75vw * 0.25 - 20px);
+    overflow: hidden;
 }
 
 .featuredContainer {
@@ -449,7 +452,7 @@ a:hover {
     width: 80%;
     min-height: 300px;
     padding: 15px;
-    margin-top: 10px;
+    margin-bottom: 25px;
 }
 .blogStyle h2 {
     text-align: left;
@@ -559,7 +562,8 @@ a:hover {
 
 .centerMargins {
     display: block;
-    margin: 0 auto;   
+    margin-left: auto;
+    margin-right: auto;   
 }
 .vertical-align {
     position: relative;
@@ -577,6 +581,13 @@ a:hover {
 }
 .border2 {
     border: 1px dashed blue;
+}
+.centerText{
+    text-align: center;
+}
+
+.paddingTop25{
+    padding-top:25px;
 }
 
 
@@ -635,4 +646,249 @@ a:hover {
 
 .textcontainer p {
     padding: 5px 0;
+}
+
+ul#filterNav { 
+  float: left; 
+  font-size: 16px; 
+  list-style: none; 
+  margin-left: 0; 
+  width: 100%;
+}
+ul#filterNav li { 
+  border-right: 1px solid #dedede;
+  float: left;
+  line-height: 16px;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+ul#filterNav li:last-child { 
+    border-right: none; 
+    margin-right: 0; 
+    padding-right: 0; 
+}
+ul#filterNav a { 
+    color: #999; 
+    text-decoration: none; 
+}
+ul#filterNav li.current a, ul#filterNav a:hover { 
+    text-decoration: underline; 
+}
+ul#filterNav li.current a { 
+    color: #333; 
+    font-weight: bold; 
+}
+
+ul#membersPortfolio { 
+  float: left;
+  text-align: justify;
+  list-style: none;
+  margin-left: 0;
+  width: 100%;
+  min-height: 200px;
+}
+ul#membersPortfolio li { 
+  /*border: 1px solid #dedede; */
+  float: left; 
+  margin: 0 10px 10px 0; 
+  padding: 5px;
+  width: calc(100% * 0.25 - 15px);
+  border: 1px solid #dedede;
+}
+
+ul#membersPortfolio .entry-img {
+    position: relative;
+    overflow: hidden;
+}
+
+ul#membersPortfolio .entry-desc {
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 85%;
+    left: 0;
+    opacity: 1;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+ul#membersPortfolio img { 
+    display: block; 
+    padding-bottom: 5px; 
+}
+
+.memCard{
+    padding: 20px;
+}
+
+#filterNavBtns {
+    padding-left: 5px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+ul#partnersPortfolio { 
+  float: left;
+  text-align: justify;
+  list-style: none;
+  margin-left: 0;
+  width: 100%;
+  min-height: 200px;
+}
+ul#partnersPortfolio li { 
+  /*border: 1px solid #dedede; */
+  float: left; 
+  margin: 0 10px 10px 0; 
+  padding: 5px;
+  width: calc(100% * 0.25 - 15px);
+  height: 200px;
+  border: 1px solid #dedede;
+  overflow: hidden;
+}
+
+ul#partnersPortfolio .entry-img {
+    position: relative;
+    overflow: hidden;
+}
+
+ul#partnersPortfolio .entry-desc {
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 85%;
+    left: 0;
+}
+
+ul#partnersPortfolio img { 
+    display: block; 
+    padding-bottom: 5px; 
+}
+
+/* Submit Section */
+
+.submitCurNav{
+    color: #fff;
+    text-shadow: 1px 1px 1px #555;
+    background-color: #ddbd00;
+}
+
+.submitCurBoiler{
+
+}
+
+.submitCurForm {
+
+}
+
+ul#submitNav {
+    float: left; 
+    font-size: 16px; 
+    list-style: none;  
+    width: 100%;
+}
+
+ul#submitNav li { 
+  float: left;
+  display: block;
+  line-height: 16px;
+  margin: 10px 10px 0 0;
+  width: calc(100% * 0.25 - 20px);
+  border: 1px solid rgba(250,230,0,1);
+  border-radius: 10px;
+}
+ul#submitNav li:last-child { 
+    margin-right: 0; 
+    padding-right: 0; 
+}
+ul#submitNav a { 
+    color: #000;
+    text-decoration: none;
+}
+
+ul#submitNav h3 {
+      color: #000;
+      padding: 25px 0;
+      background-color: #ccac00;
+  }
+ul#submitNav li.submitCurNav h3, ul#submitNav h3:hover {
+    color: #fff;
+    text-shadow: 1px 1px 1px #555;
+    background-color: #ddbd00;
+}
+
+ul#submitNav li.submitCurNav a { 
+    color: #000; 
+    font-weight: bold;
+}
+
+div#submitNavCont {
+    width: 75%;
+    text-align: center;
+    margin-top: 25px;
+}
+
+div#submitNavCont ul{
+    margin-left: 25px;
+}
+
+div#boilerPlate {
+    width: 75%;
+    margin-top: 25px;
+}
+
+div#form-fields {
+    width: 75%;
+    margin-top: 25px;
+}
+
+div#startMem {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 75%;
+    text-align: center;
+}
+
+div#startMem h4{
+    width: 30%;
+    padding: 12px 0 12px 0;
+    border: 1px solid #000;
+    background-color: #ccac00;
+    border-radius: 0;
+}
+
+div#startMem h4:hover{
+    background-color: #ddbd00;
+}
+
+div#startMem a{
+    color: #000;
+    padding: 12px 15% 12px 15%;
+}
+
+div#startMem a:hover {
+    text-shadow: 1px 1px 1px #555;
+    color:#fff;
+}
+
+div.membership.card {
+    padding: 15px;
+    border-radius: 5px;
+}
+.membership ul {
+    line-height: 32px;
+    font-size: 16px;
+}
+div.membership-form.card {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#datepicker{
+    background-color: #fff;
 }

@@ -12,58 +12,90 @@
     <div class="contentBodyBG">
         <div class="outerContentCont">
             <div class="innerContainer">
-                
-                <!--Start Populating an array with all of the categories-->
-                <?php $catID = get_cat_ID('Partners'); ?>
-                <?php $args = array(
-                                'parent' => $catID
-                            ); ?>
+                <!--Use this section for creating the partner posts and attach class based on categories for filtering later-->
+                <div class="card memCard">
+                <?php
 
-                <?php $categories = get_categories($args); ?>
-                
-                <?php foreach($categories as $catName): ?>
-                  <div class="card partnersAllMod">
-                      <!--php echo '<h3 class="showTitle">' . $catName->cat_name . '</h3>'; ?>-->
-                      
-                      <div class="slideContainer partnersMod">
+                $partnerCatLists = get_categories(array('parent'=>get_cat_ID('Partners'), 'hide_empty'=>0));
+                //this creates the list for selecting to filter
+                echo '<div class="centerMargins">';
+                echo '<div id="filterNavBtns">';
+                echo '<ul id="filterNav">';
+                $i = 0;
+                foreach($partnerCatLists as $memFilterBtn){
+                    if ($i == 0){
+                        echo '<li class="current"><a href="#">All</a></li>';
+                    }else{
+                    }
+                    echo '<li class=""> <a href="#">'.$memFilterBtn->name.'</a></li>';
+                    $i++;
+                }
+                echo '</ul></div>';
+                echo '<div class="centerMargins">';
+                $partnerPostList = new WP_Query('category_name=Partners');
+                if ($partnerPostList->have_posts()) {
+                    echo '<ul id="partnersPortfolio" class="centerMargins">';
+
+                    while ( $partnerPostList->have_posts() ) {
+                        $partnerPostList->the_post();
+                        $catClass = 'class="';
+
+                        foreach($partnerCatLists as $partCat) {
+
+                            if( in_category($partCat)){
+                                //This is what to do if it is part of the category
+                                $catClass .= $partCat->slug.' ';
+                            }else{  
+                                //Do something here if not in category?
+                            }                         
+                            //this ends the foreach loop above
+                        }
+                        $catClass .= '"';
+
                         
+                            echo '<li '.$catClass.'>';
+                            echo '<div id="portfolio" class="entry-img" alt="'.get_the_title().'">';
+                            if (has_post_thumbnail() ){
+                                the_post_thumbnail();   
+                            }else{
+                                //Something 
+                            }
+                            
+                            //$targetText = '[ext]';
+                            $description = get_the_content();
+                            //$description = explode($targetText, $description);
+                            //$blurbContent = $description[0];
+                            //$heroContent = $targetText . $description[1];
+                            //$heroContent = apply_filters('the_content', $heroContent);
+                            $description = apply_filters('the_content', $description);
 
-                            <!-- Start of the inside loop for posts within the show! -->                            
-                                <?php $args = array(
-                                                'category_name' => $catName->cat_name,
-                                                'post_type' => 'post',
-                                                'post_status' => 'publish'
-                                ); ?>
+                            if ($description != ''){
+                                echo '<div class="entry-desc">';
+                                echo '<h4>'.the_title().'</h4><hr />';
+                                echo '<p>'.$description.'</p>';
+                                echo '</div>';
+                            } else {
 
-                                <?php $list_of_posts = new WP_Query($args); ?>
+                            }
+                            echo '</div>';
+                            echo '</li>';
+                        //this should start the next post in the loop, unless there's not a post
+                    }
 
-                                <?php if( $list_of_posts->have_posts() ) : ?>
+                    echo '</ul>';
+                    echo '</div>';
+                } else {
+                    // no posts found
+                }
+                echo'</ul>';
+                echo '</div>';
+                wp_reset_postdata();
+                ?>
 
-                                    <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
-                                        <a href="<?php echo get_the_content(); ?>">
-                                        <div class="card entry-container">
+                
+                
 
-                                            <div class="entry-img">
-                                                <?php if ( has_post_thumbnail() ) : ?>
-                                                    <?php the_post_thumbnail(); ?>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div> <!-- .entry-container -->
-                                        </a>
-                                    <?php endwhile; ?>
-
-                                    <!-- End of the inside loop for posts within the show! -->
-                            </div>
-                        </div> <!-- .card -->
-
-                            <?php else : ?>
-                                <!--php get_template_part( 'content', 'none'); -->
-                            <?php endif; ?>
-
-                    <?php wp_reset_postdata(); ?>
-                    <?php wp_reset_query(); ?>
-                    <?php endforeach; ?>
-                <div class="clearBoth"></div>
+                </div>
             </div><!--Inner Container-->
         </div>
     </div> 

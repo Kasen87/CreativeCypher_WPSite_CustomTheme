@@ -1,39 +1,54 @@
 <?php get_template_part('pieces/hero', 'generic'); ?>
 
-<div class="card">
-      <div>
-          <h1 class="mem-h1">Contact The Creative Cypher</h1>
-      </div>
+<div class="outerContentCont">
+    <div class="card">
+        <div class="paddingTop25 centerText">
+            <h1>contact the creative cypher</h1>
+        </div>
       
-      <div class="innerContainer">        
-
-        <div class="image-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu gravida diam, nec dictum ante. Ut laoreet varius odio, quis porta libero congue vel. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent quis augue eget quam mollis iaculis. Suspendisse rhoncus eros quis consequat pellentesque. Etiam et tellus mattis diam volutpat ullamcorper. Aliquam vestibulum rutrum tellus, eget sollicitudin sem auctor sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus lobortis neque mauris, et mollis eros vulputate a. Fusce placerat purus ipsum, at venenatis ante aliquam nec. Donec maximus magna orci, et suscipit justo suscipit sed. In ultricies, purus a posuere rutrum, mi est mattis felis, eu posuere purus justo id ipsum. Vestibulum egestas, diam ac facilisis tristique, tellus ante bibendum sapien, sed lacinia nulla quam at turpis. Proin vel ipsum tempor, interdum dui ut, imperdiet nisi. Donec tincidunt turpis eget nibh sodales mattis.</p>
-          <p>Vestibulum condimentum sed arcu vel scelerisque. Morbi vitae magna interdum, viverra augue sodales, laoreet risus. Donec fermentum massa in libero pretium fringilla. Aenean in justo pharetra, volutpat metus id, eleifend urna. Integer vehicula quis nulla ut tempor. Nullam sodales elit sed lacinia euismod. Nam ac fringilla orci. Mauris porta pharetra nisi, eget interdum sapien viverra id. Proin dictum lacus eget risus pretium, malesuada dictum purus tempus. Donec odio nunc, venenatis nec lacus id, tincidunt auctor turpis. Aenean quis ligula justo. Integer libero sapien, feugiat et rhoncus eget, commodo in purus. Nam justo erat, facilisis ac accumsan et, porttitor vel tellus.
-          </p>
-          <p>Aenean eu felis faucibus nibh iaculis facilisis eu sed est. Mauris quis vulputate est, non fringilla enim. Vestibulum velit orci, viverra vitae lectus eu, mollis tempus arcu. Praesent sed laoreet libero. Vestibulum bibendum sollicitudin felis, eu cursus quam facilisis id. Praesent magna ligula, vestibulum at rhoncus et, egestas nec odio. Mauris disgnissim condimentum porta. Donec imperdiet molestie urna sed tincidunt. Quisque et tempus nibh. Proin congue neque ut nisl vehicula, et dictum lectus ultrices. In convallis lacinia fermentum.  
-          </p>
-        </div>
-        
-        <div class="buttons">
-            <ul class="tabs">
-                <a href="javascript:submit(0)"><li>Join</li></a>
-                <a href="javascript:submit(1)"><li>Pitch</li></a>
-                <a href="javascript:submit(2)"><li>Job Listings</li></a>
-                <a href="javascript:submit(3)"><li>Advertise</li></a>
+        <div class="innerContainer">
+            <div id="submitNavCont" class="centerMargins">
+            <ul id="submitNav">
+                <li class="card"><a href="#"><h3>membership</h3></a></li>
+                <li class="card"><a href="#"><h3>submit script</h3></a></li>
+                <li class="card"><a href="#"><h3>advertise</h3></a></li>
+                <li class="card"><a href="#"><h3>post job</h3></a></li>
             </ul>
-          <div class="hide submit(1)" style="display:none">
-                Join
-          </div>
-          <div class="hide submit(2)" style="display:none">
-                 Submit Script...
-          </div>
-          <div class="hide submit(3)" style="display:none">
-                List Jobs... 
-          </div>
-          <div class="hide submit(4)" style="display:none">
-                Advertise...
-          </div>   
-        </div>
-</div>
+            <div class="clearBoth"></div>
+            </div> <!-- end of submit navigation -->
+
+            <div id="boilerPlate" class="centerMargins">
+                <div class="membership card hidden">
+                    <h2>member invitation</h2>
+                    <hr />
+                    <h3>requirements</h3>
+                    <ul>
+                        <li>Upload your written recommendation from an industry professional</li>
+                        <li>A clear and recent headshot must be included.</li>
+                        <li>Offer trade discounts to fellow Creative Cypher Members.</li>
+                        <li>Minimum of three years experience in the industry or a related field.</li>
+                        <li>Willingness to contribute up to 10 hours a month on Creative Cypher related activities:<br>
+                            <em>(Productions, events, worokshops, youth shadowing, and community service)</em></li>
+                    </ul>
+                    <hr />
+                    <h3>all applications are reviewed by the creative cypher membership committee</h3>
+                    <h4 class="padTopBotBy10">all information will be treated in confidence</h4>
+                </div>
+
+            </div><!--End of BoilerPlate Div-->
+
+            <div id="form-fields" class="centerMargins hidden">
+                <div class="membership-form card">
+                    <p>Date:<br/>
+                    <input type="text" id="datepicker"></p>
+                </div>
+
+            </div>
+
+            <div id="startMem" class="centerMargins hidden">
+                <h4 class="centerMargins card"><a href="#">start your application</a></h4>
+            </div>
+
+        </div><!--End of inner container-->
+    </div>
 </div>
