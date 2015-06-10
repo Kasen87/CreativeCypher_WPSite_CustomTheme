@@ -10,7 +10,7 @@
 <!--Hero Section-->
 <div class="landingHero">
     <div class="fullViewport">
-        <video src="http://thecreativecypher.com/wp-content/uploads/2015/04/CC_Bumper.mp4" width="100%" height="100%" autoplay="true">
+        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Bumper_Static_Web.mp4" width="100%" height="100%" autoplay="true">
         </video>
     </div>
 </div>

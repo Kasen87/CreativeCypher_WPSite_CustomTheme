@@ -838,13 +838,14 @@ div#submitNavCont ul{
 }
 
 div#boilerPlate {
-    width: 75%;
+    width: 70%;
     margin-top: 25px;
 }
 
 div#form-fields {
-    width: 75%;
-    margin-top: 25px;
+    width: 70%;
+    margin: 25px auto;
+    padding: 15px;
 }
 
 div#startMem {
@@ -889,6 +890,68 @@ div.membership-form.card {
     border-radius: 5px;
 }
 
-#datepicker{
-    background-color: #fff;
+.ui-datepicker{
+    background-color:#eef;
+    border-radius: 3px;
+    border: 1px solid #ccac00;
+    color: #000;
+    text-align: center;
+}
+
+.ui-datepicker-header {
+    background-color: #dedede;
+    padding: 10px 10px 5px 10px;
+    width: 100%;
+    margin:0;
+}
+
+.ui-datepicker-header a {
+    color: #000;
+}
+
+.ui-datepicker-header:after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.ui-datepicker-prev{
+    float:left;
+}
+
+.ui-datepicker-next{
+    float: right;
+}
+
+.ui-datepicker-title{
+    float:left;
+    padding: 0 10px;
+    margin-top: 2px;
+}
+
+.ui-datepicker-week-end{
+    margin: 0 3px;
+}
+
+.ui-datepicker-week-end a{
+    color:#000;
+}
+
+.ui-datepicker-calendar a{
+    color:#000;
+}
+
+.ui-datepicker-week-end a:hover, .ui-datepicker-calendar a:hover{
+    color:#ccac00;
+    text-decoration: underline;
+}
+
+.ui-datepicker-today a{
+    color:#ccac00;
+    text-decoration: underline;
 }

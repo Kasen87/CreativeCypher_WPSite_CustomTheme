@@ -37,11 +37,40 @@
 
             </div><!--End of BoilerPlate Div-->
 
-            <div id="form-fields" class="centerMargins hidden">
-                <div class="membership-form card">
-                    <p>Date:<br/>
-                    <input type="text" id="datepicker"></p>
-                </div>
+            <div id="form-fields" class="centerMargins card hidden">
+                <form id="target" action="">
+                    <div class="default hidden">
+                            <p>Date:<br/>
+                            <input type="text" id="datepicker" name="date"></p>
+                            <p>Your Name:<br/>
+                            <input type="text" id="first-name" name="first-name" placeholder="First Name">
+                            <input type="text" id="last-name" name="last-name" placeholder="Last Name"></p>
+                            <p>E-mail:<br/>
+                            <input type="email" id="e-mail" name="e-mail"placeholder="Your E-mail"></p>
+                            <p>Company Name:<br/>
+                            <input type="text" id="company-name" name="company-name" placeholder="Your Company"></p>
+                            <p>Website:<br/>
+                            <input type="text" id="website" name="website" placeholder="http://"></p>
+                            <br/>
+                    </div>
+
+                    <div class="membership-form hidden">
+                        <p>Headshot:<br/>
+                        <input type="file" id="user-headshot" name="userPic" accept="image/*"></p>
+                        <br/>
+                        <p>Written Recommendation:<br/>
+                        <input type="file" id="user-recommendation" name="userRec"></p>
+                        <br/>
+                    </div>
+
+                    <div class="default hidden">
+                        <p>Comments or Question:<br/>
+                        <textarea rows="4" cols="50" name="comment-question" placeholder="Enter text here..."></textarea>
+                        </p><br />
+                        <input id="form-submit-btn" type="submit" value="Submit">
+                    </div>
+
+                </form>
 
             </div>
 

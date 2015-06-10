@@ -80,26 +80,39 @@ jQuery(document).ready(function($) {
     });
 
     $('div#startMem a').click(function(){
+
         $('div#boilerPlate div').each(function(){
             if(!$(this).hasClass('hidden')){
                $(this).fadeOut('slow').addClass('hidden'); 
             }else{
                 //Do nothing if it's already hidden
             }
+        });
 
-        //$('div#form-fields div').each(function(){
-         //   if(!$(this.hasClass(formVar)){
-         //       $(this).fadeIn('slow', function(){$("html, body").animate({scrollTop:$('#form-fields').offset().top})}).removeClass('hidden');
-         //   })
+        $('div#form-fields').fadeIn('slow', function(){$("html, body").animate({scrollTop:$('#submitNavCont').offset().top})}).removeClass('hidden');
 
-        })   
-
-        $('div#startMem').fadeOut('slow').addClass('hidden');    
-        })
-
+        $('div#form-fields div').each(function(){
+                
+            if ($(this).hasClass('default')) {
+                $(this).fadeIn('slow').removeClass('hidden');
+            } else {
+                if (!$(this).hasClass('membership-form')) {
+                    $(this).fadeOut('slow').addClass('hidden'); 
+                }else{
+                    $(this).fadeIn('slow').removeClass('hidden');
+                }
+            }
+        });
+            
+        $('div#startMem').fadeOut('slow').addClass('hidden');   
 
         return false;
     });
+
+    $('#target').submit(function(event){
+        alert('Submit?!');
+        $('#target')[0].reset(); //reset works. Use it after the 
+    })
 
     $("#datepicker").datepicker();
 

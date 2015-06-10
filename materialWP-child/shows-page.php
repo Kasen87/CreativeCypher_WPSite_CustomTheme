@@ -16,7 +16,7 @@
                 <?php $args = array('parent' => $catID); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="fullListing centerMargins">
-                    <h3 class="showTitle">All Shows</h3>
+                    <h3 class="showTitle">all shows</h3>
                     <?php foreach($categories as $catName): ?>
                         <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                             <div class="card entry-container">
