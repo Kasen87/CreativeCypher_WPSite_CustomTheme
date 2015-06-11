@@ -5,6 +5,9 @@ function theme_enqueue_styles(){
     wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js' );
     wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '', true);
     wp_enqueue_script( 'jquery-ui-datepicker', array('jquery'), '', true);
+
+    $translation_array = array( 'templateURL' => get_stylesheet_directory_uri() );
+    wp_localize_script('custom-js', 'object_name', $translation_array);
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles');
 

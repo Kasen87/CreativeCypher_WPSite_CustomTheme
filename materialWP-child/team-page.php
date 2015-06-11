@@ -24,10 +24,10 @@
                 $i = 0;
                 foreach($memberCatLists as $memFilterBtn){
                     if ($i == 0){
-                        echo '<li class="current"><a href="#">All</a></li>';
+                        echo '<li class="current"><a href="#">ALL</a></li>';
                     }else{
                     }
-                    echo '<li class=""> <a href="#">'.$memFilterBtn->name.'</a></li>';
+                    echo '<li class=""> <a href="#">'.strtoupper($memFilterBtn->name).'</a></li>';
                     $i++;
                 }
                 echo '</ul></div>';

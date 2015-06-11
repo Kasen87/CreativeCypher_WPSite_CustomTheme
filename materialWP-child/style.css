@@ -75,6 +75,11 @@ body{
 }
 a:hover {
     text-decoration: none;
+    color: rgba(255,230,0,1);
+}
+
+a {
+    color: #ccac00;
 }
 
 .container {
@@ -443,6 +448,11 @@ a:hover {
 
 .entry-desc hr{
     width: 90%;
+}
+
+.entry-desc p{
+    font-weight:normal;
+    text-align: left;
 }
 
 /* Blog Section Styling */
@@ -848,14 +858,14 @@ div#form-fields {
     padding: 15px;
 }
 
-div#startMem {
+div#startApp {
     margin-top: 25px;
     margin-bottom: 25px;
     width: 75%;
     text-align: center;
 }
 
-div#startMem h4{
+div#startApp h4{
     width: 30%;
     padding: 12px 0 12px 0;
     border: 1px solid #000;
@@ -863,16 +873,16 @@ div#startMem h4{
     border-radius: 0;
 }
 
-div#startMem h4:hover{
+div#startApp h4:hover{
     background-color: #ddbd00;
 }
 
-div#startMem a{
+div#startApp a{
     color: #000;
     padding: 12px 15% 12px 15%;
 }
 
-div#startMem a:hover {
+div#startApp a:hover {
     text-shadow: 1px 1px 1px #555;
     color:#fff;
 }
@@ -886,6 +896,19 @@ div.membership.card {
     font-size: 16px;
 }
 div.membership-form.card {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+div.submit-script.card {
+    padding: 15px;
+    border-radius: 5px;
+}
+.submit-script ul {
+    line-height: 32px;
+    font-size: 16px;
+}
+div.submit-script-form.card {
     padding: 15px;
     border-radius: 5px;
 }
@@ -922,10 +945,12 @@ div.membership-form.card {
 
 .ui-datepicker-prev{
     float:left;
+    cursor: pointer;
 }
 
 .ui-datepicker-next{
     float: right;
+    cursor: pointer;
 }
 
 .ui-datepicker-title{
@@ -954,4 +979,70 @@ div.membership-form.card {
 .ui-datepicker-today a{
     color:#ccac00;
     text-decoration: underline;
+}
+
+/* Section for overlay displays*/
+.overlay-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1000; /* high z-index */
+    background: #000; /* fallback */
+    background: rgba(0,0,0,0.75);
+}
+    .overlay-content {
+        display: none;
+        background: #fff;
+        padding: 1%;
+        width: 40%;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        margin: 0 0 0 -20%; /* add negative left margin for half the width to center the div */
+        cursor: default;
+        z-index: 10001;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.9);
+        line-height: 24px;
+    }
+
+    .overlay-content ul>li em {
+        line-height: 12px;
+    }
+
+    .close-btn {
+        cursor: pointer;
+        border: 1px solid #333;
+        padding: 2% 5%;
+        background: #ccac00; /* fallback */
+        background: -moz-linear-gradient(top,  #ccac00 0%, #ddac00 4%, #ddbd00 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ccac00), color-stop(4%,#ddac00), color-stop(100%,#eece99));
+        background: -webkit-linear-gradient(top,  #ccac00 0%,#ddac00 4%,#ddbd00 100%);
+        background: -o-linear-gradient(top,  #ccac00 0%,#ddac00 4%,#ddbd00 100%);
+        background: -ms-linear-gradient(top,  #ccac00 0%,#ddac00 4%,#ddbd00 100%);
+        background: linear-gradient(to bottom,  #ccac00 0%,#ddac00 4%,#ddbd00 100%);
+        border-radius: 4px;
+        box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
+    .close-btn:hover {
+        background: #ddbd00;
+    }
+
+
+.required{
+    color: #f00;
+}
+ 
+/* media query for most mobile devices */
+@media only screen and (min-width: 0px) and (max-width: 480px){
+ 
+    .overlay-content {
+        width: 96%;
+        margin: 0 2%;
+        left: 0;
+    }
 }
