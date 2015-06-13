@@ -71,8 +71,8 @@
 
                             if ($description != ''){
                                 echo '<div class="entry-desc">';
-                                echo '<h3>'.the_title().'</h3><hr />';
-                                echo '<p>'.$description.'</p>';
+                                echo '<h3>'.strtolower(get_the_title()).'</h3><hr />';
+                                echo $description;
                                 echo '</div>';
                             } else {
 

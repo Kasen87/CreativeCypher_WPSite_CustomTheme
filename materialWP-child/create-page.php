@@ -84,10 +84,10 @@
                     <br/><br />We encourage you to register your concept with the <a href="http://www.wgawregistry.org" alt="Writers Guild of America Website" target="_blank">Writers Guild of America West Registry</a>.</p>
                     <hr/>
                     <h3>requirements</h3>
-                    <ul>
-                        <li>The Creative Cypher must always be accredited for development of the project via our logo and a "In Association with" credit</li>
-                        <li>Project must be SAG-AFTRA</li>
-                    </ul>
+                    
+                        <p>The Creative Cypher must always be accredited for development of the project via our logo and a "In Association with" credit</p>
+                        <!--<li>Project must be SAG-AFTRA</li>-->
+                    
                     <hr />
                     <h3>also, consider these <a class="show-popup" href="#" data-showpopup="scriptTips">tips</a> when creating content for new media.</h3>
                     <h4 class="padTopBotBy10">all information will be treated in confidence</h4>

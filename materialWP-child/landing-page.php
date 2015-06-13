@@ -53,7 +53,7 @@
                 <!-- Social Media Section, feeds from Twitter, Facebook, Instagram @creativeCypher -->
                 <a href="<?php echo get_site_url(); ?>/creations/shows"> <!--Dirty Hardcode, I know... >.< -->
                     <div class="showMore centerMargins">
-                        <h4 class="vertical-align">Show More</h4>
+                        <h4 class="vertical-align">show more</h4>
                     </div>
                 </a>
                 <!--Start Populating an array with all of the categories-->
@@ -61,15 +61,25 @@
                 <?php $args = array('parent' => $catID,'number' => 4); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="singleRow">
-                    <h3 class="showTitle">More Shows</h3>
+                    <h3 class="showTitle">more shows</h3>
                     <?php foreach($categories as $catName): ?>
                         <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                             <div class="card entry-container">
                                 <div class="entry-img">    
-                                    <?php if ( has_post_thumbnail() ) : ?>
-                                        <?php the_post_thumbnail(); ?>
-                                    <?php endif; ?>
+                                    <img alt="<?php echo $catName->name; ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/creations/shows/entry-imgs/<?php echo $catName->slug; ?>.jpg" />
                                 </div>
+                            <?php
+
+                            $description = category_description($catName->cat_ID);
+                            echo '<div class="entry-desc">';
+                            echo '<h3>'.strtolower($catName->name).'</h3><hr />';
+                            if ($description != ''){                                
+                                echo '<p>'.$description.'</p>';
+                                
+                            };
+                            echo '</div>';
+
+                             ?>
                             </div> <!-- .entry-container -->
                         </a><!-- End of the loop-->
                     <?php wp_reset_postdata(); ?>

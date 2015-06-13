@@ -78,7 +78,7 @@ a:hover {
     color: rgba(255,230,0,1);
 }
 
-a {
+a{
     color: #ccac00;
 }
 
@@ -87,7 +87,13 @@ a {
     padding: 0px;
 }
 .navbar {
-    margin-bottom: 0px;   
+    margin-bottom: 0px;
+    font-family: 'League Spartan';
+    font-variant: small-caps;
+}
+
+.navbar-brand h1{
+    font-weight: 900;
 }
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse  {
     margin-left: 30px;   
@@ -180,17 +186,20 @@ a {
 
 .entry-container .entry-img {
     width: 100%;
+    /*height: 100%;*/
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-        
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);       
 }
+
 .entry-img > img {
     display: block;
     margin: 0 auto;
-    height: calc(75vw * 0.25 - 20px);
     overflow: hidden;
 }
 
@@ -201,10 +210,11 @@ a {
 .featuredContainer .entry-container {
     width: 32.3%;
     min-height: 140px;
+    height: calc(80vw * 0.15 - 20px);
 }
 
 .featuredContainer .primaryFeatured{
-    width: 65.5%;
+    width: 65%;
     min-height: 250px;
 }
 
@@ -354,7 +364,7 @@ a {
     box-shadow: none; /*Only Done To See what it Looks like*//*Edit: I like it*/;
 }
 
-.featuredSection h3 {
+.featuredSection h4 {
     font-variant: small-caps;
     margin-bottom: -15px;
     font-size: 300%;
@@ -400,7 +410,6 @@ a {
     overflow: hidden;
 }
 
-
 .seasonContainer > .entry-container > .entry-img {
     position: absolute;
     top: 0;
@@ -439,11 +448,21 @@ a {
 
 }
 
-.entry-desc h4 {
-    color: #fff;
-}
-.entry-desc:hover{
+.entry-desc {
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 85%;
+    left: 0;
     opacity: 1;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.entry-desc h3{
+    line-height: 10px;
 }
 
 .entry-desc hr{
@@ -505,12 +524,16 @@ a {
     display: block;
     margin: 0 auto;
     padding: 0;
-    /*max-height: 200px;*/
     padding-bottom: 25px;
 }
 .singleRow::-webkit-scrollbar {
     display: none;
 }
+
+.singleRow .entry-desc{
+    top: 83%;
+}
+
 .showTitle {
     margin: 0;
     margin-top: 10px;
@@ -533,7 +556,7 @@ a {
 
 .adSpace {
     width: 32.5%;
-    height: 250px;
+    height: 300px;
     background: url("images/ad-placeholder.png") center center;
     background-size: cover;
     box-shadow: none;
@@ -693,7 +716,7 @@ ul#membersPortfolio {
   float: left;
   text-align: justify;
   list-style: none;
-  margin-left: 0;
+  margin-left: 5px;
   width: 100%;
   min-height: 200px;
 }
@@ -702,13 +725,16 @@ ul#membersPortfolio li {
   float: left; 
   margin: 0 10px 10px 0; 
   padding: 5px;
-  width: calc(100% * 0.25 - 15px);
+  width: calc(33% - 20px);
+  height: calc(80vw*0.33 - 20px);
   border: 1px solid #dedede;
 }
 
 ul#membersPortfolio .entry-img {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 ul#membersPortfolio .entry-desc {
@@ -722,6 +748,12 @@ ul#membersPortfolio .entry-desc {
     background-color: #fff;
     color: #000;
     font-weight: bold;
+    line-height: auto;
+    z-index: 2;
+}
+
+div#portfolio .entry-desc h3{
+    line-height: 16px;
 }
 
 ul#membersPortfolio img { 
@@ -1046,3 +1078,4 @@ div.submit-script-form.card {
         left: 0;
     }
 }
+

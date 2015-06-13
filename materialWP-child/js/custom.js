@@ -275,7 +275,7 @@ jQuery(document).ready(function($) {
             //instead of $.post() we are using $.ajax()
             //that's because $.ajax() has more options and flexibly.
             $.ajax({
-              url: templateURL+'/contact/contactCypher.php',
+              url: templateURL+'/contact/contactCypher2.php',
               data: m_data,
               processData: false,
               contentType: false,
