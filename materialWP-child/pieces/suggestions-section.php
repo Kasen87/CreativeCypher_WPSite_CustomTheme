@@ -4,7 +4,7 @@
                 <?php $catID = $myParent->cat_ID; ?>
                 <div class="episodes centerMargins padTopBotBy10">
                     <?//php foreach($categories as $catName): ?>
-                        <h3 class="showTitle"><?php echo $myParent->name; ?></h3>
+                        <h3 class="showTitle"><?php echo strtoupper($myParent->name); ?></h3>
                         <div class="seasonContainer suggest-entry">
                         <?php $postArgs = array(
                             'cat' => $myParent->cat_ID,
@@ -31,8 +31,8 @@
                                         $descContent = apply_filters('the_content', $descContent);
                                     ?>
                                     <div class="entry-desc">
-                                    <h4><?php echo the_title(); ?></h4><hr />
-                                        <p><?php echo $descContent; ?></p>
+                                    <h4><?php echo strtoupper(get_the_title()); ?></h4><hr />
+                                        <!--<p><?php echo $descContent; ?></p>-->
                                     </div>
                                 </div> <!-- .entry-container -->
                                 </a>

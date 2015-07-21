@@ -34,7 +34,7 @@ get_header(); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="episodes centerMargins padTopBotBy10">
                     <?php foreach($categories as $catName): ?>
-                    	<h3 class="showTitle"><?php echo $catName->name; ?></h3>
+                    	<h3 class="showTitle"><?php echo strtoupper($catName->name); ?></h3>
                     	<div class="seasonContainer">
                     	<?php $postArgs = array(
 	                        'cat' => $catName->cat_ID,
@@ -60,7 +60,7 @@ get_header(); ?>
 										$descContent = apply_filters('the_content', $descContent);
 									?>
 									<div class="entry-desc">
-									<h4><?php echo the_title(); ?></h4><hr />
+									<h4><?php echo strtoupper(get_the_title()); ?></h4><hr />
 										<p><?php echo $descContent; ?></p>
 									</div>
 	                            </div> <!-- .entry-container -->

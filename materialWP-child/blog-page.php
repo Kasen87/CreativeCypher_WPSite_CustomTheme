@@ -28,10 +28,10 @@
                             <?php if( $list_of_posts->have_posts() ) : ?>
 
                                     <?php while ( $list_of_posts->have_posts() ) : $list_of_posts->the_post(); ?>
-                                        
+                                            
                                         <div class="card centerMargins blogStyle">
-                                            <h2><?php the_title(); ?></h2>
-                                            <h5>by: <?php the_author(); ?> on <?php echo get_the_date(); ?></h5><hr>
+                                            <h2><?php echo strtoupper( get_the_title() ); ?></h2>
+                                            <h5>BY: <?php echo strtoupper( get_the_author()); ?> ON <?php echo strtoupper(get_the_date()); ?></h5><hr>
 
                                             <div class="blogContent">
                                             <a href="<?php echo the_permalink(); ?>">

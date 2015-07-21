@@ -5,9 +5,6 @@
  * @package materialwp
  */
 ?>
-
-<?php get_template_part('pieces/hero', 'generic'); ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <div class="contentBodyBG">
         <div class="outerContentCont">
@@ -56,23 +53,27 @@
                             echo '<li '.$catClass.'>';
                             echo '<div id="portfolio" class="entry-img" alt="'.get_the_title().'">';
                             if (has_post_thumbnail() ){
-                                the_post_thumbnail();   
+                                the_post_thumbnail();  
                             }else{
                                 //Something 
                             }
-                            
-                            //$targetText = '[ext]';
+
                             $description = get_the_content();
-                            //$description = explode($targetText, $description);
-                            //$blurbContent = $description[0];
-                            //$heroContent = $targetText . $description[1];
-                            //$heroContent = apply_filters('the_content', $heroContent);
                             $description = apply_filters('the_content', $description);
 
                             if ($description != ''){
                                 echo '<div class="entry-desc">';
-                                echo '<h3>'.strtolower(get_the_title()).'</h3><hr />';
+                                echo '<h3>'.strtoupper(get_the_title()).'</h3><hr /><br/>';
+                                echo '<div class="entry-cont">';
                                 echo $description;
+                                echo '</div>';
+                                echo '<div class="socialMediaIcons">';
+                                echo '<a href=""><i class="fa fa-twitter first"></i></a>';
+                                echo '<a href=""><i class="fa fa-facebook"></i></a>';
+                                echo '<a href=""><i class="fa fa-instagram"></i></a>';
+                                echo '<a href=""><i class="fa fa-linkedin"></i></a>';
+                                echo '<a href=""><i class="fa fa-external-link"></i></a>';
+                                echo '</div>';
                                 echo '</div>';
                             } else {
 

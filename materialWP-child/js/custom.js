@@ -3,13 +3,15 @@ jQuery(document).ready(function($) {
     var templateURL = object_name.templateURL;
 	
     //Meant for hover over on member and partner pages...maybe for shows too?
-    $('.entry-img').hover(
+    $('.entry-container, .entry-img').hover(
+        
+        function(){$(this).children(".entry-desc").animate({top:"0%"}, "fast", "swing");
+                    $(this).parent().children(".entry-desc").animate({top:"0%"}, "fast", "swing")},
 
-        function(){$(this).children(".entry-desc").animate({top:"0%"}, "fast", "swing")},
+        function(){$(this).children(".entry-desc").animate({top:"85%"}, "slow", "swing");
+                    $(this).parent().children(".entry-desc").animate({top:"85%"}, "slow", "swing")}
 
-        function(){$(this).children(".entry-desc").animate({top:"85%"}, "slow", "swing")}
-
-        );
+    );
     
 
     //Create Page Functionality
@@ -305,6 +307,24 @@ jQuery(document).ready(function($) {
         $("#result").slideUp();
     });
 
+   var menuClicked = false;
+
+    $(".navbar-collapse.collapse li:last-child").click(function(event){
+
+    event.preventDefault();
+
+    if(menuClicked == false){
+        jQuery("body, html").animate({"margin-left":"-250px"}, 500, 'swing');
+        jQuery("#rightSideMenuContainer").animate({"right":"0"}, 500, 'swing');
+        menuClicked = true;
+    }else
+
+    {
+        jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
+        jQuery("#rightSideMenuContainer").animate({"right":"-250px"}, 500, 'swing');
+        menuClicked = false;
+    }
+    });
 
     });
 
@@ -327,21 +347,6 @@ not yet have a place in the code
     //}, 2000);
 
     //Meant for custom menu functionality(right side menu)
-    /*var menuClicked = false;
-
-    $(".customMenuBtn").click(function($){
-
-    if(menuClicked == false){
-        $("body").animate({"margin-left":"-300px"}, 500, 'swing');
-        $("#rightSideMenu").animate({"right":"0"}, 500, 'swing');
-        menuClicked = true;
-    }else
-
-    {
-        $("body").animate({"margin-left":"0"}, 500, 'swing');
-        $("#rightSideMenu").animate({"right":"-300px"}, 500, 'swing');
-        menuClicked = false;
-    }
-    });//end of customMenuBtn Click function*/
+ //end of customMenuBtn Click function*/
     
 //});//End of document ready functions

@@ -8,7 +8,7 @@
  */
 ?>
 <!--Hero Section-->
-<div class="landingHero">
+<div class="innerContainer">
     <div class="fullViewport">
         <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Bumper_Static_Web.mp4" width="100%" height="100%" autoplay="true">
         </video>
@@ -53,7 +53,7 @@
                 <!-- Social Media Section, feeds from Twitter, Facebook, Instagram @creativeCypher -->
                 <a href="<?php echo get_site_url(); ?>/creations/shows"> <!--Dirty Hardcode, I know... >.< -->
                     <div class="showMore centerMargins">
-                        <h4 class="vertical-align">show more</h4>
+                        <h4 class="vertical-align">SHOW MORE</h4>
                     </div>
                 </a>
                 <!--Start Populating an array with all of the categories-->
@@ -61,7 +61,7 @@
                 <?php $args = array('parent' => $catID,'number' => 4); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="singleRow">
-                    <h3 class="showTitle">more shows</h3>
+                    <h3 class="showTitle">MORE SHOWS</h3>
                     <?php foreach($categories as $catName): ?>
                         <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                             <div class="card entry-container">
@@ -72,7 +72,7 @@
 
                             $description = category_description($catName->cat_ID);
                             echo '<div class="entry-desc">';
-                            echo '<h3>'.strtolower($catName->name).'</h3><hr />';
+                            echo '<h3>'.strtoupper($catName->name).'</h3><hr />';
                             if ($description != ''){                                
                                 echo '<p>'.$description.'</p>';
                                 

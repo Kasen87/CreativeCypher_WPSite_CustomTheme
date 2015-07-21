@@ -3,9 +3,9 @@ if($_POST)
 {   
     require_once(dirname(__FILE__).'\..\..\..\..\wp-load.php');
 
-    $to_email       = "joshua.engel87@gmail.com"; //Recipient email, Replace with own email here
+    $to_email       = "thecreativecypher@gmail.com"; //Recipient email, Replace with own email here
     $from_email     = "no-reply@thecreativecypher.com"; //From email address (eg: no-reply@YOUR-DOMAIN.com)
-    $subject 		= "Message from thecreativecypher.com";
+    $subject 		= "A Message from thecreativecypher.com";
     $attachments    = array(); //get array ready for attachments
     $attachNum      = 0;
     
