@@ -335,6 +335,7 @@ a{
 .fullViewport {
     height: calc(100vh - 60px);
     margin: 0 auto;
+    background-color: #000;
 }
 /* Metrics Section -- Landing Page */
 .metricCard{

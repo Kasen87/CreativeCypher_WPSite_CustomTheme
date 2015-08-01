@@ -3,7 +3,9 @@ jQuery(document).ready(function($) {
     var templateURL = object_name.templateURL;
 	
     //Meant for hover over on all post-types
-    //Currently doesn't use a toggle effect to prevent multiple hover overs
+    //Currently doesn't use a toggle effect to prevent multiple hoverovers
+
+    
     $('.entry-container').hover(
 
         function(){$(this).children(".entry-desc").animate({top:"0%"}, "fast", "swing");
