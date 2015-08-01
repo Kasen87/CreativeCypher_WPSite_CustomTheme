@@ -28,7 +28,7 @@
     <?php $args = array('parent' => $catID,'number' => 4); ?>
     <?php $categories = get_categories($args); ?> 
     <div class="singleRow suggest-entry">
-        <h3 class="showTitle">more shows</h3>
+        <h3 class="showTitle">MORE SHOWS</h3>
         <?php foreach($categories as $catName): ?>
             <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                 <div class="card entry-container">
@@ -66,7 +66,7 @@
     <?php $args = array('parent' => $catID,'number' => 4); ?>
     <?php $categories = get_categories($args); ?> 
     <div class="singleRow suggest-entry">
-        <h3 class="showTitle">more shows</h3>
+        <h3 class="showTitle">MORE MUSIC</h3>
         <?php foreach($categories as $catName): ?>
             <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                 <div class="card entry-container">

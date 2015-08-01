@@ -5,9 +5,6 @@
  * @package materialwp
  */
 ?>
-
-<?php get_template_part('pieces/hero', 'generic'); ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <div class="contentBodyBG">
         <div class="outerContentCont">
@@ -24,10 +21,10 @@
                 $i = 0;
                 foreach($partnerCatLists as $memFilterBtn){
                     if ($i == 0){
-                        echo '<li class="current"><a href="#">All</a></li>';
+                        echo '<li class="current"><a href="#">ALL</a></li>';
                     }else{
                     }
-                    echo '<li class=""> <a href="#">'.$memFilterBtn->name.'</a></li>';
+                    echo '<li class=""> <a href="#">'.strtoupper($memFilterBtn->name).'</a></li>';
                     $i++;
                 }
                 echo '</ul></div>';
@@ -52,33 +49,35 @@
                         }
                         $catClass .= '"';
 
+                            $targetText = 'http';
+                            $description = get_the_content();
+
+                            if($desction != ''){
+                                $description = explode($targetText, $description);
+                                $blurbContent = $description[0];
+                                $heroContent = $targetText . $description[1];
+                                $heroContent = apply_filters('the_content', $heroContent);
+                                $description = apply_filters('the_content', $description);
+                            }
+
                         
-                            echo '<li '.$catClass.'>';
+                            echo '<a href="'.$heroContent.'"><li '.$catClass.'>';
                             echo '<div id="portfolio" class="entry-img" alt="'.get_the_title().'">';
-                            if (has_post_thumbnail() ){
+                            if (has_post_thumbnail()){
                                 the_post_thumbnail();   
                             }else{
                                 //Something 
                             }
-                            
-                            //$targetText = '[ext]';
-                            $description = get_the_content();
-                            //$description = explode($targetText, $description);
-                            //$blurbContent = $description[0];
-                            //$heroContent = $targetText . $description[1];
-                            //$heroContent = apply_filters('the_content', $heroContent);
-                            $description = apply_filters('the_content', $description);
-
+                    
                             if ($description != ''){
                                 echo '<div class="entry-desc">';
-                                echo '<h4>'.the_title().'</h4><hr />';
-                                echo '<p>'.$description.'</p>';
+                                echo '<h4>'.strtoupper(get_the_title()).'</h4><hr />';
                                 echo '</div>';
                             } else {
 
                             }
                             echo '</div>';
-                            echo '</li>';
+                            echo '</li></a>';
                         //this should start the next post in the loop, unless there's not a post
                     }
 

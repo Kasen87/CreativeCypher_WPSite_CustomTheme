@@ -21,8 +21,8 @@
             <div class="innerContainer">
                 <div class="fullShowDescription">
                     <header class="entry-header">
-                        <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?><hr />
-                        <h5><?php echo the_date(); ?>&nbsp;&nbsp;&nbsp;&nbsp;Uploaded by: <?php the_author(); ?></h5>
+                        <h2 class="entry-title"><?php echo strtoupper(get_the_title()); ?></h2><hr />
+                        <h5><?php echo strtoupper(get_the_date()); ?>&nbsp;&nbsp;&nbsp;&nbsp;UPLOADED BY: <?php echo strtoupper(get_the_author()); ?></h5>
                     </header>
                     <div class="entry-content">
                         <p><?php echo $descContent; ?></p>

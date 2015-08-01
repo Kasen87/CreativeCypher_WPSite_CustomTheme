@@ -39,12 +39,16 @@ get_header(); ?>
                 <?php get_template_part( 'about', 'page' ); ?>               
         <?php elseif (is_page('team') ): ?>
                 <?php get_template_part( 'team', 'page' ); ?>
+        <?php elseif (is_page('leadership') ): ?>
+                <?php get_template_part( 'leadership', 'page'); ?>
         <?php elseif (is_page('partners') ): ?>
                 <?php get_template_part( 'partners', 'page' ); ?>
                 
 <!--Create Section -->
          <?php elseif (is_page('create') ): ?>
-                <?php get_template_part( 'create', 'page' ); ?>               
+                <?php get_template_part( 'create', 'page' ); ?>
+         <?php elseif (is_page('events') ): ?>
+                <?php get_template_part( 'events', 'page' ); ?>               
                 
                 <?php else : ?>
                                 

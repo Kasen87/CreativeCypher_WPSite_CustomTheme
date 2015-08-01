@@ -26,7 +26,7 @@
 
             <!--<footer class="entry-footer">-->
                 <!--php edit_post_link( __( 'Edit', 'materialwp' ), '<span class="edit-link">', '</span>' ); 
-            </footer><!-- .entry-footer -->
+            </footer> .entry-footer -->
         </div> <!-- .entry-container -->
     </div> <!-- .card -->
 </article><!-- #post-## -->

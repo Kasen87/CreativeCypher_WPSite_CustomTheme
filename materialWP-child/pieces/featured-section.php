@@ -3,13 +3,13 @@ $args = array(
     'tag_in' => array('featured'),
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 10
+    'posts_per_page' => 7
 );
 
 $list_of_posts = new WP_Query($args); ?>
 
 <div class="card featuredSection">
-    <h4>featured creations</h4>
+    <h4>FEATURED CREATIONS</h4>
         <div class="featuredContainer padTopBotBy10">
                         
         <?php if( $list_of_posts->have_posts() ) : ?>
@@ -29,9 +29,9 @@ $list_of_posts = new WP_Query($args); ?>
                 <div class="card entry-container <?php echo $class; ?>">
 
                     <div class="entry-img">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail(); ?>
-                        <?php endif; ?>
+                        <?php //if ( has_post_thumbnail() ) : ?>
+                            <?php //the_post_thumbnail(); ?>
+                        <?php //endif; ?>
                     </div>
                     <?php //$targetText = '[ext]';
                     $description = get_the_content();
@@ -43,7 +43,7 @@ $list_of_posts = new WP_Query($args); ?>
 
                     if ($description != ''){
                         echo '<div class="entry-desc">';
-                        echo '<h3>'.strtolower(get_the_title()).'</h3><hr />';
+                        echo '<h3>'.strtoupper(get_the_title()).'</h3><hr />';
                         echo $description;
                         echo '</div>';
                     } else {

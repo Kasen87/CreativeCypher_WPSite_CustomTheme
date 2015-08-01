@@ -55,6 +55,8 @@
 		            );
 	        	?>
 
+	        	<!--<i class="fa fa-bars"></i>-->
+
 
 
 	        		<!--<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php  echo home_url( '/' ); ?>">
@@ -65,6 +67,11 @@
 
         		</div> <!-- .navbar-collapse -->
         	</div><!-- /.container -->
+        	<div id='rightSideMenuContainer' <?php if(is_admin_bar_showing()){ 
+        											echo 'style="top:90px"';
+        											}; ?> >
+        	<?php wp_nav_menu( 'sort_column=menu_order&menu_class=rsmContent&theme_location=side-menu' ); ?>
+        	</div>
 		</nav><!-- .navbar .navbar-default -->
 	</header><!-- #masthead -->
 

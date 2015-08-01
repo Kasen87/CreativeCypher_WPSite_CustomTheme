@@ -2,109 +2,146 @@ jQuery(document).ready(function($) {
 
     var templateURL = object_name.templateURL;
 	
-    //Meant for hover over on member and partner pages...maybe for shows too?
-    $('.entry-img').hover(
+    //Meant for hover over on all post-types
+    //Currently doesn't use a toggle effect to prevent multiple hover overs
+    $('.entry-container').hover(
 
-        function(){$(this).children(".entry-desc").animate({top:"0%"}, "fast", "swing")},
+        function(){$(this).children(".entry-desc").animate({top:"0%"}, "fast", "swing");
+                    $(this).parent().children(".entry-desc").animate({top:"0%"}, "fast", "swing")},
 
-        function(){$(this).children(".entry-desc").animate({top:"85%"}, "slow", "swing")}
+        function(){$(this).children(".entry-desc").animate({top:"85%"}, "slow", "swing");
+                    $(this).parent().children(".entry-desc").animate({top:"85%"}, "slow", "swing")}
 
-        );
+    );
     
 
     //Create Page Functionality
-    $('ul#submitNav a').click(function(event){
+    $('ul#submitNav a').click(function(event){  //This function is responsible for the menu functionality, whether it shows a "start application" button, or just cycles through 
 
-        event.preventDefault();
-
+        event.preventDefault(); //Prevent the # click
+        event.stopPropagation();
         if( $(this).children('h3').hasClass('cur') ){
-            
+            //If the menu selected, is already showing then don't reshow the page *This works!*
             return false;
-        }else{
+        }
+        else
+        {
             //Check whether or not stuff is filled out, if so alert the user about leaving!
             //Code here ^ ^ ^ ^
             //
-            $('ul#submitNav .submitCurNav').removeClass('submitCurNav');
-            $('ul#submitNav .cur').removeClass('cur');
-            $(this).addClass('submitCurNav');
-            $(this).parent().addClass('submitCurNav');
-            $(this).children('h3').addClass('cur'); //h3 kept messing the click up
+            $('ul#submitNav .submitCurNav').removeClass('submitCurNav'); //Make the current selected class, not selected
+            $('ul#submitNav .cur').removeClass('cur'); //Make the current li selected class, not selected
+            $(this).addClass('submitCurNav'); //add the *select class* to the current object firing this event
+            $(this).parent().addClass('submitCurNav'); //add to the parent because selecting the children with the below code is being a bitch (I don't like the way I've done this...#potentialIssue)
+            $(this).children('h3').addClass('cur'); //If you clicked the word instead of the button, for some reason it wouldn't read. So we have to add the class to the H3 element inside the button.
 
-            var filterVal = $(this).text().toLowerCase().replace(' ', '-');
+            var filterVal = $(this).text().toLowerCase().replace(' ', '-'); //Convert it to "expected" form for the if-statement below
 
-            $('div#boilerPlate div').each(function(){
-                if(!$(this).hasClass(filterVal)){
+            $('div#boilerPlate div').each(function(){   //cycle through each of the boiler plate sections
+                if(!$(this).hasClass(filterVal)){       //if the section doesn't contain the converted menu name, then fade it out
                     $(this).fadeOut('slow').addClass('hidden');
-                }else{
+                }else{                                  //If it does have it, then fade it in
                     $(this).fadeIn('slow').removeClass('hidden');
                 }          
             })
 
-            $('div#form-fields').fadeOut('slow').addClass('hidden');
-            $('div#form-fields div').each(function(){
-                $(this).fadeOut('slow').addClass('hidden');
+            $('div#form-fields').fadeOut('slow').addClass('hidden'); //Regardless of the above, fade-out all of the form-fields sections
+            
+            $('div#form-fields div').each(function(){               //cycle through each of the form fields
+                $(this).fadeOut('slow').addClass('hidden');             //slowly hide them all!
             });
             
-            $('div#startApp').fadeIn('slow', function(){$("html, body").animate({scrollTop:$('#submitNavCont').offset().top-70+'px'})}).removeClass('hidden');
+            //Fade in the "Start Application button" and slide the page down to the top of the menu (if possible)
+            //Although, the if-possible doesn't actually check to see if it can move the page or not :(
 
-            return false;
+            if ((filterVal == "membership") || (filterVal == "submit-script")){ //If it's membership or submit-script then...do these things
+                $('div#startApp').fadeIn('slow', function(){    //Fade in the "start application button"
+
+                $("html, body").animate({
+                                    scrollTop:$('#submitNavCont').offset().top-70+'px'})}).removeClass('hidden');
+
+                return false;
+            }
+            else
+            {
+                $('div#startApp').fadeOut('slow', function(){    //Fade in the "start application button"
+
+                $("html, body").animate({
+                               scrollTop:$('#submitNavCont').offset().top-70+'px'})}).addClass('hidden');
+
+                startApplication(filterVal);    
+
+                return false;
+            }
+            
         }
         
 
 
     });
 
-    //If start membership application is clicked...
+    //This is the functoin to call if "Start Application" button is clicked
+    //Also, use this to show forms manually without the start appication button
     function startApplication(n){
-       var name = n +'-form';
+       var name = n +'-form';           //Take the supplied name and convert it to the expected format
 
-        $('div#form-fields div').each(function(){
-                
-            if ($(this).hasClass('default')) {
-                $(this).fadeIn('slow').removeClass('hidden');
+        $('div#form-fields').fadeIn('slow', function(){
+            $("html, body").animate({scrollTop:$('#submitNavCont').offset().top-70+'px'})}).removeClass('hidden');
+
+        $('div#form-fields>form div').each(function(){          //Cycle through form-field divs
+            if ($(this).hasClass('default')) {                  //If it is a typical field div... 
+                $(this).fadeIn('slow').removeClass('hidden');   //Show the div
             } else {
-                if (!$(this).hasClass(name)) { //It isn't the membership form then...
+                if (!$(this).hasClass(name)) { //If it doesn't have a class that matches the supplied name above
 
-                    $(this).fadeOut('slow').addClass('hidden');
-                    $(this).find('input').prop("disabled", true);
-                    $(this).find('textarea').prop("disabled", true);
+                    $(this).fadeOut('slow').addClass('hidden');     //Fade it out, and add a 'hidden' to it
+                    $(this).find('input').prop("disabled", true);   //Disable all inputs within the div
+                    $(this).find('textarea').prop("disabled", true);//disable all of the text areas within the div
 
                 }else{
 
-                    $(this).fadeIn('slow').removeClass('hidden');
-                    $(this).find('input').prop("disabled", false);
-                    $(this).find('textarea').prop("disabled", false);
+                    $(this).fadeIn('slow').removeClass('hidden');       //Show the current div
+                    $(this).find('input').prop("disabled", false);      //Enable the inputs within the div
+                    $(this).find('textarea').prop("disabled", false);   //Enable the text-area if there are any
                 }
 
-                if (name == "membership-form" || "submit-script-form"){
-                    var terms = $('input#acceptTerms');
-                    $(terms).parent('label').fadeIn('slow').removeClass('hidden');
-                    $(terms).prop('disabled', false);
+                //This isn't working right now...it still shows up for all of the selected creation pages or none at all
+                var terms = $('input#acceptTerms');                     
+
+                if ((name == "membership-form") || (name =="submit-script-form")){             //If it's a membership or script...
+                    $(terms).parent('label').fadeIn('slow').removeClass('hidden');  //Then show the label for Term Acceptance & button
+                    $(terms).prop('disabled', false);                               //Then enable the button/label
                 }else{
-                    $(terms).parent('label').fadeOut('slow').addClass('hidden');
-                    $(terms).prop('disabled', true);
+                    $(terms).parent('label').fadeOut('slow').addClass('hidden');    //Hide the label and button
+                    $(terms).prop('disabled', true);                                //Then disable the label/button
                 };
             }
         });
     };
 
 
-    $('div#startApp a').click(function(){
+    $('div#startApp a').click(function(){   //this is the click event for "start application" button that shows up
 
-        $('div#boilerPlate div').each(function(){
-            if(!$(this).hasClass('hidden')){
-               $(this).fadeOut('slow').addClass('hidden'); 
+        //This part is meant to hide any currently showing forms or boilerplate divs
+        //For example: user clicked submit script, but meant to apply for membership....
+        $('div#boilerPlate div').each(function(){   //cycle through all boiler-plate divs
+            if(!$(this).hasClass('hidden')){        //If it is shown currently
+               $(this).fadeOut('slow').addClass('hidden');  //Fade it out and hide it
             }else{
                 //Do nothing if it's already hidden
             }
         });
 
-        $('div#form-fields').fadeIn('slow', function(){$("html, body").animate({scrollTop:$('#submitNavCont').offset().top-70+'px'})}).removeClass('hidden');
+        //fade in the form-fields div
+        //and move the window to the top of the menu section
+
+
+        //Figure out which form we're currently on and convert it to an expected form-name
 
         var formName = $('ul#submitNav a.submitCurNav').text().toLowerCase().replace(' ','-');
-        startApplication(formName); //use this to show the right form
+        startApplication(formName); //use this to show the right fields for the form
             
-        $('div#startApp').fadeOut('slow').addClass('hidden');
+        $('div#startApp').fadeOut('slow').addClass('hidden');//hide the "start Application" button
 
         return false;
     });
@@ -305,6 +342,24 @@ jQuery(document).ready(function($) {
         $("#result").slideUp();
     });
 
+   var menuClicked = false;
+
+    $(".navbar-collapse.collapse li:last-child").click(function(event){
+
+    event.preventDefault();
+
+    if(menuClicked == false){
+        jQuery("body, html").animate({"margin-left":"-250px"}, 500, 'swing');
+        jQuery("#rightSideMenuContainer").animate({"right":"0"}, 500, 'swing');
+        menuClicked = true;
+    }else
+
+    {
+        jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
+        jQuery("#rightSideMenuContainer").animate({"right":"-250px"}, 500, 'swing');
+        menuClicked = false;
+    }
+    });
 
     });
 
@@ -327,21 +382,6 @@ not yet have a place in the code
     //}, 2000);
 
     //Meant for custom menu functionality(right side menu)
-    /*var menuClicked = false;
-
-    $(".customMenuBtn").click(function($){
-
-    if(menuClicked == false){
-        $("body").animate({"margin-left":"-300px"}, 500, 'swing');
-        $("#rightSideMenu").animate({"right":"0"}, 500, 'swing');
-        menuClicked = true;
-    }else
-
-    {
-        $("body").animate({"margin-left":"0"}, 500, 'swing');
-        $("#rightSideMenu").animate({"right":"-300px"}, 500, 'swing');
-        menuClicked = false;
-    }
-    });//end of customMenuBtn Click function*/
+ //end of customMenuBtn Click function*/
     
 //});//End of document ready functions

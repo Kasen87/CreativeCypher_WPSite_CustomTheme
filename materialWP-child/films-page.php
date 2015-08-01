@@ -6,8 +6,6 @@
  */
 ?>
 
-<?php get_template_part('pieces/hero', 'generic'); ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <div class="contentBodyBG">
         <div class="outerContentCont">
@@ -16,7 +14,7 @@
                 <?php $args = array('parent' => $catID); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="fullListing centerMargins">
-                    <h3 class="showTitle">all films</h3>
+                    <h3 class="showTitle">ALL FILMS</h3>
                     <?php foreach($categories as $catName):
                     $filmArgs = array(
                                 'cat' => $catName->cat_ID,
@@ -41,8 +39,8 @@
                                         $heroContent = apply_filters('the_content', $heroContent);
                                         $descContent = apply_filters('the_content', $descContent);
                                     ?>
-                                    <div class="entry-desc">
-                                    <h4><?php echo the_title(); ?></h4><hr />
+                                    <div class="entry-desc lineFix">
+                                    <h4><?php echo strtoupper(get_the_title()); ?></h4><hr />
                                         <p><?php echo $descContent; ?></p>
                                     </div>
                             </div> <!-- .entry-container -->
