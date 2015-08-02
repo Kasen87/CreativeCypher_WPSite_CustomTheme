@@ -10,7 +10,7 @@
 <!--Hero Section-->
 <div class="innerContainer">
     <div class="fullViewport">
-        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature.mp4" width="100%" height="100%" autoplay="true">
+        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature_NoAudio.mp4" width="100%" height="100%" autoplay="true">
         </video>
     </div>
 </div>
