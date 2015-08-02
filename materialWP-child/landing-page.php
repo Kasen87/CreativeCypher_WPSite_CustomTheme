@@ -10,7 +10,7 @@
 <!--Hero Section-->
 <div class="innerContainer">
     <div class="fullViewport">
-        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Bumper_Static_Web.mp4" width="100%" height="100%" autoplay="true">
+        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature.mp4" width="100%" height="100%" autoplay="true">
         </video>
     </div>
 </div>
@@ -54,17 +54,13 @@
                 <!--We'll create another section here, to the right of the featured section from above-->
                 <div class="socialMediaSection">
                 </div>
-                <a href="<?php echo get_site_url(); ?>/creations/shows"> <!--Dirty Hardcode, I know... >.< -->
-                    <div class="showMore centerMargins">
-                        <h4 class="vertical-align">SHOW MORE</h4>
-                    </div>
-                </a>
+
                 <!--Start Populating an array with all of the categories-->
                 <?php $catID = get_cat_ID('shows'); ?>
                 <?php $args = array('parent' => $catID,'number' => 4); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="singleRow">
-                    <h3 class="showTitle">MORE SHOWS</h3>
+                    <h3 class="showTitle">OUR SHOWS</h3>
                     <?php foreach($categories as $catName): ?>
                         <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                             <div class="card entry-container">
@@ -88,6 +84,13 @@
                     <?php wp_reset_postdata(); ?>
                     <?php wp_reset_query(); ?>
                     <?php endforeach; ?>
+
+                <!--This is where the show more button should go-->
+                <a href="<?php echo get_site_url(); ?>/creations/shows"> 
+                    <div class="showMore centerMargins">
+                        <h4 class="vertical-align">SHOW MORE</h4>
+                    </div>
+                </a>
                 </div> <!-- .card -->
             </div><!--End of Inner Container-->
         </div><!--End of OuterContentCont-->

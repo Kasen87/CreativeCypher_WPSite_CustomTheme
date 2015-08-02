@@ -29,26 +29,28 @@ $list_of_posts = new WP_Query($args); ?>
                 <div class="card entry-container <?php echo $class; ?>">
 
                     <div class="entry-img">
-                        <?php //if ( has_post_thumbnail() ) : ?>
-                            <?php //the_post_thumbnail(); ?>
-                        <?php //endif; ?>
+                        <?php 
+                        if ( has_post_thumbnail() )
+                            the_post_thumbnail();
+                        ?>
                     </div>
-                    <?php //$targetText = '[ext]';
-                    $description = get_the_content();
-                    //$description = explode($targetText, $description);
-                    //$blurbContent = $description[0];
-                    //$heroContent = $targetText . $description[1];
-                    //$heroContent = apply_filters('the_content', $heroContent);
-                    $description = apply_filters('the_content', $description);
+                    <?php 
+                    $targetText = 'http';
+                    $description = get_the_content();                   //pull the content from the post
+                    $description = explode($targetText, $description);  //Break it at the target delimiter (http)
+                    $blurbContent = $description[0];                    //Store the part before it in the first array element
+                    $description = apply_filters('the_content', $blurbContent); //Apply the wordpress "content" filter to that result
 
-                    if ($description != ''){
-                        echo '<div class="entry-desc">';
-                        echo '<h3>'.strtoupper(get_the_title()).'</h3><hr />';
+                    
+                    echo '<div class="entry-desc">';    //Start the class
+                    echo '<h4>'.strtoupper(get_the_title()).'</h4><hr />';  //Grab the title of the post and make it uppercase
+                    if ($description != ''){            //If there's a description then...
                         echo $description;
-                        echo '</div>';
                     } else {
 
-                    }?>
+                    }
+                    echo '</div>';  //End the entry-desc div earlier
+                    ?>
                 </div> <!-- .entry-container -->
                 </a>
             <?php endwhile; ?>

@@ -335,7 +335,6 @@ a{
 .fullViewport {
     height: calc(100vh - 60px);
     margin: 0 auto;
-    background-color: #000;
 }
 /* Metrics Section -- Landing Page */
 .metricCard{
@@ -387,9 +386,8 @@ a{
 }
 
 .featuredSection h4 {
-    font-variant: small-caps;
-    margin-bottom: 15px;
-    font-size: 300%;
+    padding-top: 20px;
+    font-size: 250%;
 }
 
 .featuredSection > h3 {
@@ -399,11 +397,11 @@ a{
 .showMore {
     display: block;
     background-color: rgba(200,200,200,0.85);
-    width: 89%;
+    width: 99%;
     height: 40px;
     border-radius: 3px;
     box-shadow: 3px 3px 3px #ccc;
-    margin-top: 10px;
+    margin-top: 20px;
     transform: translateX(-0.25%);
     text-align: center;
     
@@ -483,8 +481,9 @@ a{
     font-weight: bold;
 }
 
-.entry-desc h3{
-    /*line-height: 10px;*/
+.entry-desc h4{
+    font-size: 150%;
+    padding-top: 0;
 }
 
 .entry-desc hr{
@@ -546,6 +545,7 @@ a{
     display: block;
     margin: 0 auto;
     padding: 0;
+    padding-top:15px;
     padding-bottom: 25px;
 }
 .singleRow::-webkit-scrollbar {
