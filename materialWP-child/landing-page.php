@@ -10,7 +10,7 @@
 <!--Hero Section-->
 <div class="innerContainer">
     <div class="fullViewport">
-        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature_NoAudio.mp4" width="100%" height="100%" autoplay="true">
+        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature_NoAudio.mp4" width="100%" height="100%" autoplay="true" loop="true">
         </video>
     </div>
 </div>
@@ -50,10 +50,20 @@
                         </div>
                     </div>
                 <?php get_template_part('pieces/featured', 'section'); ?>
-                <!-- Social Media Section, feeds from Twitter, Facebook, Instagram @creativeCypher -->
-                <!--We'll create another section here, to the right of the featured section from above-->
-                <div class="socialMediaSection">
-                </div>
+                    <div class="socialMediaContainer">
+                        <div class="twitterSection">
+                        <a class="twitter-timeline" href="https://twitter.com/CreativeCypher" data-widget-id="627940515179200513" height="50%">Tweets by @CreativeCypher</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                    </div>
+
+                    <div class="socialMediaContainerF">
+                        <div class="facebookSection">
+                            <h4 style="text-align: center; box-shadow: 3px 3px #aaa 3px">facebook feed</h4>
+                        </div>
+                    </div>
+                </div><!--this closing div is for the FeaturedSection div from the above piece-->
+                <!--All social Media should be contained in the above div-->
 
                 <!--Start Populating an array with all of the categories-->
                 <?php $catID = get_cat_ID('shows'); ?>

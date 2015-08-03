@@ -9,7 +9,7 @@ $args = array(
 $list_of_posts = new WP_Query($args); ?>
 
 <div class="card featuredSection">
-    <h4>FEATURED CREATIONS</h4>
+    <h4>RECENT HAPPENINGS</h4>
         <div class="featuredContainer padTopBotBy10">
                         
         <?php if( $list_of_posts->have_posts() ) : ?>
@@ -22,9 +22,9 @@ $list_of_posts = new WP_Query($args); ?>
             <?php if ($c == 1){
                   $class .= 'primaryFeatured'; 
                 }; 
-                if ($c == 2){
-                    echo '<div class="card entry-container adSpace"></div>';
-                }; ?><!--Check to see if there is an adblocker in place first -->
+                //if ($c == 2){
+                    //echo '<div class="card entry-container adSpace"></div>';
+                //}; ?><!--Check to see if there is an adblocker in place first -->
                 <a href="<?php echo the_permalink(); ?>">
                 <div class="card entry-container <?php echo $class; ?>">
 
@@ -58,7 +58,7 @@ $list_of_posts = new WP_Query($args); ?>
             <!-- End of the inside loop for posts within the show! -->
             <div class="clearBoth"></div>
     </div>
- </div> <!-- .card -->
+  <!-- .card FeaturedSection end div back in the landing page code -->
 
 
         <?php else : ?>

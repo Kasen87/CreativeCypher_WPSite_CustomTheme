@@ -150,8 +150,13 @@ a{
     margin: 0 auto;
 }
 
+video{
+    background-color: #000;
+}
+
 .lg-Container > video {
-    width: 100%;
+    width: 100;
+    background-color: #000;
 }
 
 .innerContainer {
@@ -209,17 +214,22 @@ a{
 }
 
 .featuredContainer {
-    width: 100%;
+    width: calc(50% - 10px);
+    float: left;
 }
 
 .featuredContainer .entry-container {
-    width: 32.3%;
+    width: calc(50% - 6px);
     height: calc(80vw * 0.17 - 20px);
 }
 
 .featuredContainer .primaryFeatured{
-    width: 65%;
+    width: calc(100% - 6px);
     min-height: 250px;
+}
+
+.primaryFeatured > .entry-desc {
+    top: 86%;
 }
 
 .slideContainer {
@@ -379,10 +389,18 @@ a{
 
 /* Featured Section */
 .featuredSection {
+    position: relative;
     display: block;
+    height: 100%;
     width: 90%;
     margin: 0 auto;
-    box-shadow: none; /*Only Done To See what it Looks like*//*Edit: I like it*/;
+    box-shadow: none; 
+}
+
+.featuredSection:after{
+    content:"";
+    display: table;
+    clear:both;
 }
 
 .featuredSection h4 {
@@ -455,31 +473,17 @@ a{
 
 .entry-desc{
     position: absolute;
-    color: #fff;
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
-    padding: 10px 0 0 10px;
-    opacity: 0;
-    background-color: rgba(0,0,0,0.50);
-
-    transition: opacity 0.3s;
-
-}
-
-.entry-desc {
-
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 85%;
+    top: 83%;
     left: 0;
     opacity: 1;
     background-color: #fff;
     color: #000;
     font-weight: bold;
+    padding: 10px 0 0 10px;
 }
+
 
 .entry-desc h4{
     font-size: 150%;
@@ -597,7 +601,7 @@ a{
 /*********************** ||| *********************/
 /*********************** VVV *********************/
 
-/************** Maximum Screen Size **************/
+/************** Maximum Screen Size **************/ 
 
 @media screen and (min-width: 1140px){
 .outerContentCont {
@@ -606,6 +610,12 @@ a{
         overflow-x: hidden;
     }
  
+}
+
+@media screen and (min-width: 1139px){
+    .outContentCont {
+        width: 80%;
+    }
 }
 
 /*************************************************/
@@ -780,7 +790,7 @@ ul#membersPortfolio .entry-desc {
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 85%;
+    top: 92%;
     left: 0;
     opacity: 1;
     background-color: #fff;
@@ -1176,10 +1186,6 @@ div.submit-script-form.card {
     min-height: calc(100vh - 240px);
 }
 
-.showDesc {
-    margin-top: -10px;
-}
-
 .lineFix{
     line-height: 20px;
 }
@@ -1215,7 +1221,7 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
 }
 
 .leaderSection .card .entry-desc {
-    top:90%;
+    top:87%;
 }
 
 .leaderSection .card.ceo {
@@ -1233,16 +1239,15 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
     height: 300px;
 }
 
-.directorSection .card .entry-desc {
-    top: 90%;
+.directorSection > .entry-container .entry-desc {
+    top: 89%;
 }
 
 .pull-right {
     margin-right: 30px;
 }
 
-.leaderSection .entry-desc,
-.directorSection .entry-desc {
+/*.directorSection .entry-desc {
 
     position: absolute;
     height: 100%;
@@ -1253,9 +1258,46 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
     color: #000;
     font-weight: bold;
     z-index: 2;
-}
+}*/
 
 .leaderSection .entry-cont,
 .directorSection .entry-cont {
     padding: 5px;
+}
+
+.socialMediaContainer {
+    position: absolute;
+    right: 0;
+    width: calc(50% - 10px);
+    margin-left: calc(100% * 0.005);
+    margin-top: 20px;
+    height: calc(50% - 54px);
+}
+
+.twitterSection {
+    position: relative;
+    height: 100%;
+}
+
+.twitterSection > iframe {
+    position: absolute;
+    height: 100%;
+    box-shadow: 0px 5px 8px #ccc
+}
+
+.facebookSection {
+    position: relative;
+    height: 100%;
+    margin-top: 20px;
+    background-color: #aaa;
+}
+
+.socialMediaContainerF {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: calc(50% - 10px);
+    margin-left: calc(100% * 0.005);
+    margin-top: 20px;
+    height: calc(50% - 50px);
 }

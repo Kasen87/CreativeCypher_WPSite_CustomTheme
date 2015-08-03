@@ -1,18 +1,29 @@
 jQuery(document).ready(function($) {
 
     var templateURL = object_name.templateURL;
+    var curPosition; //Used for the hover-over effects
     
     //Meant for hover over on all post-types
     //Currently doesn't use a toggle effect to prevent multiple hoverovers
 
     
-    $('.entry-container').hover(
+    $('.entry-container, #portfolio').hover(
 
-        function(){$(this).children(".entry-desc").stop(true,false).animate({top:"0%"}, "fast", "swing");
-                    $(this).parent().children(".entry-desc").stop(true,false).animate({top:"0%"}, "fast", "swing")},
-
-        function(){$(this).children(".entry-desc").stop(true,false).animate({top:"85%"}, "slow", "swing");
-                    $(this).parent().children(".entry-desc").stop(true,false).animate({top:"85%"}, "slow", "swing")}
+        //This part slides the entry-desc div up
+        function(){
+            if( $(this).children(".entry-desc").data('isSet') != true){ //Check if the isSet value for the element is true, if not then..
+                curPosition = $(this).children(".entry-desc").css('top');           //Set the curPosition variable to the starting top pos
+                $(this).children(".entry-desc").data('defaultTop', curPosition);    //Attach that value above to the object
+                $(this).children(".entry-desc").data('isSet', true);                //And set the isSet value to true
+            }else{
+                curPosition = $(this).children(".entry-desc").data('defaultTop');   //If isSet is true, make sure we use the starting top Pos from earlier
+            }
+            $(this).children(".entry-desc").stop(true,false).animate({top:"0%"}, "fast", "swing");
+            $(this).parent().children(".entry-desc").stop(true,false).animate({top:"0%"}, "fast", "swing")},
+        //This part slides the entry-desc div down
+        function(){
+            $(this).children(".entry-desc").stop(true,false).animate({top:curPosition}, "fast", "swing");
+            $(this).parent().children(".entry-desc").stop(true,false).animate({top:curPosition}, "fast", "swing")}
 
     );
     
