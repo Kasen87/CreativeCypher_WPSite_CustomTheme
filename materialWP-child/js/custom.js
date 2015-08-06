@@ -361,7 +361,7 @@ jQuery(document).ready(function($) {
             menuClicked = true;
         }else{
             jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
-            jQuery("#rightSideMenuContainer").animate({"right":"-250px"}, 500, 'swing');
+            jQuery("#rightSideMenuContainer").animate({"right":"-200px"}, 500, 'swing');
             menuClicked = false;
         }
     }); //Ends the $("navbar") function above

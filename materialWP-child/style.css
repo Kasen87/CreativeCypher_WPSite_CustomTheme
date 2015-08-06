@@ -59,6 +59,7 @@ ul{
     padding: 0;
 }
 
+
 .card {
     border: none;
 }
@@ -674,12 +675,12 @@ video{
     display: block;
     position: fixed;
     z-index: 5;
-    right: -250px;
+    right: -200px;
     top: 60px;
     padding-top: 25px;
-    width: 250px;
+    width: 200px;
     height: 100vh;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0,0,0,0.7);
 }
 
 .rsmContent li {
@@ -689,7 +690,7 @@ video{
 }
 
 .rsmContent > li > a{
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .rsmContent > li li {
@@ -1407,4 +1408,8 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
     padding-top:15px;
     font-size:100%;
     color:#000;
+}
+
+.sectionBreak{
+    margin-bottom:25px;
 }
