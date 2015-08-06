@@ -371,8 +371,10 @@ jQuery(document).ready(function($) {
         get: 'user',
         userId: 1543147855,
         accessToken: '1543147855.467ede5.2fb001a5cee149e0a87618eba5283bcc',
-        template: ''
-    });
+        sortBy: 'most-recent',
+        resolution: 'standard_resolution',
+        template: '<div class="newPost"><div class="postCaption"><h4>CREATIVE CYPHER</h4><em> @creativecypher</em><br/><hr/><p>{{caption}}</p></div><a href="{{link}}" target="_blank"><img src="{{image}}"/></a></div>'
+        });
 
     userFeed.run();
 });

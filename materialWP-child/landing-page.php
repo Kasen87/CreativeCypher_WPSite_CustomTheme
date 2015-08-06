@@ -61,7 +61,15 @@
 
                     <div class="socialMediaContainerIns">
                         <div id="instagramSection">
-                            <div id="instafeed"></div>
+                            <div class="instaHeader">
+                                <h4>instagram</h4>
+                            </div>
+                            <div class="instaContent">
+                                <div id="instafeed"></div>
+                            </div>
+                            <div class="instaFooter">
+                                <h4>FOLLOW US <a href="http://instagram.com/creativecypher" target="_blank">@CREATIVECYPHER</a></h4>
+                            </div>
                         </div>
                     </div>
                 </div><!--this closing div is for the FeaturedSection div from the above piece-->
