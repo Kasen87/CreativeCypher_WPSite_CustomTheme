@@ -356,11 +356,11 @@ jQuery(document).ready(function($) {
         event.preventDefault();
 
         if(menuClicked == false){
-            jQuery("body, html").animate({"margin-left":"-250px"}, 500, 'swing');
+            //jQuery("body, html").animate({"margin-left":"-250px"}, 500, 'swing');
             jQuery("#rightSideMenuContainer").animate({"right":"0"}, 500, 'swing');
             menuClicked = true;
         }else{
-            jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
+            //jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
             jQuery("#rightSideMenuContainer").animate({"right":"-200px"}, 500, 'swing');
             menuClicked = false;
         }
