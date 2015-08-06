@@ -59,6 +59,9 @@ ul{
     padding: 0;
 }
 
+.card {
+    border: none;
+}
 
 
 /*************************************************/
@@ -180,7 +183,7 @@ video{
     margin-top: 10px;
     margin-left: calc(100% * 0.005);
     overflow: hidden;
-    border: 1px solid rgba(250,230,0, 0.25);
+    /*border: 1px solid rgba(250,230,0, 0.25);*/
     
     /*Transitions*/
     transition: box-shadow 0.3s ease;
@@ -478,16 +481,18 @@ video{
     top: 83%;
     left: 0;
     opacity: 1;
-    background-color: #fff;
-    color: #000;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
     font-weight: bold;
     padding: 10px 0 0 10px;
 }
 
 
-.entry-desc h4{
+.entry-desc h4,
+.entry-desc h3{
     font-size: 150%;
     padding-top: 0;
+    color: #fff;
 }
 
 .entry-desc hr{
@@ -776,6 +781,7 @@ ul#membersPortfolio li {
   width: calc(33% - 20px);
   height: calc(80vw*0.33 - 20px);
   border: 1px solid #dedede;
+  padding: 0;
 }
 
 ul#membersPortfolio .entry-img {
@@ -790,11 +796,11 @@ ul#membersPortfolio .entry-desc {
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 92%;
+    top: 91%;
     left: 0;
     opacity: 1;
-    background-color: #fff;
-    color: #000;
+    background-color: #rgba(0,0,0,0.5);
+    color: #fff;
     font-weight: bold;
     z-index: 2;
 }
@@ -807,7 +813,7 @@ div.socialMediaIcons {
     position: absolute;
     text-align: center;
     bottom: 0;
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);
     left: 50%;
     transform: translate(-50%);
     -webkit-transform: translate(-50%);
@@ -825,6 +831,8 @@ div.socialMediaIcons i {
     padding: 15px;
     margin-left: 5px;
     border-radius: 25px; 
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 div.socialMediaIcons a {
@@ -881,7 +889,6 @@ ul#partnersPortfolio a > li {
   /*border: 1px solid #dedede; */
   float: left; 
   margin: 0 10px 10px 0; 
-  padding: 5px;
   width: calc(33% - 20px);
   height: 200px;
   border: 1px solid #dedede;
@@ -900,7 +907,7 @@ ul#partnersPortfolio .entry-desc {
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 85%;
+    top: 83%;
     left: 0;
 }
 
@@ -917,27 +924,24 @@ ul#partnersPortfolio .entry-desc {
     background-color: #ddbd00;
 }
 
-.submitCurBoiler{
-
-}
-
-.submitCurForm {
-
-}
-
 ul#submitNav {
-    float: left; 
     font-size: 16px; 
     list-style: none;  
-    width: 100%;
+    margin: 0 auto;
+}
+
+ul#submitNav:after{
+    content:"";
+    display: table;
+    clear:both;
 }
 
 ul#submitNav li { 
   float: left;
   display: block;
   line-height: 16px;
-  margin: 10px 10px 0 0;
-  width: calc(100% * 0.25 - 20px);
+  margin-left: calc(10%/4); /*works for now, but need to re-evaluate later*/
+  width: 30%;
   border: 1px solid rgba(250,230,0,1);
   border-radius: 10px;
 }
@@ -954,7 +958,8 @@ ul#submitNav h3 {
       color: #000;
       padding: 25px 0;
       background-color: #ccac00;
-  }
+}
+
 ul#submitNav li.submitCurNav h3, ul#submitNav h3:hover {
     color: #fff;
     text-shadow: 1px 1px 1px #555;
@@ -972,10 +977,7 @@ div#submitNavCont {
     margin-top: 25px;
 }
 
-div#submitNavCont ul{
-    margin-left: 25px;
-}
-
+/*Boiler plate and forms after here */
 div#boilerPlate {
     width: 70%;
     margin-top: 25px;
@@ -985,6 +987,28 @@ div#form-fields {
     width: 70%;
     margin: 25px auto;
     padding: 15px;
+}
+
+/*testing something*/
+div#form-fields p{
+    margin-bottom: 0;
+}
+
+div#form-fields input{
+    word-break: initial;
+}
+
+div#form-fields input,
+div#form-fields textarea,
+div#form-fields select{
+    margin-bottom: 10px;
+    overflow: hidden;
+    resize: none;
+}
+
+/*Specifically for the contact reason section*/
+div.contact-form{
+    margin-bottom: 10px;
 }
 
 div#startApp {
@@ -1181,7 +1205,7 @@ div.submit-script-form.card {
         left: 0;
     }
 }
-
+/*Only used on the "create" or "contact" page*/
 .createInner{
     min-height: calc(100vh - 240px);
 }
@@ -1221,7 +1245,7 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
 }
 
 .leaderSection .card .entry-desc {
-    top:87%;
+    top:88%;
 }
 
 .leaderSection .card.ceo {
@@ -1285,19 +1309,22 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
     box-shadow: 0px 5px 8px #ccc
 }
 
-.facebookSection {
-    position: relative;
-    height: 100%;
-    margin-top: 20px;
-    background-color: #aaa;
-}
-
-.socialMediaContainerF {
+/* Instagram social media plugin on landing page*/
+.socialMediaContainerIns {
     position: absolute;
     top: 50%;
     right: 0;
     width: calc(50% - 10px);
     margin-left: calc(100% * 0.005);
-    margin-top: 20px;
+    margin-top:40px;
     height: calc(50% - 50px);
+    border: 1px dashed red;
 }
+
+#instagramSection {
+    position: relative;
+    height: 100%;
+    border: 1px solid blue;
+    overflow: hidden;
+}
+

@@ -2,11 +2,10 @@ jQuery(document).ready(function($) {
 
     var templateURL = object_name.templateURL;
     var curPosition; //Used for the hover-over effects
-    
-    //Meant for hover over on all post-types
-    //Currently doesn't use a toggle effect to prevent multiple hoverovers
+    var menuClicked = false; //Toggle variable for the right side menu functions
 
-    
+
+    //Allows entry-desc class to raise up when a user hovers over the specific post
     $('.entry-container, #portfolio').hover(
 
         //This part slides the entry-desc div up
@@ -24,11 +23,10 @@ jQuery(document).ready(function($) {
         function(){
             $(this).children(".entry-desc").stop(true,false).animate({top:curPosition}, "fast", "swing");
             $(this).parent().children(".entry-desc").stop(true,false).animate({top:curPosition}, "fast", "swing")}
-
     );
     
 
-    //Create Page Functionality
+    //The "create" Page Functionality
     $('ul#submitNav a').click(function(event){  //This function is responsible for the menu functionality, whether it shows a "start application" button, or just cycles through 
 
         event.preventDefault(); //Prevent the # click
@@ -77,6 +75,7 @@ jQuery(document).ready(function($) {
             }
             else
             {
+
                 $('div#startApp').fadeOut('slow', function(){    //Fade in the "start application button"
 
                 $("html, body").animate({
@@ -88,12 +87,9 @@ jQuery(document).ready(function($) {
             }
             
         }
-        
-
-
     });
 
-    //This is the functoin to call if "Start Application" button is clicked
+    //This is the function to call if "Start Application" button is clicked
     //Also, use this to show forms manually without the start appication button
     function startApplication(n){
        var name = n +'-form';           //Take the supplied name and convert it to the expected format
@@ -116,6 +112,7 @@ jQuery(document).ready(function($) {
                     $(this).fadeIn('slow').removeClass('hidden');       //Show the current div
                     $(this).find('input').prop("disabled", false);      //Enable the inputs within the div
                     $(this).find('textarea').prop("disabled", false);   //Enable the text-area if there are any
+                    $(this).find('select').prop("disabled", false);     //Enable the select option if there are any
                 }
 
                 //This isn't working right now...it still shows up for all of the selected creation pages or none at all
@@ -132,8 +129,8 @@ jQuery(document).ready(function($) {
         });
     };
 
-
-    $('div#startApp a').click(function(){   //this is the click event for "start application" button that shows up
+    //this is the click event for "start application" button that shows up
+    $('div#startApp a').click(function(){  
 
         //This part is meant to hide any currently showing forms or boilerplate divs
         //For example: user clicked submit script, but meant to apply for membership....
@@ -158,9 +155,6 @@ jQuery(document).ready(function($) {
 
         return false;
     });
-
-
-
     
     //Datepicker JQuery object
     $("#datepicker").datepicker();
@@ -188,8 +182,6 @@ jQuery(document).ready(function($) {
         }
 
         return false;
-
-
     });
 
     //Meant for overlay divs
@@ -214,20 +206,19 @@ jQuery(document).ready(function($) {
         showPopup(selectedPopup); //we'll pass in the popup number to our showPopup() function to show which popup we want
     });
        
-        // hide popup when user clicks on close button or if user clicks anywhere outside the container
+    // hide popup when user clicks on close button or if user clicks anywhere outside the container
     $('.close-btn, .overlay-bg').click(function(){
         closePopup();
     });
          
-        // hide the popup when user presses the esc key
+    // hide the popup when user presses the esc key
     $(document).keyup(function(e) {
         if (e.keyCode == 27) { // if user presses esc key
             closePopup();
         }
     });
 
-    //Ajax Call for Submission to Email
-
+    //Ajax Call for Submission to Email below
     //Meant for submit button on the form sections
     $('#target').submit(function(event){
         var proceed = true;
@@ -320,12 +311,19 @@ jQuery(document).ready(function($) {
             }else{
                 m_data.append( 'comActive', false);
             }
+
+            if(form_Name == "contact"){
+                m_data.append('reasonActive', true);
+                m_data.append('contact_reason', $('select[name=contactReason]').val());
+            }else{
+                m_data.append('reasonActive', false);
+            }
             //Last Default data to be collected, one required
 
             //instead of $.post() we are using $.ajax()
             //that's because $.ajax() has more options and flexibly.
             $.ajax({
-              url: templateURL+'/contact/contactCypher2.php',
+              url: templateURL+'/contact/contactCypher.php',
               data: m_data,
               processData: false,
               contentType: false,
@@ -345,8 +343,6 @@ jQuery(document).ready(function($) {
               }
             });         
         }
-
-       
     });
     
     //reset previously set border colors and hide all message on .keyup()
@@ -355,26 +351,31 @@ jQuery(document).ready(function($) {
         $("#result").slideUp();
     });
 
-   var menuClicked = false;
-
     $(".navbar-collapse.collapse li:last-child").click(function(event){
 
-    event.preventDefault();
+        event.preventDefault();
 
-    if(menuClicked == false){
-        jQuery("body, html").animate({"margin-left":"-250px"}, 500, 'swing');
-        jQuery("#rightSideMenuContainer").animate({"right":"0"}, 500, 'swing');
-        menuClicked = true;
-    }else
+        if(menuClicked == false){
+            jQuery("body, html").animate({"margin-left":"-250px"}, 500, 'swing');
+            jQuery("#rightSideMenuContainer").animate({"right":"0"}, 500, 'swing');
+            menuClicked = true;
+        }else{
+            jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
+            jQuery("#rightSideMenuContainer").animate({"right":"-250px"}, 500, 'swing');
+            menuClicked = false;
+        }
+    }); //Ends the $("navbar") function above
 
-    {
-        jQuery("body, html").animate({"margin-left":"0"}, 500, 'swing');
-        jQuery("#rightSideMenuContainer").animate({"right":"-250px"}, 500, 'swing');
-        menuClicked = false;
-    }
+    //This is for the instagram feed on the landing page
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: 1543147855,
+        accessToken: '1543147855.467ede5.2fb001a5cee149e0a87618eba5283bcc',
+        template: ''
     });
 
-    });
+    userFeed.run();
+});
 
 /*
 -------------------------------------------------

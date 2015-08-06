@@ -7,10 +7,11 @@
  * @package materialwp
  */
 ?>
+
 <!--Hero Section-->
 <div class="innerContainer">
     <div class="fullViewport">
-        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature_NoAudio.mp4" width="100%" height="100%" autoplay="true" loop="true">
+        <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature_NoAudio.mp4" width="100%" height="auto" autoplay="true" loop="true">
         </video>
     </div>
 </div>
@@ -20,7 +21,7 @@
     <div class="contentBodyBG">
         <div class="outerContentCont">
             <div class="innerContainer padTopBotBy10">
-                <div class="card metricCard centerMargins">
+               <!-- <div class="card metricCard centerMargins">
                     <div class="metricsSection">
                             <div class="metricBox">
                                 <h1>1.2M</h1>
@@ -48,18 +49,19 @@
                             </div>
                             <div class="clear"></div>
                         </div>
-                    </div>
+                    </div>-->
                 <?php get_template_part('pieces/featured', 'section'); ?>
                     <div class="socialMediaContainer">
                         <div class="twitterSection">
                         <a class="twitter-timeline" href="https://twitter.com/CreativeCypher" data-widget-id="627940515179200513" height="50%">Tweets by @CreativeCypher</a>
+                            <!--Not entirely sure this script can be moved, but if it can...i plan on moving it very very soon.-->
                             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                         </div>
                     </div>
 
-                    <div class="socialMediaContainerF">
-                        <div class="facebookSection">
-                            <h4 style="text-align: center; box-shadow: 3px 3px #aaa 3px">facebook feed</h4>
+                    <div class="socialMediaContainerIns">
+                        <div id="instagramSection">
+                            <div id="instafeed"></div>
                         </div>
                     </div>
                 </div><!--this closing div is for the FeaturedSection div from the above piece-->
@@ -70,7 +72,7 @@
                 <?php $args = array('parent' => $catID,'number' => 4); ?>
                 <?php $categories = get_categories($args); ?> 
                 <div class="singleRow">
-                    <h3 class="showTitle">OUR SHOWS</h3>
+                    <h3 class="showTitle">SHOWS</h3>
                     <?php foreach($categories as $catName): ?>
                         <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                             <div class="card entry-container">

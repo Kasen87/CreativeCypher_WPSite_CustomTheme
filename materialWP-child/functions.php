@@ -3,8 +3,13 @@
 function theme_enqueue_styles(){
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+    
     wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js' );
-    wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '', true);
+    wp_register_script( 'instafeed-js', get_stylesheet_directory_uri() . '/js/instafeed.js' );
+    
+    wp_enqueue_script( 'instafeed-js', get_stylesheet_directory_uri() . '/js/instafeed.js', false, '', true);
+    wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery', 'instafeed-js'), '', true);
+
     wp_enqueue_script( 'jquery-ui-datepicker', array('jquery'), '', true);
 
     $translation_array = array( 'templateURL' => get_stylesheet_directory_uri() );
@@ -67,5 +72,7 @@ function add_googleanalytics() { ?>
 
 <?php 
     } //Ends tthe add_googleanalytics function from above
+
+    
 
 ?>

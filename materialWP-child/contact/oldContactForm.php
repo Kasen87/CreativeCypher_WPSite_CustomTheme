@@ -1,13 +1,9 @@
 <?php
 if($_POST)
-{   
-    require_once(dirname(__FILE__).'\..\..\..\..\wp-load.php');
-
+{
     $to_email       = "joshua.engel87@gmail.com"; //Recipient email, Replace with own email here
     $from_email     = "no-reply@thecreativecypher.com"; //From email address (eg: no-reply@YOUR-DOMAIN.com)
-    //$subject 		= "A Message from thecreativecypher.com";
-    $attachments    = array(); //get array ready for attachments
-    $attachNum      = 0;
+    $subject 		= "Message from thecreativecypher.com";
     
     //check if its an ajax request, exit if not
 if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -33,7 +29,6 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQ
     $scrActive				= filter_var($_POST["scrActive"], FILTER_SANITIZE_STRING);
     $memActive				= filter_var($_POST["memActive"], FILTER_SANITIZE_STRING);
     $comActive				= filter_var($_POST["comActive"], FILTER_SANITIZE_STRING);
-    $reaActive             = filter_var($_POST["reasonActive"], FILTER_SANITIZE_STRING);
 
    	//All Default and Optional Info
     if($comActive == 'true'){
@@ -84,12 +79,6 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQ
     if(isset($user_script_title)){
     	$message_body .= "Script Title: ".$user_script_title."\r\n"."Script Logline: ".$user_script_logline."\r\n"."Medium: ".$user_script_medium."\r\n"."Synopsis: "."\r\n\r\n".$user_script_synopsis."\r\n";
     }
-
-    //If it's the general contact form, then this will be passed in as true
-    //We need to set the subject of the message to the appropriate text
-    if(isset($reaActive)){
-        $subject = filter_var($_POST["contact_reason"], FILTER_SANITIZE_STRING)." "."from thecreativecypher.com";
-    }
     
     $message_body .= 'Comments/Questions: '.$comment_question."\r\n\r\n".$first_name." ".$last_name."\r\nEmail : ".$user_email."\r\n";
  
@@ -125,14 +114,14 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQ
             die($output); 
         }
         
-        $attachNum++;
         //read from the uploaded file & base64_encode content for the mail
-        move_uploaded_file($headS_tmp_name, WP_CONTENT_DIR.'/uploads/'.basename($headS_name));
-        $attachments[$attachNum] = (WP_CONTENT_DIR."/uploads/".$headS_name);
+        $handle = fopen($headS_tmp_name, "r");
+        $content = fread($handle, $headS_size);
+        fclose($handle);
+        $headS_encoded_content = chunk_split(base64_encode($content));
         //now we know we have the file for attachment, set $file_attached to true
         $file_attached = true;
         $headshot_attached = true;
-        var_dump('Attachments are: #'.$attachNum);
     }
     if(isset($_FILES['user_recommendation'])) //check uploaded file
     {
@@ -158,14 +147,13 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQ
         }
         
         //read from the uploaded file & base64_encode content for the mail
-        $attachNum++;
-        //read from the uploaded file & base64_encode content for the mail
-        move_uploaded_file($recA_tmp_name, WP_CONTENT_DIR.'/uploads/'.basename($recA_name));
-        $attachments[$attachNum] = (WP_CONTENT_DIR."/uploads/".$recA_name);
+        $handle = fopen($recA_tmp_name, "r");
+        $content = fread($handle, $recA_size);
+        fclose($handle);
+        $recA_encoded_content = chunk_split(base64_encode($content));
         //now we know we have the file for attachment, set $file_attached to true
         $file_attached = true;
         $recommendation_attached = true;
-        var_dump('Attachments are: #'.$attachNum);
     }
    	if(isset($_FILES['user_script01'])) //check uploaded file
     {
@@ -264,7 +252,7 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQ
         $script03_attached = true;
     }   
 
-/*    if($file_attached) //continue if we have the file
+    if($file_attached) //continue if we have the file
     {
         # Mail headers should work with most clients
         $headers = "MIME-Version: 1.0\r\n";
@@ -342,16 +330,13 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQ
     	$headers .= "--".md5('boundary1')."--";
     }else{
         //proceed with PHP email.
-
-    }*/
-
-    $headers = 'From: '.$first_name.' '.$last_name.'' . "\r\n" .
-    'Reply-To: '.$user_email.'' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+        $headers = 'From: '.$first_name.' '.$last_name.'' . "\r\n" .
+        'Reply-To: '.$user_email.'' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    }
    
-   	var_dump($headers, $to_email, $subject, $message_body, $attachments);
-    $send_mail = wp_mail($to_email, $subject, $message_body, $headers, $attachments);
-
+   	var_dump($headers, $to_email, $subject, $message_body);
+    $send_mail = mail($to_email, $subject, $message_body, $headers);
 
     if(!$send_mail)
     {
