@@ -61,7 +61,9 @@
                             }
 
                             if( get_field("external_link") ){                                    
-                                echo '<a href="'.get_field( "external_link" ).'">';
+                                echo '<a href="'.get_field( "external_link" ).'" target="_blank">';
+                            }else{
+                                echo '<a href="#">';
                             }
                             echo '<li '.$catClass.'>';
                             echo '<div id="portfolio" class="entry-img" alt="'.get_the_title().'">';

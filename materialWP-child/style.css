@@ -95,7 +95,7 @@ a{
     margin-bottom: 0px;
     font-family: 'League Spartan';
     font-variant: small-caps;
-    font-size: 125%;
+
 }
 
 .navbar-brand h1{
@@ -625,12 +625,16 @@ video{
 .twitterSection{
     width:100%;
 }
+
+.entry-desc{
+    top:85%;
+}
  
 }
 
-@media screen and (min-width:1001px) and (max-width: 1359px) {
+@media screen and (min-width:1200px) and (max-width: 1359px) {
     .outerContentCont {
-        width: 960px;
+        width: 1024px;
         margin: 0 auto;
         overflow-x: hidden;
     }
@@ -640,7 +644,7 @@ video{
 
 }
 
-@media screen and (min-width:801px) and (max-width: 1000px){
+@media screen and (min-width:901px) and (max-width: 1199px){
     .outerContentCont {
         width: 720px;
         margin: 0 auto;
@@ -739,7 +743,7 @@ video{
     padding-top: 25px;
     width: 200px;
     height: 100vh;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
 }
 
 .rsmContent li {
