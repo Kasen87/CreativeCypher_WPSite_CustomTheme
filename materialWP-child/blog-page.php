@@ -12,8 +12,6 @@
     <div class="contentBodyBG">
         <div class="outerContentCont">
             <div class="innerContainer">
-    
-                
                 <!--Start Populating an array with all of the categories-->
                   <div class="card centerMargins padTopBotBy10">
                       <!-- Start of the inside loop for posts within the show! -->                            

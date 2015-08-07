@@ -50,11 +50,21 @@
                                     };
                                     echo '</div>';
                                     echo '<div class="socialMediaIcons">';
-                                    echo '<a href=""><i class="fa fa-twitter first"></i></a>';
-                                    echo '<a href=""><i class="fa fa-facebook"></i></a>';
-                                    echo '<a href=""><i class="fa fa-instagram"></i></a>';
-                                    echo '<a href=""><i class="fa fa-linkedin"></i></a>';
-                                    echo '<a href=""><i class="fa fa-external-link"></i></a>';
+                                    if( get_field("twitter") ){                                    
+                                        echo '<a href="'.get_field( "twitter" ).'"><i class="fa fa-twitter first"></i></a>';
+                                    }
+                                    if( get_field("facebook") ){                                    
+                                        echo '<a href="'.get_field( "facebook" ).'"><i class="fa fa-facebook"></i></a>';
+                                    }
+                                    if( get_field("instagram") ){                                    
+                                        echo '<a href="'.get_field( "instagram" ).'"><i class="fa fa-instagram"></i></a>';
+                                    }
+                                    if( get_field("linkedin") ){                                    
+                                        echo '<a href="'.get_field( "linkedin" ).'"><i class="fa fa-linkedin"></i></a>';
+                                    }
+                                    if( get_field("external_link") ){                                    
+                                        echo '<a href="'.get_field( "external_link" ).'"><i class="fa fa-external-link"></i></a>';
+                                    }
                                     echo '</div>';
                                     echo '</div>';
                                     ?>  

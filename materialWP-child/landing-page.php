@@ -9,7 +9,7 @@
 ?>
 
 <!--Hero Section-->
-<div class="innerContainer">
+<div class="innerContainer altBGColor">
     <div class="fullViewport">
         <video src="<?php echo get_stylesheet_directory_uri(); ?>/videos/CC_Landing_Feature_NoAudio.mp4" width="100%" height="auto" autoplay="true" loop="true">
         </video>

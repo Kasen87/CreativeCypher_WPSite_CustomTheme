@@ -60,8 +60,10 @@
                                 $description = apply_filters('the_content', $description);
                             }
 
-                        
-                            echo '<a href="'.$heroContent.'"><li '.$catClass.'>';
+                            if( get_field("external_link") ){                                    
+                                echo '<a href="'.get_field( "external_link" ).'">';
+                            }
+                            echo '<li '.$catClass.'>';
                             echo '<div id="portfolio" class="entry-img" alt="'.get_the_title().'">';
                             if (has_post_thumbnail()){
                                 the_post_thumbnail();   

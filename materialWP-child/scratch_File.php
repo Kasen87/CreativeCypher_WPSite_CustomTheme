@@ -170,7 +170,7 @@
     height: 100%;
     z-index: 9999;
     padding-top: 20px;
-    color: rgba(250,230,0,1);
+    color: #D3BD40;
 }
 
 .rsMenu > li{
@@ -204,7 +204,7 @@
     margin-left: -50px;
 }
 .rsMenu > li a:hover {
-    background-color: rgba(250,230,0,1);
+    background-color: #D3BD40;
 }
 
 <!-- End of Side Menu Section -->

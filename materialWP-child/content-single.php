@@ -30,12 +30,11 @@
     <div class="singleRow suggest-entry">
         <h3 class="showTitle">MORE SHOWS</h3>
         <?php foreach($categories as $catName): ?>
+            <!--I'm running this check-->
             <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                 <div class="card entry-container">
                     <div class="entry-img">    
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail(); ?>
-                        <?php endif; ?>
+                        <img alt="<?php echo $catName->name; ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/creations/shows/entry-imgs/<?php echo $catName->slug; ?>.jpg" />
                     </div>
                 </div> <!-- .entry-container -->
             </a><!-- End of the loop-->
@@ -71,9 +70,7 @@
             <a href="<?php echo get_site_url() . '/category/' . get_cat_name($catName->parent) . '/' . $catName->slug; ?>">
                 <div class="card entry-container">
                     <div class="entry-img">    
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail(); ?>
-                        <?php endif; ?>
+                        <img alt="<?php echo $catName->name; ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/creations/shows/entry-imgs/<?php echo $catName->slug; ?>.jpg" />
                     </div>
                 </div> <!-- .entry-container -->
             </a><!-- End of the loop-->

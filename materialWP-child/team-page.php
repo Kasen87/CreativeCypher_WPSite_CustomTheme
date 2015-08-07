@@ -61,23 +61,34 @@
                             $description = get_the_content();
                             $description = apply_filters('the_content', $description);
 
-                            if ($description != ''){
+                            
                                 echo '<div class="entry-desc">';
-                                echo '<h3>'.strtoupper(get_the_title()).'</h3><hr /><br/>';
+                                echo '<h3>'.strtoupper(get_the_title()).'</h3><hr />';
+                            if ($description != ''){
                                 echo '<div class="entry-cont">';
                                 echo $description;
                                 echo '</div>';
-                                echo '<div class="socialMediaIcons">';
-                                echo '<a href=""><i class="fa fa-twitter first"></i></a>';
-                                echo '<a href=""><i class="fa fa-facebook"></i></a>';
-                                echo '<a href=""><i class="fa fa-instagram"></i></a>';
-                                echo '<a href=""><i class="fa fa-linkedin"></i></a>';
-                                echo '<a href=""><i class="fa fa-external-link"></i></a>';
-                                echo '</div>';
-                                echo '</div>';
                             } else {
-
+                                //Do nothing basically....maybe fill in a placeholder?
                             }
+                            echo '<div class="socialMediaIcons">';
+                                if( get_field("twitter") ){                                    
+                                    echo '<a href="'.get_field( "twitter" ).'"><i class="fa fa-twitter first"></i></a>';
+                                }
+                                if( get_field("facebook") ){                                    
+                                    echo '<a href="'.get_field( "facebook" ).'"><i class="fa fa-facebook"></i></a>';
+                                }
+                                if( get_field("instagram") ){                                    
+                                    echo '<a href="'.get_field( "instagram" ).'"><i class="fa fa-instagram"></i></a>';
+                                }
+                                if( get_field("linkedin") ){                                    
+                                    echo '<a href="'.get_field( "linkedin" ).'"><i class="fa fa-linkedin"></i></a>';
+                                }
+                                if( get_field("external_link") ){                                    
+                                    echo '<a href="'.get_field( "external_link" ).'"><i class="fa fa-external-link"></i></a>';
+                                }
+                            echo '</div>';
+                            echo '</div>'; //Ends entry-desc container
                             echo '</div>';
                             echo '</li>';
                         //this should start the next post in the loop, unless there's not a post

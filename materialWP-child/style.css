@@ -80,11 +80,11 @@ body{
 a:hover,
 a:visited {
     text-decoration: none;
-    color: rgba(255,230,0,1);
+    color: #e6d035;
 }
 
 a{
-    color: #ccac00;
+    color: #D3BD40;
 }
 
 .container {
@@ -95,6 +95,7 @@ a{
     margin-bottom: 0px;
     font-family: 'League Spartan';
     font-variant: small-caps;
+    font-size: 125%;
 }
 
 .navbar-brand h1{
@@ -105,7 +106,7 @@ a{
 }
 .navbar.navbar, .navbar-default.navbar {
     background-color: #000;
-    color: rgba(255, 230, 0, 1);
+    color: #D3BD40;
 }
 .navbar-right {
     margin-right: 0px;
@@ -116,13 +117,13 @@ a{
 }
 .dropdown-menu>.active>a {
     color: #000;
-    background-color: rgba(250,230,0,1);
+    background-color: #D3BD40;
 }
 .dropdown-menu>.active>a:hover {
-    background-color: rgba(250,230,0,1);   
+    background-color: #e6d035 !important;   
 }
 .dropdown-menu>li>a:hover{
-    color: rgba(250,230,0,1);
+    color: #e6d035;
 }
 .row {
     margin-left: 0px;
@@ -137,7 +138,7 @@ a{
 }
 .site-footer {
     background-color: #000;
-    color: rgba(255,230,0,1);
+    color: #D3BD40;
 }
 
 /*************************************************/
@@ -169,6 +170,10 @@ video{
     margin-right: auto;
     background-color: #fff;
     overflow: hidden;
+}
+
+.altBGColor {
+    background-color: #000;
 }
 
 /* Containers for the Entries */
@@ -347,7 +352,8 @@ video{
 
 /* Landing Page Section */
 .fullViewport {
-    height: calc(100vh - 60px);
+    height: 100%;
+    max-height: calc(100vh - 60px);
     margin: 0 auto;
 }
 /* Metrics Section -- Landing Page */
@@ -479,10 +485,10 @@ video{
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 83%;
+    top: 82%;
     left: 0;
     opacity: 1;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
     color: #fff;
     font-weight: bold;
     padding: 10px 0 0 10px;
@@ -494,6 +500,7 @@ video{
     font-size: 150%;
     padding-top: 0;
     color: #fff;
+    line-height: initial;
 }
 
 .entry-desc hr{
@@ -609,18 +616,70 @@ video{
 
 /************** Maximum Screen Size **************/ 
 
-@media screen and (min-width: 1140px){
+@media screen and (min-width: 1360px){
 .outerContentCont {
         width: 1200px;
         margin: 0 auto;
         overflow-x: hidden;
     }
+.twitterSection{
+    width:100%;
+}
  
 }
 
-@media screen and (min-width: 1139px){
-    .outContentCont {
-        width: 80%;
+@media screen and (min-width:1001px) and (max-width: 1359px) {
+    .outerContentCont {
+        width: 960px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+    .twitterSection{
+    width:100%;
+}
+
+}
+
+@media screen and (min-width:801px) and (max-width: 1000px){
+    .outerContentCont {
+        width: 720px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+    .twitterSection{
+    width:100%;
+}
+
+.featuredContainer .entry-container {
+    width: 100%;
+    height: calc(80vw * 0.17 - 20px);
+}
+}
+
+@media screen and (min-width:460px) and (max-width: 800px){
+    .outerContentCont {
+        width: 640px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+    .twitterSection{
+    width:100%;
+}
+    .admin-bar-adjust{
+        top: 45px;
+    }
+
+    .featuredContainer .entry-container {
+    width: 100%;
+    height: calc(80vw * 0.17 - 20px);
+}
+}
+
+@media screen and (min-width:300px) and (max-width:459px){
+    .outerContentCont {
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
     }
 }
 
@@ -800,7 +859,7 @@ ul#membersPortfolio .entry-desc {
     top: 91%;
     left: 0;
     opacity: 1;
-    background-color: #rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     color: #fff;
     font-weight: bold;
     z-index: 2;
@@ -855,7 +914,7 @@ div#portfolio a:hover {
 }
 
 div.entry-cont {
-    height: 75%;
+    height: 71%;
     overflow: hidden;
 }
 
@@ -943,7 +1002,7 @@ ul#submitNav li {
   line-height: 16px;
   margin-left: calc(10%/4); /*works for now, but need to re-evaluate later*/
   width: 30%;
-  border: 1px solid rgba(250,230,0,1);
+  border: 1px solid #D3BD40;
   border-radius: 10px;
 }
 ul#submitNav li:last-child { 
@@ -1412,4 +1471,8 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
 
 .sectionBreak{
     margin-bottom:25px;
+}
+
+.entry-title{
+    width: 85%;
 }
