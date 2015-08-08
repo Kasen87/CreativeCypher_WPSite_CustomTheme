@@ -72,14 +72,17 @@
                             }else{
                                 //Something 
                             }
-                    
+                            echo '<div class="entry-desc">';
+                            echo '<h4>'.strtoupper(get_the_title()).'</h4><hr />';
+                                
                             if ($description != ''){
-                                echo '<div class="entry-desc">';
-                                echo '<h4>'.strtoupper(get_the_title()).'</h4><hr />';
-                                echo '</div>';
+                                echo '<div class="entry-cont">';
+                                echo $description;
+                                echo '</div>';  
                             } else {
-
+                                //Do nothing basically
                             }
+                            echo '</div>'; //Ends entry-desc container
                             echo '</div>';
                             echo '</li></a>';
                         //this should start the next post in the loop, unless there's not a post

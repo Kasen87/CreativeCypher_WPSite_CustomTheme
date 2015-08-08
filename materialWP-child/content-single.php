@@ -36,6 +36,18 @@
                     <div class="entry-img">    
                         <img alt="<?php echo $catName->name; ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/creations/shows/entry-imgs/<?php echo $catName->slug; ?>.jpg" />
                     </div>
+                <?php
+
+                $description = category_description($catName->cat_ID);
+                echo '<div class="entry-desc">';
+                echo '<h3>'.strtoupper($catName->name).'</h3><hr />';
+                if ($description != ''){                                
+                    echo '<p>'.$description.'</p>';
+                    
+                };
+                echo '</div>';
+
+                 ?>
                 </div> <!-- .entry-container -->
             </a><!-- End of the loop-->
         <?php wp_reset_postdata(); ?>
