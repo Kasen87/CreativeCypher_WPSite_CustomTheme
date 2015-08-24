@@ -90,7 +90,7 @@
                             <?php
 
                             $description = category_description($catName->cat_ID);
-                            echo '<div class="entry-desc">';
+                            echo '<div class="entry-desc triColumnMod">';
                             echo '<h4>'.strtoupper($catName->name).'</h4><hr />';
                             if ($description != ''){                                
                                 echo '<p>'.$description.'</p>';
