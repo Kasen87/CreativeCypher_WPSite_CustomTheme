@@ -29,7 +29,11 @@
                 }
                 echo '</ul></div>';
                 echo '<div class="centerMargins">';
-                $partnerPostList = new WP_Query('category_name=Partners');
+                $partnersArgs = array( 'category_name' => 'Partners',
+                                        'post_status' => 'publish',
+                                        'posts_per_page' => -1,
+                                        'nopaging' => true);
+                $partnerPostList = new WP_Query($partnersArgs);
                 if ($partnerPostList->have_posts()) {
                     echo '<ul id="partnersPortfolio" class="centerMargins">';
 

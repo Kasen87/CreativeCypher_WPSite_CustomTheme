@@ -19,7 +19,9 @@
                     $musicArgs = array(
                                 'cat' => $catName->cat_ID,
                                 'post_type' => 'post',
-                                'post_status' => 'publish');
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1,
+                                'nopaging' => true);
                      $musicPost = new WP_Query($musicArgs);
                      if ($musicPost->have_posts() ) :
                         while ($musicPost->have_posts() ) : $musicPost->the_post(); ?>

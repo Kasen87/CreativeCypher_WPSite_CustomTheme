@@ -19,7 +19,9 @@
                     $filmArgs = array(
                                 'cat' => $catName->cat_ID,
                                 'post_type' => 'post',
-                                'post_status' => 'publish');
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1,
+                                'nopaging' => true);
                      $filmPost = new WP_Query($filmArgs);
                      if ($filmPost->have_posts() ) :
                         while ($filmPost->have_posts() ) : $filmPost->the_post(); ?>
@@ -39,7 +41,7 @@
                                         $heroContent = apply_filters('the_content', $heroContent);
                                         $descContent = apply_filters('the_content', $descContent);
                                     ?>
-                                    <div class="entry-desc lineFix">
+                                    <div class="entry-desc triColumnMod">
                                     <h4><?php echo strtoupper(get_the_title()); ?></h4><hr />
                                         <p><?php echo $descContent; ?></p>
                                     </div>

@@ -29,7 +29,11 @@
                 }
                 echo '</ul></div>';
                 echo '<div class="">';
-                $memberPostList = new WP_Query('category_name=team');
+                $memArgs = array('category_name' => 'team',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => -1,
+                                    'nopaging' => true);
+                $memberPostList = new WP_Query($memArgs);
                 if ($memberPostList->have_posts()) {
                     echo '<ul id="membersPortfolio" class="centerMargins">';
 
@@ -63,7 +67,7 @@
 
                             
                                 echo '<div class="entry-desc">';
-                                echo '<h3>'.strtoupper(get_the_title()).'</h3><hr />';
+                                echo '<h4>'.strtoupper(get_the_title()).'</h4><hr />';
                             if ($description != ''){
                                 echo '<div class="entry-cont">';
                                 echo $description;

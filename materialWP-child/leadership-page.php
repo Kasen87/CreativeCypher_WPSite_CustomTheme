@@ -43,7 +43,7 @@
                                     $description = get_the_content();
                                     $description = apply_filters('the_content', $description);
                                     echo '<div class="entry-desc">';
-                                    echo '<h3>'.strtoupper(get_the_title()).' , '.strtoupper($catName->name).'</h3><hr />';
+                                    echo '<h4>'.strtoupper(get_the_title()).' , '.strtoupper($catName->name).'</h4><hr />';
                                     echo '<div class="entry-cont">';
                                     if ($description != ''){                                
                                         echo '<p>'.$description.'</p>';                                

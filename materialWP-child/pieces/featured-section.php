@@ -1,6 +1,6 @@
 <?php 
 $args = array(
-    'tag_in' => array('featured'),
+    'tag' => 'featured',
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => 7
@@ -44,7 +44,9 @@ $list_of_posts = new WP_Query($args); ?>
                     $featCategory = get_the_category();
                     echo '<div class="entry-desc">';    //Start the class
                     if( ! empty( $featCategory) ){
-                        echo '<h4>'.strtoupper($featCategory[0]->name).'</h4>';
+                        if($featCategory[0] == 'Uncategorized'){
+                        echo '<h4>'.strtoupper($featCategory[1]->name).'</h4>';
+                        }
                     }
                     echo '<h3>'.strtoupper(get_the_title()).'</h3>';  //Grab the title of the post and make it uppercase
 

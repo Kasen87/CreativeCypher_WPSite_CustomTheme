@@ -504,11 +504,14 @@ video{
     white-space:nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 1px;
 }
 
 .entry-desc h3{
     font-family: Montserrat, sans-serif;
     font-size: 100%;
+    width:95%;
 }
 
 .entry-desc hr{
@@ -1482,6 +1485,7 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
     text-overflow: ellipsis;
     overflow-x: hidden;
     overflow-y: hidden;
+    padding-top: 5px;
 }
 
 ul#menu-topnav a{

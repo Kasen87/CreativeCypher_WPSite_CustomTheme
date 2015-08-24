@@ -40,6 +40,8 @@ get_header(); ?>
 	                        'cat' => $catName->cat_ID,
 	                        'post_type' => 'post',
 	                        'post_status' => 'publish',
+                            'posts_per_page' => -1,
+                            'nopaging' => true
         				); ?>
                     	<?php $postList = new WP_Query($postArgs); ?>
                     	<?php if( $postList->have_posts() ) : ?>
