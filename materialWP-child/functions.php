@@ -17,6 +17,21 @@ function theme_enqueue_styles(){
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles');
 
+/*add_action( 'init', 'create_post_types');
+
+function create_post_types(){
+    register_post_type( 'cypher_events',
+        array(
+            'labels'=> array(
+                'name' => __('Events'),
+                'singular_name' => __('Event')
+                ),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
+}*/
+
 /**
 *
 * Tests if any of a post's assigned categories are descendants of target categories
