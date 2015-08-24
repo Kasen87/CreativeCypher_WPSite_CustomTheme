@@ -53,7 +53,7 @@
                 <?php get_template_part('pieces/featured', 'section'); ?>
                     <div class="socialMediaContainer">
                         <div class="twitterSection">
-                        <a class="twitter-timeline" href="https://twitter.com/CreativeCypher" data-widget-id="627940515179200513" height="50%">Tweets by @CreativeCypher</a>
+                        <a class="twitter-timeline" href="https://twitter.com/CreativeCypher" data-widget-id="627940515179200513" height="100%">Tweets by @CreativeCypher</a>
                             <!--Not entirely sure this script can be moved, but if it can...i plan on moving it very very soon.-->
                             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                         </div>
@@ -91,7 +91,7 @@
 
                             $description = category_description($catName->cat_ID);
                             echo '<div class="entry-desc">';
-                            echo '<h3>'.strtoupper($catName->name).'</h3><hr />';
+                            echo '<h4>'.strtoupper($catName->name).'</h4><hr />';
                             if ($description != ''){                                
                                 echo '<p>'.$description.'</p>';
                                 
