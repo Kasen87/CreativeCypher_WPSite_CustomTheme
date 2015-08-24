@@ -40,7 +40,7 @@
 
                 $description = category_description($catName->cat_ID);
                 echo '<div class="entry-desc">';
-                echo '<h4>'.strtoupper($catName->name).'</h4><hr />';
+                echo '<h3>'.strtoupper($catName->name).'</h3><hr />';
                 if ($description != ''){                                
                     echo '<p>'.$description.'</p>';
                     

@@ -25,8 +25,8 @@
                             <?php
 
                             $description = category_description($catName->cat_ID);
-                            echo '<div class="entry-desc triColumnMod">';
-                            echo '<h4>'.strtoupper($catName->name).'</h4><hr />';
+                            echo '<div class="entry-desc">';
+                            echo '<h3>'.strtoupper($catName->name).'</h3><hr />';
                             if ($description != ''){                                
                                 echo '<p>'.$description.'</p>';                                
                             };
