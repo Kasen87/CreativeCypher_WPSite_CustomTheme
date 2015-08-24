@@ -229,7 +229,7 @@ video{
 
 .featuredContainer .entry-container {
     width: calc(50% - 6px);
-    height: calc(80vw * 0.17 - 20px);
+    height: 100%;
 }
 
 .featuredContainer .primaryFeatured{
@@ -238,7 +238,7 @@ video{
 }
 
 .primaryFeatured > .entry-desc {
-    top: 86%;
+    top: 78%;
 }
 
 .slideContainer {
@@ -485,7 +485,7 @@ video{
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 82%;
+    top: 72%;
     left: 0;
     opacity: 1;
     background-color: rgba(0,0,0,0.8);
@@ -497,10 +497,18 @@ video{
 
 .entry-desc h4,
 .entry-desc h3{
-    font-size: 150%;
+    font-size: 140%;
     padding-top: 0;
     color: #fff;
     line-height: initial;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.entry-desc h3{
+    font-family: Montserrat, sans-serif;
+    font-size: 100%;
 }
 
 .entry-desc hr{
@@ -510,6 +518,10 @@ video{
 .entry-desc p{
     font-weight:normal;
     text-align: left;
+}
+
+.entry-desc.triColumnMod {
+    top: 82%;
 }
 
 /* Blog Section Styling */
@@ -569,7 +581,7 @@ video{
     display: none;
 }
 
-.singleRow .entry-desc{
+.suggest-entry .entry-desc{
     top: 83%;
 }
 
@@ -624,10 +636,11 @@ video{
     }
 .twitterSection{
     width:100%;
+    height:100%;
 }
 
 .entry-desc{
-    top:83.5%;
+    top:73%;
 }
  
 }
@@ -1335,19 +1348,6 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
     margin-right: 30px;
 }
 
-/*.directorSection .entry-desc {
-
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    opacity: 1;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    z-index: 2;
-}*/
-
 .leaderSection .entry-cont,
 .directorSection .entry-cont {
     padding: 5px;
@@ -1445,7 +1445,6 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
 }
 
 .postCaption{
-    height: 75px;
     padding:5px;
     background-color: #fff;
 }
@@ -1479,6 +1478,10 @@ a .a2a_svg { -webkit-filter: invert(1); filter: invert(1); }
 
 .entry-title{
     width: 85%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 ul#menu-topnav a{
