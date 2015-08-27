@@ -7,7 +7,17 @@
  * @package materialwp
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+
+<?php 
+	if (is_admin_bar_showing()) {
+		$adminClass = 'navbar navbar-default navbar-fixed-top admin-bar-adjust';
+		$htmlFix = 'admin-bar';
+} else {
+		$adminClass = 'navbar navbar-default navbar-fixed-top';
+}
+?>
+
+<html <?php language_attributes(); if($htmlFix){ echo 'class="'.$htmlFix.'"';} ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,16 +29,20 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site <?php echo $htmlFix; ?>" >
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'materialwp' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<nav class="<?php if (is_admin_bar_showing()) {
-						echo 'navbar navbar-default navbar-fixed-top admin-bar-adjust';
-					} else {
-						echo 'navbar navbar-default navbar-fixed-top';
-					}?>" role="navigation">
+		<?php 
+		if (is_admin_bar_showing()) {
+			$adminClass = 'navbar navbar-default navbar-fixed-top admin-bar-adjust';
+		} else {
+			$adminClass = 'navbar navbar-default navbar-fixed-top';
+		}
+		?>
+
+		<nav class="<?php echo $adminClass; ?>" role="navigation">
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
@@ -77,4 +91,4 @@
 
 
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content pushFooter">

@@ -10,7 +10,7 @@
         <div class="outerContentCont">
             <div class="innerContainer">
                 <!--Use this section for creating the member posts and attach class based on categories for filtering later-->
-                <div class="card memCard">
+                <div class="memCard">
                 <?php
 
                 $memberCatLists = get_categories(array('parent'=>get_cat_ID('team'), 'hide_empty'=>0));
@@ -18,13 +18,14 @@
                 echo '<div class="centerMargins">';
                 echo '<div id="filterNavBtns">';
                 echo '<ul id="filterNav">';
-                $i = 0;
+                echo '<p>'.$i.'</p>';
+                echo '<li class="current"><a href="#">ALL</a></li>';
                 foreach($memberCatLists as $memFilterBtn){
-                    if ($i == 0){
-                        echo '<li class="current"><a href="#">ALL</a></li>';
-                    }else{
+                    if ($i == 0){ //#issue
+/*                        echo '<li class="current"><a href="#">ALL</a></li>';
+*/                    }else{
                     }
-                    echo '<li class=""> <a href="#">'.strtoupper($memFilterBtn->name).'</a></li>';
+                    echo '<li class=""><a href="#">'.strtoupper($memFilterBtn->name).'</a></li>';
                     $i++;
                 }
                 echo '</ul></div>';

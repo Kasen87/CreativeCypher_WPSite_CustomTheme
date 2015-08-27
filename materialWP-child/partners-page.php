@@ -10,7 +10,7 @@
         <div class="outerContentCont">
             <div class="innerContainer">
                 <!--Use this section for creating the partner posts and attach class based on categories for filtering later-->
-                <div class="card memCard">
+                <div class="memCard">
                 <?php
 
                 $partnerCatLists = get_categories(array('parent'=>get_cat_ID('Partners'), 'hide_empty'=>0));
@@ -19,10 +19,11 @@
                 echo '<div id="filterNavBtns">';
                 echo '<ul id="filterNav">';
                 $i = 0;
+                echo '<li class="current"><a href="#">ALL</a></li>';
                 foreach($partnerCatLists as $memFilterBtn){
                     if ($i == 0){
-                        echo '<li class="current"><a href="#">ALL</a></li>';
-                    }else{
+/*                        echo '<li class="current"><a href="#">ALL</a></li>';
+*/                    }else{
                     }
                     echo '<li class=""> <a href="#">'.strtoupper($memFilterBtn->name).'</a></li>';
                     $i++;
@@ -51,7 +52,7 @@
                             }                         
                             //this ends the foreach loop above
                         }
-                        $catClass .= '"';
+                        $catClass .= 'card"';
 
                             $targetText = 'http';
                             $description = get_the_content();

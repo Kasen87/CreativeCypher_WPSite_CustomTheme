@@ -44,8 +44,10 @@ $list_of_posts = new WP_Query($args); ?>
                     $featCategory = get_the_category();
                     echo '<div class="entry-desc">';    //Start the class
                     if( ! empty( $featCategory) ){
-                        if($featCategory[0] == 'Uncategorized'){
-                        echo '<h4>'.strtoupper($featCategory[1]->name).'</h4>';
+                        if(($featCategory[0] == 'Uncategorized' && $featCategory[1] != null)){
+                            echo '<h4>'.strtoupper($featCategory[1]->name).'</h4>';
+                        }else{
+                            echo '<h4>UNTITLED POST</h4>';
                         }
                     }
                     echo '<h3>'.strtoupper(get_the_title()).'</h3>';  //Grab the title of the post and make it uppercase
