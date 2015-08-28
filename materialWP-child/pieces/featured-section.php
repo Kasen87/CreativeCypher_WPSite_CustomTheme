@@ -43,13 +43,42 @@ $list_of_posts = new WP_Query($args); ?>
 
                     $featCategory = get_the_category();
                     echo '<div class="entry-desc">';    //Start the class
-                    if( ! empty( $featCategory) ){
-                        if(($featCategory[0] == 'Uncategorized' && $featCategory[1] != null)){
-                            echo '<h4>'.strtoupper($featCategory[1]->name).'</h4>';
+                        $taxonomy = 'category';
+
+                        // get the term IDs assigned to post.
+                        $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+                        // separator between links
+                        $separator = ', ';
+
+                        if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
+
+                            $term_ids = implode( ',' , $post_terms );
+                            $terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids . '&number=1&order=desc' );
+                            $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+                            $terms = sanitize_text_field($terms);
+                            // display post categories
+                            //echo $terms;
+                            echo '<h4>'.strtoupper($terms).'</h4>';
+                           // echo '<p>FIRST!</p>';
                         }else{
-                            echo '<h4>UNTITLED POST</h4>';
+                            echo '<h4></h4>';
                         }
-                    }
+
+
+
+
+
+
+/*                    if( ! empty( $featCategory) ){
+                        if(($featCategory[0]->name == 'Uncategorized' ) && (! empty($featCategory[1])) ){
+                            echo '<h4>'.strtoupper($featCategory[1]->name).'</h4>';
+                            echo '<p>FIRST!</p>';
+                        }else{
+                            echo '<h4>'.strtoupper($featCategory[0]->name).'</h4>';
+                            echo '<p>SECOND!</p>';
+                        }
+                    }else{
+                    }*/
                     echo '<h3>'.strtoupper(get_the_title()).'</h3>';  //Grab the title of the post and make it uppercase
 
                     echo '<hr />';
